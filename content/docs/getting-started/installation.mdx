@@ -1,0 +1,444 @@
+---
+title: "Installation"
+description: Install the necessary packages and set up your project. This tool automates the process, streamlining your setup with no extra steps required.
+order: 2
+published: true
+---
+
+## Installation via CLI
+Before executing the command, ensure that **tailwind-css** is installed. If not, follow the instructions [here](https://tailwindcss.com/docs/installation) for installation.
+
+<Note variant='primary'>
+  This CLI will overwrite your **tailwind.config** and **css** file. It is recommended to use this in a **new project** rather than an existing one to avoid manual file additions.
+</Note>
+
+### Initial Setup
+Begin by executing this command:
+
+<CLI command='init' />
+
+First, it will asks what your project type, if you’re using **Next.js**, **Laravel with Inertia.js** or **Vite.js with React** just select it.
+If none of them, select the **other** option and it will asks several question about your project structure.
+
+### Add Components
+Next, use `add [component-name]` to add components in your project. This allows for selective installation without the need for a full setup. Install only what you need, or refer to the documentation to manually include components. Here's how to add a `combo-box`:
+<CLI command='add' items={['combo-box']} />
+
+This command will ensure all necessary components are installed:
+```bash
+✓ combo-box created
+✓ select created
+✓ dropdown created
+✓ field created
+✓ list-box created
+✓ popover created
+✓ button created
+```
+
+Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
+<CLI command='add' items={['select', 'text-field']} />
+
+### Select and Add Components
+You might prefer to select the components you want to include by adding them without specifying any items. Just use the following command to add components:
+<CLI command='add' items={[]} />
+This command will present a list of available components, which you can navigate and select using the arrow keys and spacebar.
+
+```bash
+? Select components to add: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
+ ◯ dropdown
+ ◯ dialog
+ ◯ field
+ ◯ forms
+ ◯ collections
+ ◯ date-and-time
+```
+
+## Manual Installation
+To begin setting up the design system, start by installing these packages:
+
+<CLI command='install' items={['react-aria-components', 'tailwindcss-react-aria-components']} />
+
+Next, add Tailwind Variant, Tailwind Merge, and clsx for utility functions:
+
+<CLI command='install' items={['tailwind-variants', 'tailwind-merge', 'clsx']} />
+
+Following that, include the animation package for managing animations and icons:
+
+<CLI command='install' items={['cleon-icons', 'tailwindcss-animate']} />
+
+### CSS
+Start by adjusting your main CSS file. For example, if you are using Laravel, this would be **resources/css/app.css**.
+You should add the following code:
+
+You can customize your colors using these variables. By default, Justd utilizes HSL colors, but you have the option
+to switch to RGB, HSL, or HSB.
+
+<Code lang='css' code={`@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    :root {
+        --background: 0 0% 98.04%; /* zinc-50 */
+        --foreground: 240 10% 3.92%; /* zinc-950 */
+        --primary: 224.3 76.3% 48%; /* blue-700 */
+        --primary-foreground: 0 0% 98.04%; /* zinc-50 */
+        --secondary: 211.7 96.4% 78.4%; /* blue-300 */
+        --secondary-foreground: 226.2 57% 21%; /* blue-950 */
+        --danger: 0 72.22% 50.59%; /* red-600 */
+        --danger-foreground: 0 0% 98.04%; /* zinc-50 */
+        --success: 142.1 76.2% 36.3%; /* green-700 */
+        --success-foreground: 0 0% 98.04%; /* zinc-50 */
+        --warning: 24.6 95% 53.1%; /* orange-500 */
+        --warning-foreground: 0 0% 98.04%; /* zinc-50 */
+        --info: 294.7 72.4% 39.8%; /* fuchsia-500 */
+        --info-foreground: 0 0% 98.04%;
+        --dark: 240 10% 4%; /* zinc-950 */
+        --dark-foreground: 0 0% 98.04%; /* zinc-50 */
+        --muted: 240 4.88% 83.92%; /* zinc-300 */
+        --muted-foreground: 240 3.83% 46.08%; /* zinc-500 */
+        --radius: 0.5rem;
+
+        --chart-1: var(--primary);
+        --chart-2: var(--danger);
+        --chart-3: var(--success);
+        --chart-4: var(--warning);
+        --chart-5: var(--info);
+    }
+
+    .dark {
+        --background: 240 10% 3.92%; /* zinc-950 */
+        --foreground: 0 0% 98.04%; /* zinc-50 */
+        --primary: 221.2 83.2% 53.3%; /* blue-600 */
+        --primary-foreground: 0 0% 98.04%; /* zinc-50 */
+        --secondary: 226.2 57% 21%; /* blue-950 */
+        --secondary-foreground: 211.7 96.4% 78.4%; /* blue-300 */
+        --danger: 0 72.2% 50.6%; /* red-600 */
+        --danger-foreground: 0 0% 98.04%;
+        --success: 142.1 76.2% 36.3%; /* green-700 */
+        --success-foreground: 0 0% 98.04%;
+        --warning: 17.5 88.3% 40.4%; /* orange-700 */
+        --warning-foreground: 0 0% 98.04%;
+        --info: 294.7 72.4% 39.8%; /* fuchsia-700 */
+        --info-foreground: 0 0% 98.04%;
+        --dark: 0 0% 98.04%;
+        --dark-foreground: 240 10% 3.92%;
+        --muted: 240 5.2% 33.92%; /* zinc-800 */
+        --muted-foreground: 240 5.03% 64.9%; /* zinc-400 */
+    }
+}`} />
+
+### Default Utilities
+Include this for the default set of utilities:
+
+```
+@layer base {
+  * {
+    @apply border-muted;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 850;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+```
+
+### Tailwind Configuration
+
+Configure your Tailwind setup by wrapping your tailwind config with withTV from tailwind-variants. Also, make sure to
+integrate the plugins we've just installed.
+
+<Code lang='js' code={`/** @type {import('tailwindcss').Config} */
+import { withTV } from 'tailwind-variants/transformer'
+import ta from 'tailwindcss-animate'
+import trac from 'tailwindcss-react-aria-components'
+
+const config = withTV({
+    content: [], // based on your project framework
+    darkMode: 'class',
+    theme: {
+        container: {
+            center: true,
+            padding: {
+                DEFAULT: '1rem',
+                sm: '2rem'
+            },
+            screens: {
+                '2xl': '1400px'
+            }
+        },
+        fontFamily: {
+            sans: ['var(--font-sans)', ...fontFamily.sans],
+            mono: ['var(--font-mono)', ...fontFamily.mono]
+        },
+        extend: {
+            colors: {
+                background: 'hsl(var(--background))',
+                foreground: 'hsl(var(--foreground))',
+                primary: {
+                    DEFAULT: 'hsl(var(--primary))',
+                    foreground: 'hsl(var(--primary-foreground))'
+                },
+                secondary: {
+                    DEFAULT: 'hsl(var(--secondary))',
+                    foreground: 'hsl(var(--secondary-foreground))'
+                },
+                danger: {
+                    DEFAULT: 'hsl(var(--danger))',
+                    foreground: 'hsl(var(--danger-foreground))'
+                },
+                success: {
+                    DEFAULT: 'hsl(var(--success))',
+                    foreground: 'hsl(var(--success-foreground))'
+                },
+                info: {
+                    DEFAULT: 'hsl(var(--info))',
+                    foreground: 'hsl(var(--info-foreground))'
+                },
+                warning: {
+                    DEFAULT: 'hsl(var(--warning))',
+                    foreground: 'hsl(var(--warning-foreground))'
+                },
+                dark: {
+                    DEFAULT: 'hsl(var(--dark))',
+                    foreground: 'hsl(var(--dark-foreground))'
+                },
+                muted: {
+                    DEFAULT: 'hsl(var(--muted))',
+                    foreground: 'hsl(var(--muted-foreground))'
+                }
+            },
+            borderRadius: {
+                lg: 'var(--radius)',
+                md: 'calc(var(--radius) - 2px)',
+                sm: 'calc(var(--radius) - 4px)'
+            }
+        }
+    },
+    plugins: [ta, trac]
+})
+
+export default config
+`} />
+
+### Utils
+
+All of the components need this utility, You can create this file inside your lib folder or anywhere you like. Here's how to define it in `lib/utils.ts`:
+
+<Code lang='ts' code={`import React from 'react'
+
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
+
+export const useMediaQuery = (query: string) => {
+    const [value, setValue] = React.useState(false)
+
+    React.useEffect(() => {
+        function onChange(event: MediaQueryListEvent) {
+            setValue(event.matches)
+        }
+
+        const result = matchMedia(query)
+        result.addEventListener('change', onChange)
+        setValue(result.matches)
+
+        return () => result.removeEventListener('change', onChange)
+    }, [query])
+
+    return value
+}
+
+export const wait = (number: number = 1000) => new Promise((resolve) => setTimeout(resolve, number))`}/>
+
+## Simple Import
+Indeed, it's efficient because the index.ts file in your UI folder serves as a hub. Even if the button and badge
+components are in separate files, you can import them together easily:
+
+```
+import { Button, Sheet, Badge } from '@/components/ui'
+```
+
+So, here's the scoop: your UI folder contains an index.ts file, right? This file consolidates all your components for
+straightforward access. Simply import them as needed, hassle-free!
+<Code lang='ts' code={`export * from './accordion'
+export * from './aside'
+export * from './avatar'
+export * from './badge'
+export * from './breadcrumbs'
+export * from './button'
+export * from './calendar'
+export * from './card'
+export * from './carousel'
+export * from './chart'
+export * from './checkbox'
+export * from './choicebox'
+export * from './color-area'
+export * from './color-field'
+export * from './color-picker'
+export * from './color-slider'
+export * from './color-swatch'
+export * from './color-swatch-picker'
+export * from './color-thumb'
+export * from './color-wheel'
+export * from './combo-box'
+export * from './command'
+export * from './container'
+export * from './context-menu'
+export * from './date-field'
+export * from './date-picker'
+export * from './date-range-picker'
+export * from './description-list'
+export * from './dialog'
+export * from './disclosure'
+export * from './drop-zone'
+export * from './dropdown'
+export * from './field'
+export * from './file-trigger'
+export * from './form'
+export * from './grid-list'
+export * from './heading'
+export * from './keyboard'
+export * from './link'
+export * from './list-box'
+export * from './loader'
+export * from './loading-dots'
+export * from './menu'
+export * from './meter'
+export * from './modal'
+export * from './multi-select'
+export * from './navbar'
+export * from './note'
+export * from './number-field'
+export * from './otp'
+export * from './pagination'
+export * from './popover'
+export * from './progress-bar'
+export * from './progress-circle'
+export * from './radio'
+export * from './range-calendar'
+export * from './search-field'
+export * from './select'
+export * from './separator'
+export * from './sheet'
+export * from './show-more'
+export * from './skeleton'
+export * from './slider'
+export * from './switch'
+export * from './table'
+export * from './tabs'
+export * from './tag-field'
+export * from './tag-group'
+export * from './text-field'
+export * from './textarea'
+export * from './time-field'
+export * from './toast'
+export * from './toggle'
+export * from './toolbar'
+export * from './tooltip'
+export * from './tree'
+export * from './visually-hidden'`} />
+
+If you're not using all those components, feel free to remove the ones you don't need. Later, when you introduce a new
+component, simply add it to your setup. It's straightforward!
+
+### TS Config
+Next, incorporate the following settings into your `tsconfig.json` file:
+```json {5}
+    {
+      "compilerOptions": {
+      // ...
+      "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+### TS Config with src Folder
+Ensure you configure the `paths` property correctly if your project includes a `src` folder. If you want to organize
+the UI folder, adjust your paths accordingly like this:
+
+```json {5}
+    {
+      "compilerOptions": {
+      // ...
+      "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+## Fonts
+This is is currently using the [Geist font](https://vercel.com/font). If you want to use a different font, you can define your font-family in your js or css file.
+
+### Stylesheet
+When you're working with a stylesheet, you can define your `@font-face` in your css file.
+
+```
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("GeistVF.woff") format("woff");
+}
+```
+
+### Next.js
+If you're using Next.js, you don't event need css files. Just define your font in your layout file.
+
+```
+import localFont from 'next/font/local'
+
+const fontSans = localFont({
+  src: [{path: './fonts/GeistVF.woff'}],
+  variable: '--font-sans'
+})
+```
+
+Then, apply the `fontSans` to the `body` tag like this:
+
+```
+import { cn } from '@/lib/utils'
+
+<body
+className={cn(
+  'min-h-svh font-sans antialiased',
+  fontSans.variable,
+)}
+>
+```
+
+Then, you can use the variable in your tailwind config like this:
+
+```ts
+import { fontFamily } from 'tailwindcss/defaultTheme'
+
+theme: {
+  // ...
+  extend: {
+    fontFamily: {
+      sans: ['var(--font-sans)', ...fontFamily.sans],
+    },
+  },
+  // ...
+}
+```
+
+For more information, refer to the [Tailwind documentation](https://tailwindcss.com/docs/font-family#customizing-the-default-font) and [Next.js documentation](https://nextjs.org/docs/app/building-your-application/optimizing/fonts).
+
+## InteliSense
+If you want your development environment to be more intelligent, you can follow instructions here at [Tailwind Variants](https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional).
+
+## Dark Mode
+Cleon-Kit supports dark mode out of the box. Every framework has its own way of implementing dark mode. So you better check the docs list below:
+- [Vite](/docs/dark-mode/vite)
+- [Inertia.js](/docs/dark-mode/inertia-js)
+- [Next.js](/docs/dark-mode/next-js)
+- [Remix](/docs/dark-mode/remix)
+- [Astro](/docs/dark-mode/astro)

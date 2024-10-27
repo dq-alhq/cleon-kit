@@ -1,0 +1,69 @@
+---
+title: 'Text Field'
+description: Enter text like jotting notes on your phone, offering versatility for typing and accommodating various types of information.
+order: 2
+published: true
+references:
+    [
+        'https://react-spectrum.adobe.com/react-aria/TextField.html#props',
+        'https://www.framer.com/motion/animate-presence'
+    ]
+---
+
+## Text Field
+
+A text field is a box where you can type in text, like your name or email.
+
+<Demo center component='forms/text-field/text-field-demo' />
+
+## Installation
+
+<Install component='text-field' />
+
+## Suffix and Prefix
+
+Enhance your TextField by adding a prefix or suffix. Whether it’s text or icons, it’s flexible to fit your design.
+
+<Demo center component='forms/text-field/text-field-prefix-suffix-demo' />
+
+## Suffix with Button
+
+Add a button to the suffix by simply including it in the suffix prop. While you can do the same with a prefix, it’s more common to see it as a suffix.
+
+<Demo center component='forms/text-field/text-field-suffix-button-demo' />
+
+## Pending
+
+Activate the loading state on your TextField with the `isPending` prop. Adjust the `loaderPosition` to position the loader as desired.
+
+<Demo center component='forms/text-field/text-field-pending-demo' />
+
+## Revealable
+
+When using a text field as a password input, you may want the option to reveal the password. To enable this feature, simply add the `isRevealable` prop. However, ensure that the input type is explicitly set to 'password', as this is a required condition.
+
+<Demo center component='forms/text-field/text-field-revealable-demo' />
+
+## Controlled
+
+Manage the TextField value through the `value` prop for controlled usage.
+
+<Demo center component='forms/text-field/text-field-controlled-demo' />
+
+## Validation
+
+Validate the TextField input using the `isInvalid` prop.
+
+<Demo center component='forms/text-field/text-field-validation-demo' />
+
+## Readonly
+
+Set the TextField to readonly, preventing any edits.
+
+<Demo center component='forms/text-field/text-field-readonly-demo' />
+
+## Disabled
+
+When the TextField is disabled, it becomes non-editable and appears inactive.
+
+<Demo center component='forms/text-field/text-field-disabled-demo' />

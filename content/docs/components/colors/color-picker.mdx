@@ -1,0 +1,64 @@
+---
+title: 'Color Picker'
+description: A Color Picker keeps color values in sync across React Aria color components. It makes building color pickers with custom layouts a breeze through composition.
+order: 1
+published: true
+references: ['https://react-spectrum.adobe.com/react-aria/ColorPicker.html']
+---
+
+## Basic
+
+The basic color picker allows users to select a color.
+
+<Demo center component='colors/color-picker/color-picker-demo' />
+
+## Installation
+
+<Install component='color-picker' />
+
+## Enable Format Selection
+
+Enable users to select the format of the color value (e.g., RGB, HSL).
+
+<Demo center component='colors/color-picker/color-picker-enable-selection-format-demo' />
+
+## Combination
+
+Combine both swatch and selection format options in the color picker.
+
+<Demo center component='colors/color-picker/color-picker-combination-demo' />
+
+## Label
+
+Add a label to the color picker for better accessibility and user guidance.
+
+<Demo center component='colors/color-picker/color-picker-with-label-demo' />
+
+## Dynamic Label
+
+Dynamically update the label based on the selected color.
+
+```tsx
+import { ColorPicker, defaultColor } from "ui"
+
+const [color, setColor] = React.useState(defaultColor)
+return <ColorPicker label={color.toString('hex')} value={color} onChange={setColor} />
+```
+
+## Description
+
+Include a description to provide additional information or instructions.
+
+<Demo center component='colors/color-picker/color-picker-with-description-demo' />
+
+## Controlled
+
+Control the selected color with the `value` prop to sync it with your application's state.
+
+<Demo center component='colors/color-picker/color-picker-controlled-demo' />
+
+## Disabled
+
+Disable the color picker by setting the `isDisabled` prop, making it non-interactive.
+
+<Demo center component='colors/color-picker/color-picker-disabled-demo' />

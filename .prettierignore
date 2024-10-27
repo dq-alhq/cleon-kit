@@ -1,0 +1,6 @@
+components/docs/generated/**/*
+.velite
+.next
+.github
+**/*.json
+content
