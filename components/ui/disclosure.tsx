@@ -48,7 +48,7 @@ const DisclosureGroup = ({
 }
 
 const disclosureStyles = tv({
-    base: 'flex group relative w-full flex-col',
+    base: ['flex group relative w-full flex-col'],
     variants: {
         isDisabled: {
             true: 'cursor-not-allowed opacity-75'
@@ -139,7 +139,6 @@ const Trigger = ({ className, ...props }: Aria.ButtonProps) => {
         </Aria.Button>
     )
 }
-
 const Panel = ({ className, ...props }: Aria.DisclosurePanelProps) => {
     return (
         <Aria.UNSTABLE_DisclosurePanel {...props} className={cn('sm:text-sm', className)}>

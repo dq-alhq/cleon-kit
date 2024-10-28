@@ -248,7 +248,7 @@ export const Presets: Record<string, ThemeStyle> = {
         dark: {
             '--background': '0 0% 0%',
             '--foreground': '210 5.56% 92.94%',
-            '--primary': '240 5.26% 26.08%',
+            '--primary': '212.01999999999998 100% 46.67%',
             '--primary-foreground': '0 0% 100%',
             '--secondary': '270 59.26% 57.65%',
             '--secondary-foreground': '0 0% 100%',

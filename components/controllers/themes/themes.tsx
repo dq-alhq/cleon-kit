@@ -12,6 +12,7 @@ import {
     Button,
     buttonVariants,
     ColorPicker,
+    Container,
     NumberField,
     Popover,
     Select,
@@ -177,7 +178,7 @@ export default function ThemeCustomizer() {
     }
 
     return (
-        <>
+        <Container>
             <div className='w-full rounded-b-lg bg-background/60 backdrop-blur-xl sticky top-12 lg:top-14 py-6 z-10'>
                 <div className='container flex flex-row gap-3 justify-between items-center'>
                     <div className='flex flex-row gap-3'>
@@ -381,7 +382,7 @@ export default function ThemeCustomizer() {
             >
                 <ThemeContainer />
             </div>
-        </>
+        </Container>
     )
 }
 

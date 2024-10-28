@@ -9,9 +9,9 @@ import { RouterProvider } from 'react-aria-components'
 
 import { Toaster } from '@/components/ui'
 
-const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
-    return <NextThemesProvider {...props}>{children}</NextThemesProvider>
-}
+const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => (
+    <NextThemesProvider {...props}>{children}</NextThemesProvider>
+)
 
 declare module 'react-aria-components' {
     interface RouterConfig {

@@ -57,7 +57,6 @@
         font-feature-settings: 'cv11', 'ss01';
         font-variation-settings: 'opsz' 850;
         text-rendering: optimizeLegibility;
-        scrollbar-width: thin;
     }
 
     body {
@@ -72,27 +71,8 @@
         --chart-5: var(--info);
     }
 
-    /* Firefox */
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: var(--muted) transparent;
-    }
-
-    /* dark mode */
-    .dark {
-        scrollbar-width: thin;
-        scrollbar-color: var(--muted) transparent;
-        @media (prefers-color-scheme: dark) {
-            * {
-                scrollbar-width: thin;
-                scrollbar-color: var(--muted) transparent;
-            }
-        }
-    }
-
-    /* Chrome, Edge, and Safari */
     *::-webkit-scrollbar {
-        @apply size-4;
+        @apply size-1.5 rounded-full;
     }
 
     *::-webkit-scrollbar-track {
@@ -100,7 +80,7 @@
     }
 
     *::-webkit-scrollbar-thumb {
-        @apply rounded-full border border-transparent bg-muted;
+        @apply rounded-xl border border-transparent bg-muted;
     }
 }
 
@@ -115,7 +95,7 @@
     .overflow-scroll,
     .overflow-x-scroll,
     .overflow-y-scroll {
-        @apply [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-transparent [&::-webkit-scrollbar-thumb]:hover:bg-muted-foreground;
+        @apply [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-transparent [&::-webkit-scrollbar-thumb]:transition [&::-webkit-scrollbar-thumb]:duration-300 [&::-webkit-scrollbar-thumb]:hover:bg-muted;
     }
 
     .no-scrollbar {

@@ -43,11 +43,11 @@ export const SourceCode = ({ component, ...props }: SourceCodeProps) => {
     const open = () => setIsOpened(!isOpened)
 
     return (
-        <section className='my-6 not-prose'>
+        <section className='my-6 not-prose space-y-2'>
             <Description className='-mt-2 mb-4 prose text-base max-w-none'>
                 Copy the code below and paste it into your component folder.
             </Description>
-            <Tabs onSelectionChange={()=>setIsOpened(false)}>
+            <Tabs onSelectionChange={() => setIsOpened(false)}>
                 <Tabs.List items={codeStrings}>
                     {(item) => (
                         <Tabs.Label key={item.name} id={`tab-${item.name}`}>
@@ -55,32 +55,32 @@ export const SourceCode = ({ component, ...props }: SourceCodeProps) => {
                         </Tabs.Label>
                     )}
                 </Tabs.List>
-                    {codeStrings.map((item) => (
-                        <Tabs.Content key={item.name} id={`tab-${item.name}`}>
-                            <div className={'relative overflow-hidden'} {...props}>
-                                <div
-                                    className={cn(
-                                        'my-0 overflow-hidden transition',
-                                        !isOpened && 'h-32'
-                                    )}
-                                >
-                                    <Code code={item.code} />
-                                </div>
-                                <div
-                                    className={cn(
-                                        'absolute inset-0 rounded-md bg-gradient-to-b from-transparent to-background',
-                                        isOpened && 'hidden'
-                                    )}
-                                ></div>
-                                <Button
-                                    className='sticky bottom-4 left-1/2 right-1/2 outline-none focus:outline-none rounded-lg p-2 transition border -translate-x-1/2 bg-background hover:bg-background hover:ring-offset-4 hover:ring-4 pressed:bg-background'
-                                    onPress={open}
-                                >
-                                    {isOpened ? 'Hide' : 'Reveal'}
-                                </Button>
+                {codeStrings.map((item) => (
+                    <Tabs.Content key={item.name} id={`tab-${item.name}`}>
+                        <div className={'relative overflow-hidden'} {...props}>
+                            <div
+                                className={cn(
+                                    'my-0 overflow-hidden transition',
+                                    !isOpened && 'h-32'
+                                )}
+                            >
+                                <Code code={item.code} />
                             </div>
-                        </Tabs.Content>
-                    ))}
+                            <div
+                                className={cn(
+                                    'absolute inset-0 rounded-md bg-gradient-to-b from-transparent to-background',
+                                    isOpened && 'hidden'
+                                )}
+                            ></div>
+                            <Button
+                                className='sticky bottom-4 left-1/2 right-1/2 outline-none focus:outline-none rounded-lg p-2 transition border -translate-x-1/2 bg-background hover:bg-background hover:ring-offset-4 hover:ring-4 pressed:bg-background'
+                                onPress={open}
+                            >
+                                {isOpened ? 'Hide' : 'Reveal'}
+                            </Button>
+                        </div>
+                    </Tabs.Content>
+                ))}
             </Tabs>
         </section>
     )

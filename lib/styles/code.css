@@ -48,7 +48,7 @@ span[data-rehype-pretty-code-figure] > code span {
 
 [data-rehype-pretty-code-figure] [data-highlighted-line] {
     background: rgba(200, 200, 255, 0.1);
-    @apply border-l-primary/80;
+    @apply border-l-primary/80 bg-muted/50 dark:bg-muted/50;
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-chars] {

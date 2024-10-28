@@ -939,6 +939,61 @@
     "slugAsParams": "components/charts/radial-chart"
   },
   {
+    "slug": "docs/components/collections/accordion",
+    "title": "Accordion",
+    "description": "Accordion is a vertical stack of headers that expand or collapse to show or hide content, providing an organized, user-friendly way to manage information.",
+    "order": 6,
+    "published": true,
+    "references": [
+      "https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html#props"
+    ],
+    "body": "const{Fragment:e,jsx:i,jsxs:n}=arguments[0];function _createMdxContent(a){const d={a:\"a\",code:\"code\",h2:\"h2\",p:\"p\",span:\"span\",...a.components},{Demo:t,Install:r}=d;return t||_missingMdxReference(\"Demo\",!0),r||_missingMdxReference(\"Install\",!0),n(e,{children:[i(d.h2,{id:\"basic\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#basic\",children:\"Basic\"})}),\"\\n\",i(d.p,{children:\"An disclosure functions as a vertical stack of headers that expand to reveal or conceal content sections.\"}),\"\\n\",i(t,{className:\"flex-1\",component:\"collections/disclosure-group/disclosure-group-demo\"}),\"\\n\",i(d.h2,{id:\"installation\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#installation\",children:\"Installation\"})}),\"\\n\",i(r,{component:\"disclosure\"}),\"\\n\",i(d.h2,{id:\"default-expanded\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#default-expanded\",children:\"Default Expanded\"})}),\"\\n\",n(d.p,{children:[\"Set the initially expanded sections by providing an array of keys to the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"defaultExpandedKeys\"})})})}),\" prop. These keys can be either numbers or strings.\"]}),\"\\n\",i(t,{component:\"collections/disclosure-group/disclosure-group-default-expand-demo\"}),\"\\n\",i(d.h2,{id:\"allow-multiple-expanded\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#allow-multiple-expanded\",children:\"Allow Multiple Expanded\"})}),\"\\n\",n(d.p,{children:[\"Allow multiple sections to be expanded at once by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"allowsMultipleExpanded\"})})})}),\" prop.\"]}),\"\\n\",i(t,{component:\"collections/disclosure-group/disclosure-group-allow-multiple-expand-demo\"}),\"\\n\",i(d.h2,{id:\"border-hidden\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#border-hidden\",children:\"Border Hidden\"})}),\"\\n\",n(d.p,{children:[\"Eliminate the border between sections by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideBorder\"})})})}),\" prop.\"]}),\"\\n\",i(t,{component:\"collections/disclosure-group/disclosure-group-border-hidden-demo\"}),\"\\n\",i(d.h2,{id:\"hide-indicator\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#hide-indicator\",children:\"Hide Indicator\"})}),\"\\n\",n(d.p,{children:[\"Eliminate the visual indicator (arrow key) by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideIndicator\"})})})}),\" prop.\"]}),\"\\n\",i(t,{component:\"collections/disclosure-group/disclosure-group-hide-indicator-demo\"}),\"\\n\",i(d.h2,{id:\"hide-everything\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#hide-everything\",children:\"Hide Everything\"})}),\"\\n\",n(d.p,{children:[\"You may want to hide the entire disclosure attribute like border or indicator. You can do that by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideBorder\"})})})}),\" and \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideIndicator\"})})})}),\" props.\"]}),\"\\n\",i(t,{component:\"collections/disclosure-group/disclosure-group-hide-everything-demo\"}),\"\\n\",i(d.h2,{id:\"disabled\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#disabled\",children:\"Disabled\"})}),\"\\n\",n(d.p,{children:[\"You can disabled specific sections by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"isDisabled\"})})})}),\" props to the item.\"]}),\"\\n\",i(t,{component:\"collections/disclosure-group/disclosure-group-disabled-demo\"})]})}return{default:function(e={}){const{wrapper:n}=e.components||{};return n?i(n,{...e,children:i(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,i){throw new Error(\"Expected \"+(i?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "toc": [
+      {
+        "title": "Basic",
+        "url": "#basic",
+        "items": []
+      },
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Default Expanded",
+        "url": "#default-expanded",
+        "items": []
+      },
+      {
+        "title": "Allow Multiple Expanded",
+        "url": "#allow-multiple-expanded",
+        "items": []
+      },
+      {
+        "title": "Border Hidden",
+        "url": "#border-hidden",
+        "items": []
+      },
+      {
+        "title": "Hide Indicator",
+        "url": "#hide-indicator",
+        "items": []
+      },
+      {
+        "title": "Hide Everything",
+        "url": "#hide-everything",
+        "items": []
+      },
+      {
+        "title": "Disabled",
+        "url": "#disabled",
+        "items": []
+      }
+    ],
+    "status": "alpha",
+    "slugAsParams": "components/collections/accordion"
+  },
+  {
     "slug": "docs/components/collections/choicebox",
     "title": "Choicebox",
     "description": "A bigger, juiced-up version of a Radio or Checkbox, giving users a chunky tap target and extra deets.",
@@ -981,6 +1036,46 @@
       }
     ],
     "slugAsParams": "components/collections/choicebox"
+  },
+  {
+    "slug": "docs/components/collections/collapsible",
+    "title": "Collapsible",
+    "description": "Collapsible content section featuring a header with a title and a trigger button, along with a panel that holds the content.",
+    "order": 5,
+    "published": true,
+    "references": [
+      "https://react-spectrum.adobe.com/react-aria/Disclosure.html#props"
+    ],
+    "body": "const{Fragment:e,jsx:n,jsxs:o}=arguments[0];function _createMdxContent(i){const a={a:\"a\",code:\"code\",h2:\"h2\",p:\"p\",span:\"span\",...i.components},{Demo:c,Install:s}=a;return c||_missingMdxReference(\"Demo\",!0),s||_missingMdxReference(\"Install\",!0),o(e,{children:[n(a.h2,{id:\"basic\",children:n(a.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#basic\",children:\"Basic\"})}),\"\\n\",n(a.p,{children:\"An accordion functions as a vertical stack of headers that expand to reveal or conceal content sections.\"}),\"\\n\",n(c,{component:\"collections/disclosure/disclosure-demo\"}),\"\\n\",n(a.h2,{id:\"installation\",children:n(a.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#installation\",children:\"Installation\"})}),\"\\n\",n(s,{component:\"disclosure\"}),\"\\n\",n(a.h2,{id:\"disabled\",children:n(a.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#disabled\",children:\"Disabled\"})}),\"\\n\",o(a.p,{children:[\"You can disable all disclosure by setting the \",n(a.span,{\"data-rehype-pretty-code-figure\":\"\",children:n(a.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:n(a.span,{\"data-line\":\"\",children:n(a.span,{children:\"isDisabled\"})})})}),\" prop.\"]}),\"\\n\",n(c,{component:\"collections/disclosure/disclosure-disabled-demo\"}),\"\\n\",n(a.h2,{id:\"controlled\",children:n(a.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#controlled\",children:\"Controlled\"})}),\"\\n\",o(a.p,{children:[\"You can control the disclosure by using the \",n(a.span,{\"data-rehype-pretty-code-figure\":\"\",children:n(a.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:n(a.span,{\"data-line\":\"\",children:n(a.span,{children:\"isExpanded\"})})})}),\" prop.\"]}),\"\\n\",n(c,{component:\"collections/disclosure/disclosure-controlled-demo\"}),\"\\n\",n(a.h2,{id:\"accordion\",children:n(a.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#accordion\",children:\"Accordion\"})}),\"\\n\",o(a.p,{children:[\"If you're looking for a more advanced accordion, check out the \",n(a.a,{href:\"/docs/components/collections/disclosure-group\",children:\"Accordion\"}),\" component.\"]})]})}return{default:function(e={}){const{wrapper:o}=e.components||{};return o?n(o,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "toc": [
+      {
+        "title": "Basic",
+        "url": "#basic",
+        "items": []
+      },
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Disabled",
+        "url": "#disabled",
+        "items": []
+      },
+      {
+        "title": "Controlled",
+        "url": "#controlled",
+        "items": []
+      },
+      {
+        "title": "Accordion",
+        "url": "#accordion",
+        "items": []
+      }
+    ],
+    "status": "alpha",
+    "slugAsParams": "components/collections/collapsible"
   },
   {
     "slug": "docs/components/collections/grid-list",
@@ -1896,7 +1991,7 @@
     "slugAsParams": "components/controls/toolbar"
   },
   {
-    "slug": "docs/components/date-and-time/calendar",
+    "slug": "docs/components/date-&-time/calendar",
     "title": "Calendar",
     "description": "Manage your dates, plan your schedule, and keep track of important events, all in one place, like a personal assistant for your time.",
     "order": 1,
@@ -1922,10 +2017,10 @@
         "items": []
       }
     ],
-    "slugAsParams": "components/date-and-time/calendar"
+    "slugAsParams": "components/date-&-time/calendar"
   },
   {
-    "slug": "docs/components/date-and-time/date-field",
+    "slug": "docs/components/date-&-time/date-field",
     "title": "Date Field",
     "description": "Enter dates directly into this field, perfect for logging events or deadlines with the precision of a historian noting important events.",
     "order": 3,
@@ -1966,10 +2061,10 @@
         "items": []
       }
     ],
-    "slugAsParams": "components/date-and-time/date-field"
+    "slugAsParams": "components/date-&-time/date-field"
   },
   {
-    "slug": "docs/components/date-and-time/date-picker",
+    "slug": "docs/components/date-&-time/date-picker",
     "title": "Date Picker",
     "description": "Pop up a calendar, click a date, and it’s set. It’s like pointing at a day on the wall calendar, but digital and without the thumbtacks..",
     "order": 5,
@@ -2015,10 +2110,10 @@
         "items": []
       }
     ],
-    "slugAsParams": "components/date-and-time/date-picker"
+    "slugAsParams": "components/date-&-time/date-picker"
   },
   {
-    "slug": "docs/components/date-and-time/date-range-picker",
+    "slug": "docs/components/date-&-time/date-range-picker",
     "title": "Date Range Picker",
     "description": "Date Range Pickers are crucial for conveying date-based info effectively, improving user interaction with accurate date selections.",
     "order": 6,
@@ -2054,10 +2149,10 @@
         "items": []
       }
     ],
-    "slugAsParams": "components/date-and-time/date-range-picker"
+    "slugAsParams": "components/date-&-time/date-range-picker"
   },
   {
-    "slug": "docs/components/date-and-time/range-calendar",
+    "slug": "docs/components/date-&-time/range-calendar",
     "title": "Range Calendar",
     "description": "Manage your dates, plan your schedule, and keep track of important events, all in one place, like a personal assistant for your time.",
     "order": 2,
@@ -2083,10 +2178,10 @@
         "items": []
       }
     ],
-    "slugAsParams": "components/date-and-time/range-calendar"
+    "slugAsParams": "components/date-&-time/range-calendar"
   },
   {
-    "slug": "docs/components/date-and-time/time-field",
+    "slug": "docs/components/date-&-time/time-field",
     "title": "Time Field",
     "description": "Punch in times down to the minute, ideal for setting reminders or scheduling meetings, like setting your alarm clock for another busy day..",
     "order": 4,
@@ -2127,10 +2222,10 @@
         "items": []
       }
     ],
-    "slugAsParams": "components/date-and-time/time-field"
+    "slugAsParams": "components/date-&-time/time-field"
   },
   {
-    "slug": "docs/components/drag-and-drop/drop-zone",
+    "slug": "docs/components/drag-&-drop/drop-zone",
     "title": "Drop Zone",
     "description": "Drag and drop files here is like droppin' postcards into a mailbox easy and effective for quick uploads.",
     "order": 1,
@@ -2156,7 +2251,7 @@
         "items": []
       }
     ],
-    "slugAsParams": "components/drag-and-drop/drop-zone"
+    "slugAsParams": "components/drag-&-drop/drop-zone"
   },
   {
     "slug": "docs/components/forms/checkbox-group",
@@ -2990,101 +3085,6 @@
       }
     ],
     "slugAsParams": "components/navigation/breadcrumbs"
-  },
-  {
-    "slug": "docs/components/navigation/disclosure-group",
-    "title": "Disclosure Group aka Accordion",
-    "description": "Disclosure Group is a vertical stack of headers that expand or collapse to show or hide content, providing an organized, user-friendly way to manage information.",
-    "order": 6,
-    "published": true,
-    "references": [
-      "https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html#props"
-    ],
-    "body": "const{Fragment:e,jsx:i,jsxs:n}=arguments[0];function _createMdxContent(a){const d={a:\"a\",code:\"code\",h2:\"h2\",p:\"p\",span:\"span\",...a.components},{Demo:t,Install:r}=d;return t||_missingMdxReference(\"Demo\",!0),r||_missingMdxReference(\"Install\",!0),n(e,{children:[i(d.h2,{id:\"basic\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#basic\",children:\"Basic\"})}),\"\\n\",i(d.p,{children:\"An disclosure functions as a vertical stack of headers that expand to reveal or conceal content sections.\"}),\"\\n\",i(t,{className:\"flex-1\",component:\"navigation/disclosure-group/disclosure-group-demo\"}),\"\\n\",i(d.h2,{id:\"installation\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#installation\",children:\"Installation\"})}),\"\\n\",i(r,{component:\"disclosure\"}),\"\\n\",i(d.h2,{id:\"default-expanded\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#default-expanded\",children:\"Default Expanded\"})}),\"\\n\",n(d.p,{children:[\"Set the initially expanded sections by providing an array of keys to the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"defaultExpandedKeys\"})})})}),\" prop. These keys can be either numbers or strings.\"]}),\"\\n\",i(t,{component:\"navigation/disclosure-group/disclosure-group-default-expand-demo\"}),\"\\n\",i(d.h2,{id:\"allow-multiple-expanded\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#allow-multiple-expanded\",children:\"Allow Multiple Expanded\"})}),\"\\n\",n(d.p,{children:[\"Allow multiple sections to be expanded at once by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"allowsMultipleExpanded\"})})})}),\" prop.\"]}),\"\\n\",i(t,{component:\"navigation/disclosure-group/disclosure-group-allow-multiple-expand-demo\"}),\"\\n\",i(d.h2,{id:\"border-hidden\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#border-hidden\",children:\"Border Hidden\"})}),\"\\n\",n(d.p,{children:[\"Eliminate the border between sections by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideBorder\"})})})}),\" prop.\"]}),\"\\n\",i(t,{component:\"navigation/disclosure-group/disclosure-group-border-hidden-demo\"}),\"\\n\",i(d.h2,{id:\"hide-indicator\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#hide-indicator\",children:\"Hide Indicator\"})}),\"\\n\",n(d.p,{children:[\"Eliminate the visual indicator (arrow key) by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideIndicator\"})})})}),\" prop.\"]}),\"\\n\",i(t,{component:\"navigation/disclosure-group/disclosure-group-hide-indicator-demo\"}),\"\\n\",i(d.h2,{id:\"hide-everything\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#hide-everything\",children:\"Hide Everything\"})}),\"\\n\",n(d.p,{children:[\"You may want to hide the entire disclosure attribute like border or indicator. You can do that by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideBorder\"})})})}),\" and \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"hideIndicator\"})})})}),\" props.\"]}),\"\\n\",i(t,{component:\"navigation/disclosure-group/disclosure-group-hide-everything-demo\"}),\"\\n\",i(d.h2,{id:\"disabled\",children:i(d.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#disabled\",children:\"Disabled\"})}),\"\\n\",n(d.p,{children:[\"You can disabled specific sections by using the \",i(d.span,{\"data-rehype-pretty-code-figure\":\"\",children:i(d.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:i(d.span,{\"data-line\":\"\",children:i(d.span,{children:\"isDisabled\"})})})}),\" props to the item.\"]}),\"\\n\",i(t,{component:\"navigation/disclosure-group/disclosure-group-disabled-demo\"})]})}return{default:function(e={}){const{wrapper:n}=e.components||{};return n?i(n,{...e,children:i(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,i){throw new Error(\"Expected \"+(i?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
-    "toc": [
-      {
-        "title": "Basic",
-        "url": "#basic",
-        "items": []
-      },
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Default Expanded",
-        "url": "#default-expanded",
-        "items": []
-      },
-      {
-        "title": "Allow Multiple Expanded",
-        "url": "#allow-multiple-expanded",
-        "items": []
-      },
-      {
-        "title": "Border Hidden",
-        "url": "#border-hidden",
-        "items": []
-      },
-      {
-        "title": "Hide Indicator",
-        "url": "#hide-indicator",
-        "items": []
-      },
-      {
-        "title": "Hide Everything",
-        "url": "#hide-everything",
-        "items": []
-      },
-      {
-        "title": "Disabled",
-        "url": "#disabled",
-        "items": []
-      }
-    ],
-    "status": "alpha",
-    "slugAsParams": "components/navigation/disclosure-group"
-  },
-  {
-    "slug": "docs/components/navigation/disclosure",
-    "title": "Disclosure aka Collapsible",
-    "description": "A disclosure is a collapsible content section featuring a header with a title and a trigger button, along with a panel that holds the content.",
-    "order": 5,
-    "published": true,
-    "references": [
-      "https://react-spectrum.adobe.com/react-aria/Disclosure.html#props"
-    ],
-    "body": "const{Fragment:e,jsx:n,jsxs:i}=arguments[0];function _createMdxContent(a){const o={a:\"a\",code:\"code\",h2:\"h2\",p:\"p\",span:\"span\",...a.components},{Demo:r,Install:s}=o;return r||_missingMdxReference(\"Demo\",!0),s||_missingMdxReference(\"Install\",!0),i(e,{children:[n(o.h2,{id:\"basic\",children:n(o.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#basic\",children:\"Basic\"})}),\"\\n\",n(o.p,{children:\"An accordion functions as a vertical stack of headers that expand to reveal or conceal content sections.\"}),\"\\n\",n(r,{component:\"navigation/disclosure/disclosure-demo\"}),\"\\n\",n(o.h2,{id:\"installation\",children:n(o.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#installation\",children:\"Installation\"})}),\"\\n\",n(s,{component:\"disclosure\"}),\"\\n\",n(o.h2,{id:\"disabled\",children:n(o.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#disabled\",children:\"Disabled\"})}),\"\\n\",i(o.p,{children:[\"You can disable all disclosure by setting the \",n(o.span,{\"data-rehype-pretty-code-figure\":\"\",children:n(o.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:n(o.span,{\"data-line\":\"\",children:n(o.span,{children:\"isDisabled\"})})})}),\" prop.\"]}),\"\\n\",n(r,{component:\"navigation/disclosure/disclosure-disabled-demo\"}),\"\\n\",n(o.h2,{id:\"controlled\",children:n(o.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#controlled\",children:\"Controlled\"})}),\"\\n\",i(o.p,{children:[\"You can control the disclosure by using the \",n(o.span,{\"data-rehype-pretty-code-figure\":\"\",children:n(o.code,{\"data-language\":\"plaintext\",\"data-theme\":\"dark-plus light-plus\",style:{\"--shiki-dark\":\"#D4D4D4\",\"--shiki-light\":\"#000000\",\"--shiki-dark-bg\":\"#1E1E1E\",\"--shiki-light-bg\":\"#FFFFFF\"},children:n(o.span,{\"data-line\":\"\",children:n(o.span,{children:\"isExpanded\"})})})}),\" prop.\"]}),\"\\n\",n(r,{component:\"navigation/disclosure/disclosure-controlled-demo\"}),\"\\n\",n(o.h2,{id:\"accordion\",children:n(o.a,{className:\"not-prose subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#accordion\",children:\"Accordion\"})}),\"\\n\",i(o.p,{children:[\"If you're looking for a more advanced accordion, check out the \",n(o.a,{href:\"/docs/components/navigation/disclosure-group\",children:\"Disclosure Group\"}),\" component.\"]})]})}return{default:function(e={}){const{wrapper:i}=e.components||{};return i?n(i,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
-    "toc": [
-      {
-        "title": "Basic",
-        "url": "#basic",
-        "items": []
-      },
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Disabled",
-        "url": "#disabled",
-        "items": []
-      },
-      {
-        "title": "Controlled",
-        "url": "#controlled",
-        "items": []
-      },
-      {
-        "title": "Accordion",
-        "url": "#accordion",
-        "items": []
-      }
-    ],
-    "status": "alpha",
-    "slugAsParams": "components/navigation/disclosure"
   },
   {
     "slug": "docs/components/navigation/link",

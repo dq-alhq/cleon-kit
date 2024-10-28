@@ -78,7 +78,7 @@ const fontSans = localFont({
 })
 
 const fontMono = localFont({
-    src: [{ path: './fonts/GeistMonoVF.woff' }],
+    src: [{ path: './fonts/mono/FiraCode.woff2' }],
     variable: '--font-mono'
 })
 
@@ -88,17 +88,17 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <ViewTransitions>
-            <html dir='ltr' lang='en' suppressHydrationWarning>
-                <body
-                    className={`${fontSans.variable} ${fontMono.variable} antialiased min-h-screen font-sans`}
-                >
-                    <Providers>
+        <html dir='ltr' lang='en'>
+            <body
+                className={`${fontSans.variable} ${fontMono.variable} antialiased min-h-screen font-sans`}
+            >
+                <Providers>
+                    <ViewTransitions>
                         {children}
                         {process.env.NODE_ENV === 'production' && <Analytics />}
-                    </Providers>
-                </body>
-            </html>
-        </ViewTransitions>
+                    </ViewTransitions>
+                </Providers>
+            </body>
+        </html>
     )
 }

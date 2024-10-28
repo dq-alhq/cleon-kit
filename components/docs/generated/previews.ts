@@ -467,6 +467,15 @@ export const previews: Record<string, any> = {
   "collections/menu/menu-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/collections/menu/menu-disabled-demo")),
   },
+  "collections/disclosure/disclosure-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure/disclosure-controlled-demo")),
+  },
+  "collections/disclosure/disclosure-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure/disclosure-disabled-demo")),
+  },
+  "collections/disclosure/disclosure-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure/disclosure-demo")),
+  },
   "collections/choicebox/choicebox-demo": {
     component: React.lazy(() => import("@/components/docs/collections/choicebox/choicebox-demo")),
   },
@@ -538,6 +547,27 @@ export const previews: Record<string, any> = {
   },
   "collections/table/table-resize-demo": {
     component: React.lazy(() => import("@/components/docs/collections/table/table-resize-demo")),
+  },
+  "collections/disclosure-group/disclosure-group-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-demo")),
+  },
+  "collections/disclosure-group/disclosure-group-default-expand-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-default-expand-demo")),
+  },
+  "collections/disclosure-group/disclosure-group-hide-indicator-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-hide-indicator-demo")),
+  },
+  "collections/disclosure-group/disclosure-group-border-hidden-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-border-hidden-demo")),
+  },
+  "collections/disclosure-group/disclosure-group-hide-everything-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-hide-everything-demo")),
+  },
+  "collections/disclosure-group/disclosure-group-allow-multiple-expand-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-allow-multiple-expand-demo")),
+  },
+  "collections/disclosure-group/disclosure-group-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-disabled-demo")),
   },
   "media/carousel-orientation-demo": {
     component: React.lazy(() => import("@/components/docs/media/carousel-orientation-demo")),
@@ -971,15 +1001,6 @@ export const previews: Record<string, any> = {
   "navigation/link/link-unstyled-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/link/link-unstyled-demo")),
   },
-  "navigation/disclosure/disclosure-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure/disclosure-controlled-demo")),
-  },
-  "navigation/disclosure/disclosure-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure/disclosure-disabled-demo")),
-  },
-  "navigation/disclosure/disclosure-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure/disclosure-demo")),
-  },
   "navigation/pagination/simple-pagination-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/pagination/simple-pagination-demo")),
   },
@@ -1012,27 +1033,6 @@ export const previews: Record<string, any> = {
   },
   "navigation/tabs/tabs-collections-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/tabs/tabs-collections-demo")),
-  },
-  "navigation/disclosure-group/disclosure-group-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure-group/disclosure-group-demo")),
-  },
-  "navigation/disclosure-group/disclosure-group-default-expand-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure-group/disclosure-group-default-expand-demo")),
-  },
-  "navigation/disclosure-group/disclosure-group-hide-indicator-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure-group/disclosure-group-hide-indicator-demo")),
-  },
-  "navigation/disclosure-group/disclosure-group-border-hidden-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure-group/disclosure-group-border-hidden-demo")),
-  },
-  "navigation/disclosure-group/disclosure-group-hide-everything-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure-group/disclosure-group-hide-everything-demo")),
-  },
-  "navigation/disclosure-group/disclosure-group-allow-multiple-expand-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure-group/disclosure-group-allow-multiple-expand-demo")),
-  },
-  "navigation/disclosure-group/disclosure-group-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/disclosure-group/disclosure-group-disabled-demo")),
   },
   "statuses/toast-demo": {
     component: React.lazy(() => import("@/components/docs/statuses/toast-demo")),
