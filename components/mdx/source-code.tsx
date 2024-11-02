@@ -54,7 +54,7 @@ export const SourceCode = ({ component, withMessage = true, ...props }: SourceCo
                 <Tabs.List items={codeStrings}>
                     {(item) => (
                         <Tabs.Label key={item.name} id={`tab-${item.name}`}>
-                            {item.name.split('/').length > 1 ? `main` : item.name}.tsx
+                            {item.name.includes('demo') ? `main` : item.name}.tsx
                         </Tabs.Label>
                     )}
                 </Tabs.List>

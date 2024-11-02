@@ -15,6 +15,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     }
 }
 
+export async function generateStaticParams() {
+    return Object.keys(previews)
+        .filter((c) => c.includes('blocks') && c.includes('demo'))
+        .map((c) => ({ slug: c.replace('blocks/', '').split('/') }))
+}
+
 export default async function BlocksPage({ params }: { params: Params }) {
     const { slug } = await params
     const component = `blocks/${slug.join('/')}`
