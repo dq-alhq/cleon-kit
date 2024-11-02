@@ -5,66 +5,76 @@ order: 6
 published: true
 references: ['https://recharts.org/en-US/api/RadialChart']
 ---
-
 ## Basic
-
-A radial chart, also known as a radial bar chart or circular bar chart, is a variation of the traditional bar chart where bars radiate from a central point instead of being aligned horizontally or vertically. Each bar's length corresponds to the value it represents, and the angle around the central point determines the category or grouping.
-
-Radial charts are effective for displaying data that is cyclic or directional, such as time-based trends or periodic data. They offer a visually appealing way to compare values across categories while maintaining a clear connection to a central theme or reference point. Radial charts are often used in dashboards, infographics, and presentations to highlight relationships and trends in data that may not be as effectively communicated through traditional linear charts.
-
-<Demo className="w-full" component='charts/radial-chart/radial-chart-simple-demo' />
+Charts are used to display data in a clear and concise manner. They are ideal for presenting information in a visually appealing and easy-to-understand format.
+<Demo center component="chart/radial/radial-chart-demo" />
 
 ## Installation
+<Install component='chart' />
 
-<Note variant="warning">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
-
-<CLI command='install' items={['recharts@alpha']} />
-
-<Install component='charts' />
-
-Then add these lines to your `css` file, of course you can change the color as you like `in hsl`
-
-```tsx {2-17}
-/* Rest of your styles */
+## Colors
+If you're working on an existing project, you can use these variables. However, if you've just installed Justd, they will already be included during project initialization. You can also customize chart colors, check out the [theme page](/themes) for more options.
+```
 @layer base {
-    :root {
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-    }
-    .dark {
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-    }
+  root: {
+      --primary-chart: 51.24% 0.222 261.097;
+      --secondary-chart: 76.58% 0.119 263.28;
+      --tertiary-chart: 63.25% 0.184 258.64;
+      --highlight-chart: 81.17% 0.097 249.1;
+      --accent-chart: 81.17% 0.097 249.1;
+  }
+  .dark: {
+      --primary-chart: 54.6% 0.215 262.87;
+      --secondary-chart: 72.11% 0.142 253.1;
+      --tertiary-chart: 63.25% 0.184 258.64;
+      --highlight-chart: 81.17% 0.097 249.1;
+      --accent-chart: 88.29% 0.057 251.91;
+  }
 }
-/* Rest of your styles */
 ```
 
-## Radial Chart Simple
+## Tooltip
+Tooltips are used to provide additional information about a chart element when the user hovers over it. They can be used to display additional details, such as the value of a data point, or to provide context about the data.
+```
+import { Chart } from '@/components/ui'
+import { RadialChart } from 'recharts'
 
-<Demo className="w-full" component='charts/radial-chart/radial-chart-simple-demo' />
+<RadialChart accessibilityLayer data={data}>
+  <XAxis.../>
+  <Chart.Tooltip cursor={false} content={<Chart.TooltipContent />} />
+  <Bar.../>
+</RadialChart>
+```
 
-## Radial Chart Label
+## Legend
+Legends are used to display a list of labels for different chart elements. They can be used to provide context about the data and help the user understand the meaning of different colors and shapes.
+```
+import { Chart } from '@/components/ui'
+import { RadialChart } from 'recharts'
 
-<Demo className="w-full" component='charts/radial-chart/radial-chart-label-demo' />
+<RadialChart>
+  ...
+  <Chart.Legend content={<Chart.LegendContent />} />
+</RadialChart>
+```
 
-## Radial Chart Grid
+## Radial Chart
+A radial chart is a circular graph where data points are plotted in a circular arrangement around a central point, radiating outwards. It’s used to display multivariate data where multiple variables are compared on the same scale. Radial charts help in visualizing relationships between different data points and often make it easier to see overall patterns or outliers in the data.
 
-<Demo className="w-full" component='charts/radial-chart/radial-chart-grid-demo' />
+### Grid
+<Demo center component="chart/radial/radial-chart-grid-demo" />
 
-## Radial Chart Text
+### Stacked
+<Demo center component="chart/radial/radial-chart-stacked-demo" />
 
-<Demo className="w-full" component='charts/radial-chart/radial-chart-text-demo' />
+### Text
+<Demo center component="chart/radial/radial-chart-text-demo" />
 
-## Radial Chart Shape
+### Shape
+<Demo center component="chart/radial/radial-chart-shape-demo" />
 
-<Demo className="w-full" component='charts/radial-chart/radial-chart-shape-demo' />
-
-## Radial Chart Stacked
-
-<Demo className="w-full" component='charts/radial-chart/radial-chart-stacked-demo' />
+## Accessibility
+For accessibility purposes, you can add the `accessibilityLayer` prop to the chart component. This will add a `role="img"` to the chart, which will make it accessible to screen readers.
+```
+<RadialChart accessibilityLayer />
+```

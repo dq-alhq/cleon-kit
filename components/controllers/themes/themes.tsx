@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconAdjustments, IconCheck, IconPalette, IconX } from 'cleon-icons'
+import { IconCheck, IconPalette, IconSettings, IconX } from 'cleon-icons'
 import { useTheme } from 'next-themes'
 import { ListBox, ListBoxItem, type ListBoxItemProps, type Selection } from 'react-aria-components'
 import { titleCase } from 'usemods'
@@ -184,7 +184,7 @@ export default function ThemeCustomizer() {
                     <div className='flex flex-row gap-3'>
                         <Popover>
                             <Button variant='outline'>
-                                <IconAdjustments />
+                                <IconSettings />
                                 Customize
                             </Button>
                             <Popover.Content placement='right'>

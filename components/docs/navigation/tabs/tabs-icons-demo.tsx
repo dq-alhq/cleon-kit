@@ -1,6 +1,6 @@
 'use client'
 
-import { IconApple, IconClock, IconCut } from 'cleon-icons'
+import { IconApple, IconClock, IconScissors } from 'cleon-icons'
 
 import { Tabs } from '@/components/ui'
 
@@ -9,7 +9,7 @@ export default function TabsIconsDemo() {
         <Tabs aria-label='Fitness App'>
             <Tabs.List>
                 <Tabs.Label id='w'>
-                    <IconCut /> Workouts
+                    <IconScissors /> Workouts
                 </Tabs.Label>
                 <Tabs.Label id='n'>
                     <IconApple /> Nutrition

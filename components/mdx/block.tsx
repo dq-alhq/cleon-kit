@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconDesktop, IconMobile, IconTablet } from 'cleon-icons'
+import { IconMonitor, IconSmartphone, IconTablet } from 'cleon-icons'
 
 import jsonPreviews from '@/components/docs/generated/previews.json'
 import { Tabs, Toggle } from '@/components/ui'
@@ -19,7 +19,7 @@ interface HowProps extends React.HTMLAttributes<HTMLDivElement> {
     zoomOut?: boolean
 }
 
-export function BlockContent({ component, zoomOut = false, className, ...props }: HowProps) {
+export function BlockContent({ component, zoomOut = true, className, ...props }: HowProps) {
     // @ts-ignore
     const [codeString, setCodeString] = React.useState<string>('')
     React.useEffect(() => {
@@ -52,7 +52,7 @@ export function BlockContent({ component, zoomOut = false, className, ...props }
                                 isSelected={screenWidth === 'max-w-sm'}
                                 onChange={() => setScreenWidth('max-w-sm')}
                             >
-                                <IconMobile />
+                                <IconSmartphone />
                             </Toggle>
                             <Toggle
                                 variant='solid'
@@ -68,7 +68,7 @@ export function BlockContent({ component, zoomOut = false, className, ...props }
                                 isSelected={screenWidth === 'max-w-none'}
                                 onChange={() => setScreenWidth('max-w-none')}
                             >
-                                <IconDesktop />
+                                <IconMonitor />
                             </Toggle>
                         </div>
                         <PreviewContent

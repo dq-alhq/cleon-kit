@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconMenu, IconMinus, IconSquareHalf } from 'cleon-icons'
+import { IconMenu, IconMinus, IconPanelLeftClose } from 'cleon-icons'
 import type { DisclosureProps, LinkProps } from 'react-aria-components'
 import {
     Button as ButtonPrimitive,
@@ -356,7 +356,7 @@ const Trigger = ({ className, onPress, ...props }: React.ComponentProps<typeof B
             }}
             {...props}
         >
-            <IconSquareHalf className='md:inline hidden' />
+            <IconPanelLeftClose className='md:inline hidden' />
             <IconMenu className='md:hidden inline' />
             <span className='sr-only'>Toggle Sidebar</span>
         </Button>

@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconDotsVertical } from 'cleon-icons'
+import { IconEllipsisVertical } from 'cleon-icons'
 
 import { Button, buttonVariants, Loader, Menu, Modal } from '@/components/ui'
 import { wait } from '@/lib/utils'
@@ -53,7 +53,7 @@ export default function ModalTriggeredByMenuDemo() {
         <>
             <Menu>
                 <Menu.Trigger className={buttonVariants({ variant: 'outline' })}>
-                    <IconDotsVertical />
+                    <IconEllipsisVertical />
                 </Menu.Trigger>
                 <Menu.Content placement='bottom'>
                     <Menu.Item onAction={() => setState('delete')}>Delete</Menu.Item>

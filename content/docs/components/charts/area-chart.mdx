@@ -5,79 +5,73 @@ order: 2
 published: true
 references: ['https://recharts.org/en-US/api/AreaChart']
 ---
-
 ## Basic
-
-An area chart is a graphical representation that displays quantitative data using shaded areas to depict cumulative totals over time or categories. It's similar to a line graph but with the area below the line filled in, making it easier to visualize trends in data distribution or progression. Area charts are effective for showing how different components contribute to a whole and for highlighting overall patterns and trends across different datasets.
-<Demo className="w-full" component='charts/area-chart/area-chart-simple-demo' />
+Charts are used to display data in a clear and concise manner. They are ideal for presenting information in a visually appealing and easy-to-understand format.
+<Demo center component="chart/area/area-chart-demo" />
 
 ## Installation
+<Install component='chart' />
 
-<Note variant="warning">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
-
-<CLI command='install' items={['recharts@alpha']} />
-
-<Install component='charts' />
-
-Then add these lines to your `css` file, of course you can change the color as you like `in hsl`
-
-```tsx {2-17}
-/* Rest of your styles */
+## Colors
+If you're working on an existing project, you can use these variables. However, if you've just installed Justd, they will already be included during project initialization. You can also customize chart colors, check out the [theme page](/themes) for more options.
+```
 @layer base {
-    :root {
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-    }
-    .dark {
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-    }
+  root: {
+      --primary-chart: 51.24% 0.222 261.097;
+      --secondary-chart: 76.58% 0.119 263.28;
+      --tertiary-chart: 63.25% 0.184 258.64;
+      --highlight-chart: 81.17% 0.097 249.1;
+      --accent-chart: 81.17% 0.097 249.1;
+  }
+  .dark: {
+      --primary-chart: 54.6% 0.215 262.87;
+      --secondary-chart: 72.11% 0.142 253.1;
+      --tertiary-chart: 63.25% 0.184 258.64;
+      --highlight-chart: 81.17% 0.097 249.1;
+      --accent-chart: 88.29% 0.057 251.91;
+  }
 }
-/* Rest of your styles */
 ```
 
-## Area Chart Simple
+## Tooltip
+Tooltips are used to provide additional information about a chart element when the user hovers over it. They can be used to display additional details, such as the value of a data point, or to provide context about the data.
+```
+import { Chart } from '@/components/ui'
+import { AreaChart } from 'recharts'
 
-<Demo className="w-full" component='charts/area-chart/area-chart-simple-demo' />
+<AreaChart accessibilityLayer data={data}>
+  <XAxis.../>
+  <Chart.Tooltip cursor={false} content={<Chart.TooltipContent />} />
+  <Bar.../>
+</AreaChart>
+```
 
-## Area Chart Linear
+## Legend
+Legends are used to display a list of labels for different chart elements. They can be used to provide context about the data and help the user understand the meaning of different colors and shapes.
+```
+import { Chart } from '@/components/ui'
+import { AreaChart } from 'recharts'
 
-<Demo className="w-full" component='charts/area-chart/area-chart-linear-demo' />
+<AreaChart>
+  ...
+  <Chart.Legend content={<Chart.LegendContent />} />
+</AreaChart>
+```
 
-## Area Chart Step
+## Area Chart
+Used to show changes over time, the area chart highlights both trends and volume, with the filled area showing the magnitude of change. It’s useful when you want to emphasize total growth or decline.
 
-<Demo className="w-full" component='charts/area-chart/area-chart-step-demo' />
+### Stacked
+<Demo center component="chart/area/area-chart-stacked-demo" />
 
-## Area Chart Stacked
+### Linear
+<Demo center component="chart/area/area-chart-linear-demo" />
 
-<Demo className="w-full" component='charts/area-chart/area-chart-stacked-demo' />
+### Gradient
+<Demo center component="chart/area/area-chart-gradient-demo" />
 
-## Area Chart Stacked Expanded
-
-<Demo className="w-full" component='charts/area-chart/area-chart-stacked-expanded-demo' />
-
-## Area Chart Legend
-
-<Demo className="w-full" component='charts/area-chart/area-chart-legend-demo' />
-
-## Area Chart Icons
-
-<Demo className="w-full" component='charts/area-chart/area-chart-icons-demo' />
-
-## Area Chart Gradient
-
-<Demo className="w-full" component='charts/area-chart/area-chart-gradient-demo' />
-
-## Area Chart Axes
-
-<Demo className="w-full" component='charts/area-chart/area-chart-axes-demo' />
-
-## Area Chart Interactive
-
-<Demo className="w-full" component='charts/area-chart/area-chart-interactive-demo' />
+## Accessibility
+For accessibility purposes, you can add the `accessibilityLayer` prop to the chart component. This will add a `role="img"` to the chart, which will make it accessible to screen readers.
+```
+<AreaChart accessibilityLayer />
+```

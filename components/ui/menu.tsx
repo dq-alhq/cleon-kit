@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconCheck, IconChevronRight, IconDot } from 'cleon-icons'
+import { IconCheck, IconChevronRight, IconCircleCheck } from 'cleon-icons'
 import * as Aria from 'react-aria-components'
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
@@ -163,8 +163,8 @@ const Radio = ({ className, children, ...props }: MenuItemProps) => (
         {(values) => (
             <>
                 {values.isSelected && (
-                    <span className='absolute left-3 flex size-[0.650rem] items-center animate-in justify-center'>
-                        <IconDot className='size-[0.650rem]' />
+                    <span className='absolute left-2.5 flex size-4 items-center animate-in justify-center'>
+                        <IconCircleCheck className='size-4' />
                     </span>
                 )}
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { IconDotsVertical } from 'cleon-icons'
+import { IconEllipsisVertical } from 'cleon-icons'
 
 import { Card, Menu, Table } from '@/components/ui'
 import { NumberFormatter } from '@internationalized/number'
@@ -32,7 +32,7 @@ export default function TableDemo() {
                                 <div className='flex justify-end'>
                                     <Menu>
                                         <Menu.Trigger>
-                                            <IconDotsVertical />
+                                            <IconEllipsisVertical />
                                         </Menu.Trigger>
                                         <Menu.Content
                                             aria-label='Actions'

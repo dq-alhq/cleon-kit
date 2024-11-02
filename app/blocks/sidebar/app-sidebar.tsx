@@ -4,20 +4,20 @@ import * as React from 'react'
 
 import {
     IconArchive,
-    IconBag,
     IconBrandLinux,
     IconChevronDown,
+    IconCircleUser,
     IconCreditCard,
-    IconDashboard,
-    IconLogout,
+    IconGauge,
+    IconLogOut,
     IconMail,
     IconMessage,
     IconMoon,
     IconPlus,
     IconSettings,
     IconShield,
+    IconShoppingBag,
     IconSun,
-    IconUserCircle,
     IconUserPlus,
     IconUsers
 } from 'cleon-icons'
@@ -46,7 +46,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
             </Sidebar.Header>
             <Sidebar.Content>
                 <Sidebar.Section>
-                    <SidebarItem icon={IconDashboard} href='/blocks/sidebar/sidebar-01'>
+                    <SidebarItem icon={IconGauge} href='/blocks/sidebar/sidebar-01'>
                         Overview
                     </SidebarItem>
                     <SidebarItem icon={IconSettings} href='/blocks/sidebar/sidebar-02'>
@@ -63,7 +63,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
                     </Sidebar.Item>
                 </Sidebar.Section>
                 <Sidebar.Section title='Projects'>
-                    <Sidebar.Item icon={IconBag} href='#'>
+                    <Sidebar.Item icon={IconShoppingBag} href='#'>
                         All Projects
                     </Sidebar.Item>
                     <Sidebar.Item icon={IconPlus} href='#'>
@@ -81,7 +81,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
                     <Sidebar.Item icon={IconUserPlus} href='#'>
                         Add New Member
                     </Sidebar.Item>
-                    <Sidebar.Item icon={IconUserCircle} href='#'>
+                    <Sidebar.Item icon={IconCircleUser} href='#'>
                         Manage Roles
                     </Sidebar.Item>
                 </Sidebar.Section>
@@ -105,7 +105,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
                         className={collapsed ? 'sm:min-w-56' : 'min-w-[--trigger-width]'}
                     >
                         <Menu.Item href='#'>
-                            <IconUserCircle />
+                            <IconCircleUser />
                             Profile
                         </Menu.Item>
                         <Menu.Item href='#'>
@@ -123,7 +123,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
                         </Menu.Item>
                         <Menu.Separator />
                         <Menu.Item href='#'>
-                            <IconLogout />
+                            <IconLogOut />
                             Log out
                         </Menu.Item>
                     </Menu.Content>

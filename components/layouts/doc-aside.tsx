@@ -2,14 +2,15 @@
 
 import React from 'react'
 
-import { IconCircleHalf, IconKey, IconPackage } from 'cleon-icons'
+import { IconBox, IconEclipse, IconHighlighter, IconLayers } from 'cleon-icons'
 import { LayoutGroup, motion } from 'framer-motion'
 import { Link } from 'next-view-transitions'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
-import { titleCase, deslugify} from 'usemods'
+import { tv } from 'tailwind-variants'
+import { deslugify, titleCase } from 'usemods'
 
-import { Accordion } from '@/components/ui'
+import { Disclosure, DisclosureGroup } from '@/components/ui'
 import { cn } from '@/lib/utils'
 import { sortDocs } from '@/lib/utils/docs'
 import { type Docs, docs } from '@docs'
@@ -17,6 +18,7 @@ import { type Docs, docs } from '@docs'
 export interface Doc {
     slug: string
     title: string
+    status?: 'wip' | 'new' | 'beta' | 'help' | 'primitive' | 'alpha'
 }
 
 export interface HierarchyNode {
@@ -48,93 +50,98 @@ export const createHierarchy = (docs: Array<Docs>): HierarchyNode => {
 
 const renderHierarchy = (node: HierarchyNode, defaultValues: string[]) => {
     const filteredNodeEntries = Object.entries(node).sort(([a], [b]) => {
-        const order = ['getting-started', 'dark-mode', 'components']
+        const order = ['prologue', 'getting-started', 'dark-mode', 'components']
         return order.indexOf(a) - order.indexOf(b)
     })
     return (
-        <Accordion
+        <DisclosureGroup
+            hideBorder
+            allowsMultipleExpanded
             defaultExpandedKeys={['getting-started', 'components']}
-            className='w-full [&_.accordion-content]:p-0 [&_.accordion-item]:p-0 [&_.accordion-item]:border-none'
+            className='w-full flex flex-col gap-y-0.5'
         >
             {filteredNodeEntries.map(([key, value]) => (
-                <Accordion.Item key={key} currentId={key}>
-                    <Trigger className='text-foreground [&_.aside-icon]:size-4 group-data-[open=true]:text-primary'>
+                <Disclosure
+                    className={({ isExpanded }) =>
+                        cn(isExpanded && 'pb-0 [&_svg]:text-primary [&_svg]:fill-primary/10')
+                    }
+                    key={key}
+                    id={key}
+                >
+                    <Trigger className='[&_.icon]:size-4 pl-2.5 pr-1 text-foreground'>
                         {key === 'getting-started' ? (
-                            <IconKey className='aside-icon rotate-45' />
+                            <IconLayers className='icon' />
+                        ) : key === 'prologue' ? (
+                            <IconHighlighter className='icon' />
                         ) : key === 'dark-mode' ? (
-                            <IconCircleHalf className='aside-icon' />
+                            <IconEclipse className='icon' />
                         ) : (
-                            <IconPackage className='aside-icon' />
+                            <IconBox className='icon' />
                         )}
                         {titleCase(deslugify(key))}
                     </Trigger>
-                    <Accordion.Content className='py-0'>
-                        {typeof value === 'object' && 'title' in value ? (
-                            <AsideLink href={`/${(value as Doc).slug}`}>
-                                {titleCase(deslugify((value as Doc).title))}
-                            </AsideLink>
-                        ) : (
-                            <Accordion
-                                defaultExpandedKeys={defaultValues}
-                                className='w-full relative'
-                            >
-                                <div className='h-full absolute left-0 bg-muted w-px ml-2' />
-                                {Object.entries(value as HierarchyNode).map(([subKey, subValue]) =>
-                                    typeof subValue === 'object' && 'title' in subValue ? (
-                                        <AsideLink
-                                            className='pl-8 flex justify-between items-center'
-                                            key={subKey}
-                                            href={`/${subValue.slug}`}
-                                        >
-                                            {(subValue as Doc).title}
-                                        </AsideLink>
-                                    ) : (
-                                        <Accordion.Item
-                                            key={subKey}
-                                            currentId={subKey}
-                                            className='[&[data-open]_.ex]:text-danger'
-                                        >
-                                            <Trigger className='pl-8'>{titleCase(deslugify(subKey))}</Trigger>
-                                            <Accordion.Content className='py-0'>
-                                                {Object.entries(subValue as HierarchyNode).map(
-                                                    ([childKey, childValue]) =>
-                                                        typeof childValue === 'object' &&
-                                                        'title' in childValue ? (
-                                                            <AsideLink
-                                                                className={cn(
-                                                                    'ml-[0rem] flex justify-between items-center pl-[3rem]',
-                                                                    defaultValues.length > 0 &&
-                                                                        'aside-link'
-                                                                )}
-                                                                key={childKey}
-                                                                href={`/${childValue.slug}`}
-                                                                indicatorClassName=''
-                                                            >
-                                                                {titleCase(deslugify(
-                                                                    (childValue as Doc).title
-                                                                ))}
-                                                            </AsideLink>
-                                                        ) : null
-                                                )}
-                                            </Accordion.Content>
-                                        </Accordion.Item>
-                                    )
-                                )}
-                            </Accordion>
-                        )}
-                    </Accordion.Content>
-                </Accordion.Item>
+                    <Disclosure.Content>
+                        <DisclosureGroup
+                            allowsMultipleExpanded
+                            hideBorder
+                            defaultExpandedKeys={defaultValues}
+                            className='w-full relative'
+                        >
+                            <div className='h-full absolute left-0 bg-muted w-px ml-4' />
+                            {Object.entries(value as HierarchyNode).map(([subKey, subValue]) =>
+                                typeof subValue === 'object' && 'title' in subValue ? (
+                                    <AsideLink
+                                        className='pl-[2.1rem] flex justify-between items-center'
+                                        key={subKey}
+                                        href={`/${subValue.slug}`}
+                                    >
+                                        {(subValue as Doc).title}
+                                    </AsideLink>
+                                ) : (
+                                    <Disclosure
+                                        className={({ isExpanded }) => cn(isExpanded && 'pb-0')}
+                                        key={subKey}
+                                        id={subKey}
+                                    >
+                                        {/* Trigger components: buttons, controls, etc. */}
+                                        <Trigger className='[--trigger-padding-left:2.2rem] pl-[--trigger-padding-left] pr-1'>
+                                            {titleCase(deslugify(subKey))}
+                                        </Trigger>
+                                        <Disclosure.Content>
+                                            {Object.entries(subValue as HierarchyNode).map(
+                                                ([childKey, childValue]) =>
+                                                    typeof childValue === 'object' &&
+                                                    'title' in childValue ? (
+                                                        <AsideLink
+                                                            className={cn(
+                                                                'ml-[-0rem] flex justify-between h-9 items-center pl-12 pr-2',
+                                                                defaultValues.length > 0 && 'child'
+                                                            )}
+                                                            key={childKey}
+                                                            href={`/${childValue.slug}`}
+                                                        >
+                                                            {titleCase(
+                                                                deslugify((childValue as Doc).title)
+                                                            )}
+                                                        </AsideLink>
+                                                    ) : null
+                                            )}
+                                        </Disclosure.Content>
+                                    </Disclosure>
+                                )
+                            )}
+                        </DisclosureGroup>
+                    </Disclosure.Content>
+                </Disclosure>
             ))}
-        </Accordion>
+        </DisclosureGroup>
     )
 }
 
 export const Aside = () => {
     const pathname = usePathname()
     const id = React.useId()
-    const docsPage = docs.filter((doc) => doc.slug.indexOf('blocks') === -1)
-
-    const hierarchicalDocs = createHierarchy(docsPage)
+    const hierarchicalDocs = createHierarchy(docs)
 
     const computeDefaultValuesFromURL = (): string[] => {
         const pathParts = pathname.split('/').filter(Boolean)
@@ -148,7 +155,7 @@ export const Aside = () => {
     const defaultValues = computeDefaultValuesFromURL()
 
     React.useEffect(() => {
-        const activeElement = document.querySelector('.aside-link')
+        const activeElement = document.querySelector('.child')
 
         if (activeElement) {
             activeElement.scrollIntoView({
@@ -166,14 +173,16 @@ export const Aside = () => {
 
 const Trigger = ({ children, className }: { children: React.ReactNode; className?: string }) => {
     return (
-        <Accordion.Trigger
+        <Disclosure.Trigger
             className={cn(
-                'pt-0 py-1.5 outline-0 outline-offset-0 font-normal px lg:text-sm',
+                'group hover:text-primary py-1.5 pressed:text-primary aria-expanded:text-primary',
+                '[&_svg]:text-foreground [&_svg]:fill-foreground/10',
+                '[&_svg]:hover:text-primary [&_svg]:hover:fill-primary/10',
                 className
             )}
         >
             {children}
-        </Accordion.Trigger>
+        </Disclosure.Trigger>
     )
 }
 
@@ -184,25 +193,27 @@ interface AsideLinkProps extends NextLinkProps {
     indicatorClassName?: string
 }
 
-function AsideLink({ indicatorClassName, className, children, active, ...props }: AsideLinkProps) {
+const asideLinkStyles = tv({
+    base: 'relative block group focus:outline-none focus-visible:ring-inset focus-visible:ring-1 focus-visible:ring-primary rounded-lg pl-2.5 h-9 text-base transition-colors hover:text-primary lg:text-sm',
+    variants: {
+        isActive: {
+            true: 'font-medium text-primary',
+            false: 'text-foreground'
+        }
+    }
+})
+
+function AsideLink({ indicatorClassName, className, children, ...props }: AsideLinkProps) {
     const pathname = usePathname()
-    const isActive = pathname === props.href || active
+    const isActive = pathname === props.href
     return (
-        <Link
-            data-active={isActive}
-            className={cn(
-                'relative block rounded-md px-2.5 py-2 text-base font-medium transition-colors hover:text-primary focus:outline-none focus-visible:text-primary lg:text-sm',
-                isActive ? 'text-primary' : 'text-foreground',
-                className
-            )}
-            {...props}
-        >
+        <Link className={asideLinkStyles({ isActive, className })} {...props}>
             {children}
             {isActive && (
                 <motion.span
                     layoutId='current-indicator-sidebar'
                     className={cn(
-                        'absolute inset-y-0 left-1.5 w-0.5 rounded-full bg-primary',
+                        'absolute inset-y-1 left-[1rem] w-0.5 rounded-full bg-primary',
                         indicatorClassName
                     )}
                 />

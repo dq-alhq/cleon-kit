@@ -5,8 +5,8 @@ import React from 'react'
 import {
     IconBox,
     IconCreditCard,
-    IconHome2,
-    IconNotes,
+    IconHome,
+    IconNotebook,
     IconSettings,
     IconShield
 } from 'cleon-icons'
@@ -37,12 +37,12 @@ export default function CommandTriggerByKeyboardDemo() {
                     <Command.Section separator heading='Pages'>
                         <Command.Item asChild>
                             <Link href='#'>
-                                <IconHome2 /> Home
+                                <IconHome /> Home
                             </Link>
                         </Command.Item>
                         <Command.Item asChild>
                             <Link href='#'>
-                                <IconNotes /> Docs
+                                <IconNotebook /> Docs
                                 <Command.Keyboard keys='⌘k' />
                             </Link>
                         </Command.Item>

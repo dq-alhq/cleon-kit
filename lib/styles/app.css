@@ -23,6 +23,12 @@
         --muted: 240 4.88% 83.92%; /* zinc-300 */
         --muted-foreground: 240 3.83% 46.08%; /* zinc-500 */
         --radius: 0.5rem;
+
+        --primary-chart: 216.74 100% 45%;
+        --secondary-chart: 219.83 100% 77%;
+        --tertiary-chart: 216.01 92% 60%;
+        --highlight-chart: 210 98% 78%;
+        --accent-chart: 210 98% 78%;
     }
 
     .dark {
@@ -44,6 +50,12 @@
         --dark-foreground: 240 10% 3.92%;
         --muted: 240 5.2% 33.92%; /* zinc-800 */
         --muted-foreground: 240 5.03% 64.9%; /* zinc-400 */
+
+        --primary-chart: 221.19 83% 53%;
+        --secondary-chart: 211.99 95% 68%;
+        --tertiary-chart: 216.01 92% 60%;
+        --highlight-chart: 210 98% 78%;
+        --accent-chart: 212 96% 87%;
     }
 }
 
@@ -60,15 +72,7 @@
     }
 
     body {
-        @apply bg-background text-foreground antialiased;
-    }
-
-    :root {
-        --chart-1: var(--primary);
-        --chart-2: var(--danger);
-        --chart-3: var(--success);
-        --chart-4: var(--warning);
-        --chart-5: var(--info);
+        @apply bg-background text-foreground;
     }
 
     *::-webkit-scrollbar {

@@ -1,6 +1,6 @@
 'use client'
 
-import { IconAlertTriangle } from 'cleon-icons'
+import { IconTriangleAlert } from 'cleon-icons'
 import { motion } from 'framer-motion'
 import * as Aria from 'react-aria-components'
 
@@ -24,7 +24,7 @@ const Meter = ({ label, className, ...props }: MeterProps) => {
                             className={`text-sm tabular-nums ${percentage >= 80 ? 'text-danger' : 'text-muted-foreground'}`}
                         >
                             {percentage >= 80 && (
-                                <IconAlertTriangle
+                                <IconTriangleAlert
                                     aria-label='Alert'
                                     className='inline-block fill-danger/20 text-danger size-4 align-text-bottom'
                                 />

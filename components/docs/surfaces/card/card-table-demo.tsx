@@ -1,6 +1,6 @@
 'use client'
 
-import { IconDotsVertical, IconEye, IconHighlight, IconTrash } from 'cleon-icons'
+import { IconEllipsisVertical, IconEye, IconHighlighter, IconTrash } from 'cleon-icons'
 
 import { Card, Menu, Pagination, Table } from '@/components/ui'
 
@@ -32,14 +32,14 @@ export default function CardTableDemo() {
                                 <Table.Cell className='flex justify-end'>
                                     <Menu>
                                         <Menu.Trigger>
-                                            <IconDotsVertical />
+                                            <IconEllipsisVertical />
                                         </Menu.Trigger>
                                         <Menu.Content showArrow placement='left top'>
                                             <Menu.Item>
                                                 <IconEye /> View
                                             </Menu.Item>
                                             <Menu.Item>
-                                                <IconHighlight /> Edit
+                                                <IconHighlighter /> Edit
                                             </Menu.Item>
                                             <Menu.Separator />
                                             <Menu.Item isDanger>

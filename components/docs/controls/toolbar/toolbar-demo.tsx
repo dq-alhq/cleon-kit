@@ -2,17 +2,17 @@
 
 import {
     IconAlignCenter,
-    IconAlignJustified,
+    IconAlignJustify,
     IconAlignLeft,
     IconAlignRight,
     IconBold,
     IconChevronDown,
     IconCircleArrowLeft,
     IconCircleArrowRight,
+    IconImage,
     IconItalic,
     IconLayoutGrid,
     IconLink,
-    IconPhoto,
     IconStrikethrough,
     IconUnderline
 } from 'cleon-icons'
@@ -48,7 +48,7 @@ export default function ToolbarDemo() {
                     <IconAlignRight />
                 </Toolbar.Item>
                 <Toolbar.Item aria-label='Align Justify' size='icon' variant='outline'>
-                    <IconAlignJustified />
+                    <IconAlignJustify />
                 </Toolbar.Item>
             </Toolbar.Group>
             <Toolbar.Separator />
@@ -72,7 +72,7 @@ export default function ToolbarDemo() {
                             Insert Link
                         </Menu.Item>
                         <Menu.Item>
-                            <IconPhoto />
+                            <IconImage />
                             Insert Image
                         </Menu.Item>
                         <Menu.Item>

@@ -569,6 +569,99 @@ export const previews: Record<string, any> = {
   "collections/disclosure-group/disclosure-group-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/collections/disclosure-group/disclosure-group-disabled-demo")),
   },
+  "chart/pie/pie-chart-interactive-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/pie/pie-chart-interactive-demo")),
+  },
+  "chart/pie/pie-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/pie/pie-chart-demo")),
+  },
+  "chart/pie/pie-chart-stacked-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/pie/pie-chart-stacked-demo")),
+  },
+  "chart/pie/pie-chart-legend-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/pie/pie-chart-legend-demo")),
+  },
+  "chart/pie/pie-chart-label-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/pie/pie-chart-label-demo")),
+  },
+  "chart/area/area-chart-stacked-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/area/area-chart-stacked-demo")),
+  },
+  "chart/area/area-chart-linear-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/area/area-chart-linear-demo")),
+  },
+  "chart/area/area-chart-gradient-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/area/area-chart-gradient-demo")),
+  },
+  "chart/area/area-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/area/area-chart-demo")),
+  },
+  "chart/bar/bar-chart-horizontal-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/bar/bar-chart-horizontal-demo")),
+  },
+  "chart/bar/bar-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/bar/bar-chart-demo")),
+  },
+  "chart/bar/bar-chart-analytic-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/bar/bar-chart-analytic-demo")),
+  },
+  "chart/bar/bar-chart-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/bar/bar-chart-multiple-demo")),
+  },
+  "chart/bar/bar-chart-mixed-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/bar/bar-chart-mixed-demo")),
+  },
+  "chart/radar/radar-chart-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radar/radar-chart-multiple-demo")),
+  },
+  "chart/radar/radar-chart-icon-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radar/radar-chart-icon-demo")),
+  },
+  "chart/radar/radar-chart-line-only-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radar/radar-chart-line-only-demo")),
+  },
+  "chart/radar/radar-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radar/radar-chart-demo")),
+  },
+  "chart/radar/radar-chart-dots-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radar/radar-chart-dots-demo")),
+  },
+  "chart/radial/radial-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radial/radial-chart-demo")),
+  },
+  "chart/radial/radial-chart-grid-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radial/radial-chart-grid-demo")),
+  },
+  "chart/radial/radial-chart-stacked-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radial/radial-chart-stacked-demo")),
+  },
+  "chart/radial/radial-chart-text-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radial/radial-chart-text-demo")),
+  },
+  "chart/radial/radial-chart-shape-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/radial/radial-chart-shape-demo")),
+  },
+  "chart/basic-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/basic-chart-demo")),
+  },
+  "chart/line/line-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/line/line-chart-demo")),
+  },
+  "chart/line/line-chart-linear-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/line/line-chart-linear-demo")),
+  },
+  "chart/line/line-chart-dots-color-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/line/line-chart-dots-color-demo")),
+  },
+  "chart/line/line-chart-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/line/line-chart-multiple-demo")),
+  },
+  "chart/line/line-chart-label-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/line/line-chart-label-demo")),
+  },
+  "chart/line/line-chart-dots-demo": {
+    component: React.lazy(() => import("@/components/docs/chart/line/line-chart-dots-demo")),
+  },
   "media/carousel-orientation-demo": {
     component: React.lazy(() => import("@/components/docs/media/carousel-orientation-demo")),
   },
@@ -799,192 +892,6 @@ export const previews: Record<string, any> = {
   },
   "layouts/navbar/navbar-logo-demo": {
     component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-logo-demo")),
-  },
-  "charts/pie-chart/pie-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-interactive-demo")),
-  },
-  "charts/pie-chart/pie-chart-donut-with-text-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-donut-with-text-demo")),
-  },
-  "charts/pie-chart/pie-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-simple-demo")),
-  },
-  "charts/pie-chart/pie-chart-donut-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-donut-demo")),
-  },
-  "charts/pie-chart/pie-chart-donut-active-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-donut-active-demo")),
-  },
-  "charts/pie-chart/pie-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-stacked-demo")),
-  },
-  "charts/pie-chart/pie-chart-label-list-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-label-list-demo")),
-  },
-  "charts/pie-chart/pie-chart-separator-none-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-separator-none-demo")),
-  },
-  "charts/pie-chart/pie-chart-legend-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-legend-demo")),
-  },
-  "charts/pie-chart/pie-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-custom-label-demo")),
-  },
-  "charts/pie-chart/pie-chart-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart/pie-chart-label-demo")),
-  },
-  "charts/bar-chart/bar-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-simple-demo")),
-  },
-  "charts/bar-chart/bar-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-stacked-demo")),
-  },
-  "charts/bar-chart/bar-chart-horizontal-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-horizontal-demo")),
-  },
-  "charts/bar-chart/bar-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-interactive-demo")),
-  },
-  "charts/bar-chart/bar-chart-active-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-active-demo")),
-  },
-  "charts/bar-chart/bar-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-custom-label-demo")),
-  },
-  "charts/bar-chart/bar-chart-negative-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-negative-demo")),
-  },
-  "charts/bar-chart/bar-chart-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-multiple-demo")),
-  },
-  "charts/bar-chart/bar-chart-mixed-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-mixed-demo")),
-  },
-  "charts/bar-chart/bar-chart-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart/bar-chart-label-demo")),
-  },
-  "charts/radar-chart/radar-chart-grid-custom-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-grid-custom-demo")),
-  },
-  "charts/radar-chart/radar-chart-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-multiple-demo")),
-  },
-  "charts/radar-chart/radar-chart-icons-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-icons-demo")),
-  },
-  "charts/radar-chart/radar-chart-grid-circle-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-grid-circle-demo")),
-  },
-  "charts/radar-chart/radar-chart-grid-none-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-grid-none-demo")),
-  },
-  "charts/radar-chart/radar-chart-grid-filled-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-grid-filled-demo")),
-  },
-  "charts/radar-chart/radar-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-custom-label-demo")),
-  },
-  "charts/radar-chart/radar-chart-grid-circle-filled-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-grid-circle-filled-demo")),
-  },
-  "charts/radar-chart/radar-chart-legend-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-legend-demo")),
-  },
-  "charts/radar-chart/radar-chart-grid-circle-no-lines-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-grid-circle-no-lines-demo")),
-  },
-  "charts/radar-chart/radar-chart-lines-only-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-lines-only-demo")),
-  },
-  "charts/radar-chart/radar-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-simple-demo")),
-  },
-  "charts/radar-chart/radar-chart-dots-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-dots-demo")),
-  },
-  "charts/radar-chart/radar-chart-radius-axis-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart/radar-chart-radius-axis-demo")),
-  },
-  "charts/radial-chart/radial-chart-grid-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart/radial-chart-grid-demo")),
-  },
-  "charts/radial-chart/radial-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart/radial-chart-simple-demo")),
-  },
-  "charts/radial-chart/radial-chart-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart/radial-chart-label-demo")),
-  },
-  "charts/radial-chart/radial-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart/radial-chart-stacked-demo")),
-  },
-  "charts/radial-chart/radial-chart-text-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart/radial-chart-text-demo")),
-  },
-  "charts/radial-chart/radial-chart-shape-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart/radial-chart-shape-demo")),
-  },
-  "charts/line-chart/line-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-custom-label-demo")),
-  },
-  "charts/line-chart/line-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-simple-demo")),
-  },
-  "charts/line-chart/line-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-interactive-demo")),
-  },
-  "charts/line-chart/line-chart-dots-colors-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-dots-colors-demo")),
-  },
-  "charts/line-chart/line-chart-linear-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-linear-demo")),
-  },
-  "charts/line-chart/line-chart-step-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-step-demo")),
-  },
-  "charts/line-chart/line-chart-custom-dots-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-custom-dots-demo")),
-  },
-  "charts/line-chart/line-chart-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-multiple-demo")),
-  },
-  "charts/line-chart/line-chart-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-label-demo")),
-  },
-  "charts/line-chart/line-chart-dots-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart/line-chart-dots-demo")),
-  },
-  "charts/area-chart/area-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-stacked-demo")),
-  },
-  "charts/area-chart/area-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-simple-demo")),
-  },
-  "charts/area-chart/area-chart-step-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-step-demo")),
-  },
-  "charts/area-chart/area-chart-linear-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-linear-demo")),
-  },
-  "charts/area-chart/area-chart-icons-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-icons-demo")),
-  },
-  "charts/area-chart/area-chart-gradient-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-gradient-demo")),
-  },
-  "charts/area-chart/area-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-interactive-demo")),
-  },
-  "charts/area-chart/area-chart-axes-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-axes-demo")),
-  },
-  "charts/area-chart/area-chart-legend-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-legend-demo")),
-  },
-  "charts/area-chart/area-chart-stacked-expanded-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-stacked-expanded-demo")),
-  },
-  "charts/area-chart/area-chart-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart/area-chart-demo")),
   },
   "navigation/link/link-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/link/link-disabled-demo")),

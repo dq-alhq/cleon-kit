@@ -3,23 +3,23 @@
 import React, { useEffect, useId, useState } from 'react'
 
 import {
+    IconBox,
     IconBrandAdobe,
     IconBrandCleon,
     IconBrandFramer,
     IconBrandGithub,
     IconBrandTailwind,
     IconChevronDown,
-    IconColorSwatch,
-    IconDesktop,
     IconHome,
+    IconLayoutTemplate,
     IconMenu,
+    IconMonitor,
     IconMoon,
-    IconPackages,
-    IconPaint,
+    IconPalette,
     IconSearch,
-    IconShapes2,
+    IconShapes,
     IconSun,
-    IconTemplate
+    IconSwatchBook
 } from 'cleon-icons'
 import { LayoutGroup, motion } from 'framer-motion'
 import { Link } from 'next-view-transitions'
@@ -35,18 +35,17 @@ import { cn, useMediaQuery } from '@/lib/utils'
 import { CommandPalette, type OpenCloseProps } from './command-menu'
 import { Aside } from './doc-aside'
 
-export const menuItems = [
-    { id: 1, label: 'Home', url: '/' },
-    { id: 2, label: 'Components', url: '/docs/getting-started/introduction' },
-    { id: 3, label: 'Blocks', url: '/blocks' },
-    { id: 4, label: 'Icons', url: '/icons' },
-    { id: 5, label: 'Colors', url: '/colors' },
-    { id: 6, label: 'Themes', url: '/themes' }
-]
-
 export function Navbar() {
     const id = useId()
     const pathname = usePathname()
+    const menuItems = [
+        { id: 1, label: 'Home', url: '/', active: pathname === '/' },
+        { id: 2, label: 'Components', url: '/docs', active: pathname.startsWith('/docs') },
+        { id: 3, label: 'Blocks', url: '/blocks', active: pathname.startsWith('/blocks') },
+        { id: 4, label: 'Icons', url: '/icons', active: pathname.startsWith('/icons') },
+        { id: 5, label: 'Colors', url: '/colors', active: pathname.startsWith('/colors') },
+        { id: 6, label: 'Themes', url: '/themes', active: pathname.startsWith('/themes') }
+    ]
 
     const [open, setOpen] = React.useState(false)
 
@@ -62,39 +61,11 @@ export function Navbar() {
                                     <NavbarDropdown />
                                     <Separator orientation='vertical' className='h-6' />
                                     <Collection items={menuItems}>
-                                        <NavLink isActive={pathname === '/'} href='/'>
-                                            Home
-                                        </NavLink>
-                                        <NavLink
-                                            isActive={pathname?.startsWith('/docs')}
-                                            href='/docs/getting-started/introduction'
-                                        >
-                                            Components
-                                        </NavLink>
-                                        <NavLink
-                                            isActive={pathname?.startsWith('/blocks')}
-                                            href='/blocks'
-                                        >
-                                            Blocks
-                                        </NavLink>
-                                        <NavLink
-                                            isActive={pathname?.startsWith('/icons')}
-                                            href='/icons'
-                                        >
-                                            Icons
-                                        </NavLink>
-                                        <NavLink
-                                            isActive={pathname?.startsWith('/colors')}
-                                            href='/colors'
-                                        >
-                                            Colors
-                                        </NavLink>
-                                        <NavLink
-                                            isActive={pathname?.startsWith('/themes')}
-                                            href='/themes'
-                                        >
-                                            Themes
-                                        </NavLink>
+                                        {(item) => (
+                                            <NavLink href={item.url} isActive={item.active}>
+                                                {item.label}
+                                            </NavLink>
+                                        )}
                                     </Collection>
                                 </div>
 
@@ -258,24 +229,24 @@ export function NavbarDropdown() {
                     <IconHome />
                     Home
                 </Menu.Item>
-                <Menu.Item href='/docs/getting-started/introduction'>
-                    <IconPackages />
+                <Menu.Item href='/docs'>
+                    <IconBox />
                     Components
                 </Menu.Item>
                 <Menu.Item href='/blocks'>
-                    <IconTemplate />
+                    <IconLayoutTemplate />
                     Blocks
                 </Menu.Item>
-                <Menu.Item href='/blocks'>
-                    <IconShapes2 />
+                <Menu.Item href='/icons'>
+                    <IconShapes />
                     Icons
                 </Menu.Item>
                 <Menu.Item href='/colors'>
-                    <IconColorSwatch />
+                    <IconSwatchBook />
                     Colors
                 </Menu.Item>
                 <Menu.Item href='/themes'>
-                    <IconPaint />
+                    <IconPalette />
                     Themes
                 </Menu.Item>
                 <Menu.Separator />
@@ -303,7 +274,7 @@ export function NavbarDropdown() {
                 <Menu.Submenu>
                     <Menu.Item aria-label='Switch Theme'>
                         {theme === 'system' ? (
-                            <IconDesktop />
+                            <IconMonitor />
                         ) : theme === 'dark' ? (
                             <IconMoon />
                         ) : (
@@ -313,7 +284,7 @@ export function NavbarDropdown() {
                     </Menu.Item>
                     <Menu.Content aria-labelledby='switch-theme'>
                         <Menu.Item onAction={() => setTheme('system')}>
-                            <IconDesktop />
+                            <IconMonitor />
                             <span>System</span>
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('dark')}>

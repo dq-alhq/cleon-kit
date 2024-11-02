@@ -1,37 +1,33 @@
 'use client'
 
-import React from 'react'
-
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useDebouncedCallback } from 'use-debounce'
 
 import { SearchField } from '@/components/ui'
 
-export default function SearchIcon() {
+export function Search() {
     const searchParams = useSearchParams()
-    const router = useRouter()
+
     const pathname = usePathname()
-    const [search, setSearch] = React.useState(searchParams.get('q') || '')
+    const { replace } = useRouter()
 
-    const createQuery = React.useCallback(
-        (name: string, value: string) => {
-            const params = new URLSearchParams(searchParams.toString())
-            params.set(name, value)
-            return params.toString()
-        },
-        [searchParams]
-    )
-
-    const handleSearch = (v: string) => {
-        setSearch(v)
-        router.push(`${pathname}?${createQuery('q', v)}`, { scroll: false })
-    }
+    const handleSearch = useDebouncedCallback((term) => {
+        const params = new URLSearchParams(searchParams)
+        if (term) {
+            params.set('q', term)
+        } else {
+            params.delete('q')
+        }
+        replace(`${pathname}?${params.toString()}`)
+    }, 300)
 
     return (
         <SearchField
-            className='w-full lg:max-w-xl'
-            aria-label='Search for Icon'
-            value={search}
-            onChange={(v) => handleSearch(v)}
+            className='w-full sm:max-w-sm'
+            onChange={handleSearch}
+            defaultValue={searchParams.get('q')?.toString()}
+            aria-label='Search icons'
+            placeholder='Search icons...'
         />
     )
 }

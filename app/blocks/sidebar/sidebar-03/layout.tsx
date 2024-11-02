@@ -4,11 +4,11 @@ import * as React from 'react'
 
 import {
     IconChevronDown,
-    IconLogout,
+    IconCircleUser,
+    IconLogOut,
     IconSearch,
     IconSettings,
-    IconShield,
-    IconUserCircle
+    IconShield
 } from 'cleon-icons'
 
 import { AppSidebar } from '@/app/blocks/sidebar/app-sidebar'
@@ -50,7 +50,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             </Menu.Trigger>
                             <Menu.Content className='min-w-[--trigger-width]'>
                                 <Menu.Item href='#'>
-                                    <IconUserCircle />
+                                    <IconCircleUser />
                                     Profile
                                 </Menu.Item>
                                 <Menu.Item href='#'>
@@ -62,7 +62,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                     Security
                                 </Menu.Item>
                                 <Menu.Item href='#'>
-                                    <IconLogout />
+                                    <IconLogOut />
                                     Log out
                                 </Menu.Item>
                             </Menu.Content>

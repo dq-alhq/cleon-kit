@@ -1,19 +1,11 @@
 'use client'
 
-import { IconMobile } from 'cleon-icons'
+import { IconPhone } from 'cleon-icons'
 
+import TimeFieldDemo from '@/components/docs/date-and-time/time-field/time-field-demo'
 import DropZoneAndFileTriggerDemo from '@/components/docs/drag-and-drop/drop-zone-and-file-trigger-demo'
 import TextareaDemo from '@/components/docs/forms/textarea/textarea-demo'
-import {
-    Avatar,
-    Card,
-    DatePicker,
-    Heading,
-    NumberField,
-    Tabs,
-    TextField,
-    TimeField
-} from '@/components/ui'
+import { Avatar, Card, DatePicker, Heading, NumberField, Tabs, TextField } from '@/components/ui'
 
 export default function UserProfileSink() {
     return (
@@ -49,10 +41,10 @@ export default function UserProfileSink() {
                         <Tabs.Content id='t1'>
                             <div className='w-full items-end flex gap-3 mb-7'>
                                 <DatePicker label='Birthdate' className='w-full' />
-                                <TimeField />
+                                <TimeFieldDemo />
                             </div>
                             <div>
-                                <TextField label='Phone' prefix='+62 ' suffix={<IconMobile />} />
+                                <TextField label='Phone' prefix='+62 ' suffix={<IconPhone />} />
                             </div>
                         </Tabs.Content>
                         <Tabs.Content id='t2'>

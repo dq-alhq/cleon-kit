@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconLoader } from 'cleon-icons'
+import { IconLoaderCircle } from 'cleon-icons'
 import * as Aria from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
@@ -135,7 +135,7 @@ const Bars = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
         </rect>
     </svg>
 )
-const Ring = (props: React.SVGProps<SVGSVGElement>) => <IconLoader {...props} />
+const Ring = (props: React.SVGProps<SVGSVGElement>) => <IconLoaderCircle {...props} />
 const Spin = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
     <svg className={cn('size-4', className)} data-slot='icon' viewBox='0 0 2400 2400' {...props}>
         <g strokeWidth='200' strokeLinecap='round' fill='none'>

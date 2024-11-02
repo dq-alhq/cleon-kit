@@ -3,7 +3,11 @@ import { Link } from 'next-view-transitions'
 import ThemeCustomizer from '@/components/controllers/themes/themes'
 import { Hero, HeroDescription, HeroHeader, HeroTitle } from '@/components/layouts/hero'
 
-export default async function Page() {
+export const metadata = {
+    title: 'Themes'
+}
+
+export default function Page() {
     return (
         <>
             <Hero>

@@ -1,22 +1,12 @@
 'use client'
 
-import React from 'react'
-
 import { IconMoon, IconSun } from 'cleon-icons'
 import { useTheme } from 'next-themes'
 
 import { Button } from '@/components/ui'
 
-import { applyTheme } from './controllers/themes/controller'
-
 export function ThemeToggle({ variant = 'outline' }: { variant?: 'outline' | 'ghost' }) {
     const { resolvedTheme, setTheme } = useTheme()
-
-    React.useEffect(() => {
-        const theme = localStorage.getItem('theme-id') || 'cleon'
-        const themeContainer = document.getElementsByTagName('html')[0]
-        if (themeContainer) applyTheme(themeContainer, theme, resolvedTheme as any)
-    }, [resolvedTheme])
 
     return (
         <Button

@@ -2,39 +2,53 @@
 
 import React from 'react'
 
+import { IconChevronDown } from 'cleon-icons'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import type { Selection } from 'react-aria-components'
 
-import { Select } from '@/components/ui'
+import { Button, Menu } from '@/components/ui'
+import { useQueryString } from '@/lib/hooks/use-query-string'
 
-export default function SelectStroke() {
-    const searchParams = useSearchParams()
+const strokes = [
+    { id: '1', name: 'Stroke 1' },
+    { id: '2', name: 'Stroke 2' }
+]
+
+export function SelectStroke() {
     const router = useRouter()
     const pathname = usePathname()
-    const [size, setSize] = React.useState(searchParams.get('stroke') || '2')
+    const { createQueryString } = useQueryString()
 
-    const createQuery = React.useCallback(
-        (name: string, value: string) => {
-            const params = new URLSearchParams(searchParams.toString())
-            params.set(name, value)
-            return params.toString()
-        },
-        [searchParams]
+    const searchParams = useSearchParams()
+
+    const [selectedStroke, setSelectStroke] = React.useState<Selection>(
+        new Set([searchParams.get('t') || '2'])
     )
-
-    const handleSelect = (v: string) => {
-        setSize(v as '1' | '2')
-        router.push(`${pathname}?${createQuery('stroke', v)}`, { scroll: false })
+    const onSelectionChange = (stroke: Selection) => {
+        router.push(pathname + '?' + createQueryString('t', [...stroke].join(',')), {
+            scroll: false
+        })
+        setSelectStroke(stroke)
     }
 
     return (
-        <Select
-            aria-label='Stroke Width'
-            className='w-28'
-            selectedKey={size}
-            onSelectionChange={(v) => handleSelect(v as '1' | '2')}
-        >
-            <Select.Item id='1'>Stroke 1</Select.Item>
-            <Select.Item id='2'>Stroke 2</Select.Item>
-        </Select>
+        <Menu aria-label='Select Icon Size'>
+            <Button
+                className='[&[data-pressed]_[data-slot=icon]]:rotate-180 bg-background [&_[data-slot=icon]]:transition-transform w-full sm:max-w-sm'
+                variant='outline'
+            >
+                <span>Stroke {[...selectedStroke].join('').replace('stroke-', '') || '5'}</span>
+                <IconChevronDown />
+            </Button>
+            <Menu.Content
+                selectionMode='single'
+                selectedKeys={selectedStroke}
+                onSelectionChange={onSelectionChange}
+                placement='bottom end'
+                items={strokes}
+            >
+                {(item) => <Menu.Radio textValue={item.name}>{item.name}</Menu.Radio>}
+            </Menu.Content>
+        </Menu>
     )
 }

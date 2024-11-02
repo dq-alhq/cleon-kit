@@ -1,6 +1,6 @@
 'use client'
 
-import { IconAlertCircle } from 'cleon-icons'
+import { IconInfo } from 'cleon-icons'
 
 import { buttonVariants, Tooltip } from '@/components/ui'
 
@@ -14,7 +14,7 @@ export default function TooltipVariantDemo() {
                     size: 'icon'
                 })}
             >
-                <IconAlertCircle />
+                <IconInfo />
             </Tooltip.Trigger>
             <Tooltip.Content variant='inverse'>
                 <div className='relative'>

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconLoader, IconLock, IconLockOpen } from 'cleon-icons'
+import { IconLoaderCircle, IconLock, IconLockOpen } from 'cleon-icons'
 import * as Aria from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
@@ -66,7 +66,7 @@ const TextField = ({
                 className={fieldGroupPrefixStyles({ className })}
             >
                 {isPending && indicatorPlace === 'prefix' ? (
-                    <IconLoader className='animate-spin prefix' />
+                    <IconLoaderCircle className='animate-spin prefix' />
                 ) : prefix ? (
                     <span className='attribute prefix x2e2'>{prefix}</span>
                 ) : null}

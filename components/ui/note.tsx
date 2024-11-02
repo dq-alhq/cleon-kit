@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconAlertCircle, IconAlertTriangle, IconCircleCheck } from 'cleon-icons'
+import { IconCircleAlert, IconCircleCheck, IconTriangleAlert } from 'cleon-icons'
 import { Text } from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
@@ -45,11 +45,11 @@ const Note = ({ hideIndicator = false, variant = 'primary', className, ...props 
                 {!hideIndicator && (
                     <div className='w-5 shrink-0 mt-px'>
                         {['info', 'primary', 'secondary'].includes(variant) ? (
-                            <IconAlertCircle />
+                            <IconCircleAlert />
                         ) : variant === 'success' ? (
                             <IconCircleCheck />
                         ) : (
-                            <IconAlertTriangle />
+                            <IconTriangleAlert />
                         )}
                     </div>
                 )}

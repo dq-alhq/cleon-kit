@@ -4,9 +4,9 @@ import {
     IconBrandLinux,
     IconChevronDown,
     IconCommand,
-    IconDashboard,
+    IconGauge,
     IconHeadphones,
-    IconLogout,
+    IconLogOut,
     IconSearch,
     IconSettings,
     IconShoppingBag
@@ -59,7 +59,7 @@ export default function NavbarBasicDemo() {
                             </Menu.Section>
 
                             <Menu.Item href='#dashboard'>
-                                <IconDashboard />
+                                <IconGauge />
                                 Dashboard
                             </Menu.Item>
                             <Menu.Item href='#settings'>
@@ -78,7 +78,7 @@ export default function NavbarBasicDemo() {
                             </Menu.Item>
                             <Menu.Separator />
                             <Menu.Item href='#logout'>
-                                <IconLogout />
+                                <IconLogOut />
                                 Log out
                             </Menu.Item>
                         </Menu.Content>

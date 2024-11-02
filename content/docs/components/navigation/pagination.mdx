@@ -38,9 +38,9 @@ Sometimes, you need to prevent the page from scrolling to the top when users int
 When using [Inertia.js](https://inertiajs.com/scroll-management#scroll-preservation), you can use the `preserveScroll` prop to keep the page from scrolling to the top during pagination interactions.
 
 ```tsx {4}
-<PaginationList aria-label="Pagination Segment" items={pages}>
+<Pagination.List aria-label="Pagination Segment" items={pages}>
   {(item) => (
-    <PaginationItem
+    <Pagination.Item
       routerOptions={{ preserveScroll: true }}
       id={item.label.toString()}
       isCurrent={item.isCurrent}
@@ -53,9 +53,9 @@ When using [Inertia.js](https://inertiajs.com/scroll-management#scroll-preservat
 When using [Next.js](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#disabling-scroll-restoration), apply the `scroll` prop to stop the page from scrolling to the top when users navigate through pagination.
 
 ```tsx {4}
-<PaginationList aria-label="Pagination Segment" items={pages}>
+<Pagination.List aria-label="Pagination Segment" items={pages}>
   {(item) => (
-    <PaginationItem
+    <Pagination.Item
       routerOptions={{ scroll: false }}
       id={item.label.toString()}
       isCurrent={item.isCurrent}
@@ -68,9 +68,9 @@ When using [Next.js](https://nextjs.org/docs/app/building-your-application/routi
 When using [Remix](https://remix.run/docs/en/main/components/scroll-restoration#preventing-scroll-reset), you can add the `preventScrollReset` prop to prevent the page from scrolling to the top when users interact with pagination.
 
 ```tsx {4}
-<PaginationList aria-label="Pagination Segment" items={pages}>
+<Pagination.List aria-label="Pagination Segment" items={pages}>
   {(item) => (
-    <PaginationItem
+    <Pagination.Item
       routerOptions={{ preventScrollReset: true }}
       id={item.label.toString()}
       isCurrent={item.isCurrent}
@@ -105,18 +105,18 @@ const renderListItem = (
 So here's how I roll with it:
 
 ```tsx {4}
-<PaginationList aria-label='Pagination Segment' items={paginate.pages}>
+<Pagination.List aria-label='Pagination Segment' items={paginate.pages}>
     {(item) => (
-        <PaginationItem
+        <Pagination.Item
             routerOptions={{ only: ['series'] }}
             id={item.label.toString()}
             isCurrent={item.isCurrent}
             href={item.url ?? ''}
         >
             {item.label}
-        </PaginationItem>
+        </Pagination.Item>
     )}
-</PaginationList>
+</Pagination.List>
 ```
 
 I figured it'd be chill, but nah, it ain't cuttin' it. That’s why I’m throwin' this idea your way: toss that option in when you're rockin' the pagination component. Ain’t sayin' it's top shelf, but it’s one way to roll.

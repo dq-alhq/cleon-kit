@@ -8,7 +8,7 @@ import TooltipDemo from '@/components/docs/overlays/tooltip/tooltip-demo'
 import ComboBoxDemo from '@/components/docs/pickers/combo-box/combo-box-demo'
 import MeterDemo from '@/components/docs/statuses/meter-demo'
 import ProgressDemo from '@/components/docs/statuses/progress-bar-demo'
-import { Breadcrumbs, Card, DateRangePicker, SearchField, Select } from '@/components/ui'
+import { Breadcrumbs, Card, DatePicker, Select } from '@/components/ui'
 
 export default function OptionsSink() {
     return (
@@ -30,8 +30,7 @@ export default function OptionsSink() {
                     <Select.Item id='20'>20</Select.Item>
                     <Select.Item id='30'>30</Select.Item>
                 </Select>
-                <SearchField className='w-full' aria-label='Search' />
-                <DateRangePicker className='w-full' aria-label='Event date' />
+                <DatePicker className='w-full' aria-label='Event date' />
             </div>
             <div className='flex gap-1 items-end mt-4'>
                 <ComboBoxDemo />

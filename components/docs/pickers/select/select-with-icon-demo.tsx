@@ -1,6 +1,6 @@
 'use client'
 
-import { IconDesktop, IconLaptop, IconPhone } from 'cleon-icons'
+import { IconLaptop, IconMonitor, IconPhone } from 'cleon-icons'
 
 import { Select } from '@/components/ui'
 
@@ -8,7 +8,7 @@ export default function SelectWithIconDemo() {
     return (
         <Select aria-label='Devices' defaultSelectedKey='desktop' placeholder='Select a device'>
             <Select.Item id='desktop' textValue='Desktop'>
-                <IconDesktop />
+                <IconMonitor />
                 Desktop
             </Select.Item>
             <Select.Item id='laptop' textValue='Laptop'>

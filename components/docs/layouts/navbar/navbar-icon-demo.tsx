@@ -4,16 +4,16 @@ import {
     IconBrandLinux,
     IconChartBar,
     IconChevronDown,
-    IconColorSwatch,
     IconCommand,
-    IconDashboard,
+    IconEclipse,
+    IconGauge,
     IconHeadphones,
-    IconLogout,
-    IconNotes,
+    IconLogOut,
+    IconNotebook,
     IconSearch,
     IconSettings,
     IconShoppingBag,
-    IconSquareHalf
+    IconSwatchBook
 } from 'cleon-icons'
 
 import { Avatar, Button, Menu, Navbar, Separator } from '@/components/ui'
@@ -28,14 +28,14 @@ export default function NavbarIconDemo() {
                 </Navbar.Logo>
                 <Navbar.Section>
                     <Navbar.Item href='/docs/components/layouts/navbar'>
-                        <IconNotes />
+                        <IconNotebook />
                         Documentation
                     </Navbar.Item>
                     <Navbar.Item href='https://getjustd.com/docs/components/layouts/sidebar'>
-                        <IconSquareHalf /> Sidebar
+                        <IconEclipse /> Sidebar
                     </Navbar.Item>
                     <Navbar.Item href='https://getjustd.com/themes'>
-                        <IconColorSwatch /> Themes
+                        <IconSwatchBook /> Themes
                     </Navbar.Item>
                     <Navbar.Item href='https://getjustd.com/charts'>
                         <IconChartBar /> Charts
@@ -85,7 +85,7 @@ export default function NavbarIconDemo() {
                             </Menu.Section>
 
                             <Menu.Item href='#dashboard'>
-                                <IconDashboard />
+                                <IconGauge />
                                 Dashboard
                             </Menu.Item>
                             <Menu.Item href='#settings'>
@@ -104,7 +104,7 @@ export default function NavbarIconDemo() {
                             </Menu.Item>
                             <Menu.Separator />
                             <Menu.Item href='#logout'>
-                                <IconLogout />
+                                <IconLogOut />
                                 Log out
                             </Menu.Item>
                         </Menu.Content>

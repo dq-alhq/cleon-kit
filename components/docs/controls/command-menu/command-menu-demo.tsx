@@ -2,14 +2,7 @@
 
 import React from 'react'
 
-import {
-    IconBox,
-    IconCurrencyDollar,
-    IconHome,
-    IconNotes,
-    IconSettings,
-    IconShield
-} from 'cleon-icons'
+import { IconBox, IconDollar, IconHome, IconNotebook, IconSettings, IconShield } from 'cleon-icons'
 import Link from 'next/link'
 
 // Replace with your router link component
@@ -33,7 +26,7 @@ export default function CommandDemo() {
                         </Command.Item>
                         <Command.Item asChild>
                             <Link href='#'>
-                                <IconNotes /> Docs
+                                <IconNotebook /> Docs
                                 <Command.Keyboard keys='⌘k' />
                             </Link>
                         </Command.Item>
@@ -46,7 +39,7 @@ export default function CommandDemo() {
                     <Command.Section separator heading='Dashboard'>
                         <Command.Item asChild>
                             <Link href='#'>
-                                <IconCurrencyDollar /> Billing
+                                <IconDollar /> Billing
                             </Link>
                         </Command.Item>
                         <Command.Item asChild>

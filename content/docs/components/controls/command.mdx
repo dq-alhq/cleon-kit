@@ -67,7 +67,7 @@ Manage the command palette dynamically using the `value` and `onValueChange` pro
 Additionally, control the execution of an action upon selecting an item:
 
 ```tsx
-<CommandItem onSelect={() => console.log('share getjustd.com/d/command')} />
+<Command.Item onSelect={() => console.log('share this component')} />
 ```
 
 ## Disabled
@@ -81,7 +81,7 @@ Disable items in the command menu to make them non-interactive, appearing grayed
 Eliminate the search indicator and close button for a cleaner interface by using `hideSearchIndicator` and `hideCloseButton`. View this setup in the [Command Description](#description) section.
 
 ```
-<CommandMenu
+<Command
   hideCloseButton
   hideSearchIndicator
   isOpen={isOpen}
@@ -113,13 +113,13 @@ Alternatively, if you want to create a custom empty message, disable the default
   isOpen={isOpen}
   onOpenChange={setIsOpen}
 >
-  <CommandInput placeholder="Search for apps and commands..." />
-  <CommandEmpty className="grid place-content-center">
+  <Command.Input placeholder="Search for apps and commands..." />
+  <Command.Empty className="grid place-content-center">
     <div className="text-center">
-      <IconCube className="inline" />
+      <IconPackage className="inline" />
       <p className="mt-2">No results found.</p>
     </div>
-  </CommandEmpty>
+  </Command.Empty>
   ...
 </Command>
 ```

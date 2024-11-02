@@ -1,6 +1,6 @@
 'use client'
 
-import { IconHash, IconHeadphones, IconLogout, IconPlus, IconSettings } from 'cleon-icons'
+import { IconHash, IconHeadphones, IconLogOut, IconPlus, IconSettings } from 'cleon-icons'
 
 import { Avatar, Menu } from '@/components/ui'
 
@@ -38,7 +38,7 @@ export default function MenuWithArrowDemo() {
                     </Menu.Item>
                     <Menu.Separator />
                     <Menu.Item>
-                        <IconLogout />
+                        <IconLogOut />
                         Log out
                     </Menu.Item>
                 </Menu.Content>

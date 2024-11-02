@@ -1,6 +1,6 @@
 'use client'
 
-import { IconLoader2, IconSearch, IconX } from 'cleon-icons'
+import { IconLoaderCircle, IconSearch, IconX } from 'cleon-icons'
 import * as Aria from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
@@ -42,7 +42,7 @@ const SearchField = ({
                     className='[&::-webkit-search-cancel-button]:hidden'
                 />
                 {isPending ? (
-                    <IconLoader2 className='mr-2 animate-spin' />
+                    <IconLoaderCircle className='mr-2 animate-spin' />
                 ) : (
                     <Button
                         size='icon'

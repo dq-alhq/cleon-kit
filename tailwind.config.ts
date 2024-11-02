@@ -59,6 +59,13 @@ const config = withTV({
                 muted: {
                     DEFAULT: 'hsl(var(--muted))',
                     foreground: 'hsl(var(--muted-foreground))'
+                },
+                chart: {
+                    primary: 'hsl(var(--primary-chart))',
+                    secondary: 'hsl(var(--secondary-chart))',
+                    tertiary: 'hsl(var(--tertiary-chart))',
+                    highlight: 'hsl(var(--highlight-chart))',
+                    accent: 'hsl(var(--accent-chart))'
                 }
             },
             borderRadius: {

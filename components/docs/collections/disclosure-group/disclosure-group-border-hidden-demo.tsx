@@ -4,7 +4,7 @@ import {
     IconBell,
     IconCreditCard,
     IconDownload,
-    IconLifebuoy,
+    IconLifeBuoy,
     IconSettings,
     IconShield
 } from 'cleon-icons'
@@ -50,7 +50,7 @@ const items = [
             'Add, remove, or update your payment methods including credit cards and digital wallets.'
     },
     {
-        icon: <IconLifebuoy />,
+        icon: <IconLifeBuoy />,
         title: 'Support Center',
         description: 'Find help with common issues, or contact support for further assistance.'
     },

@@ -49,7 +49,7 @@ const navbarStyles = tv({
         variant: {
             floating: 'pt-2 px-2.5',
             navbar: '',
-            inset: 'bg-muted/50 dark:bg-background'
+            inset: 'bg-muted dark:bg-background'
         }
     }
 })

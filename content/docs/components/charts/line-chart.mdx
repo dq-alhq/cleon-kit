@@ -1,84 +1,83 @@
 ---
-title: 'Line Chart'
+title: Line Chart
 description: Line chart connects data points with straight lines to display trends over time or categories.
 order: 3
 published: true
 references: ['https://recharts.org/en-US/api/LineChart']
 ---
-
 ## Basic
-
-A line chart is a type of graph that displays data as a series of points (markers) connected by straight line segments. It's commonly used to show trends over time or to compare changes in values of different categories. Each point on the chart represents a data value, and the lines between them emphasize the continuity or progression of the data. Line charts are useful for visualizing patterns, identifying trends, and understanding relationships between variables in a clear and straightforward manner. They are widely employed in various fields such as economics, science, finance, and social sciences for data analysis and presentation.
-
-<Demo className="w-full" component='charts/line-chart/line-chart-simple-demo' />
+Charts are used to display data in a clear and concise manner. They are ideal for presenting information in a visually appealing and easy-to-understand format.
+<Demo center component="chart/line/line-chart-demo" />
 
 ## Installation
+<Install component='chart' />
 
-<Note variant="warning">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
-
-<CLI command='install' items={['recharts@alpha']} />
-
-<Install component='charts' />
-
-Then add these lines to your `css` file, of course you can change the color as you like `in hsl`
-
-```tsx {2-17}
-/* Rest of your styles */
+## Colors
+If you're working on an existing project, you can use these variables. However, if you've just installed Justd, they will already be included during project initialization. You can also customize chart colors, check out the [theme page](/themes) for more options.
+```
 @layer base {
-    :root {
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-    }
-    .dark {
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-    }
+  root: {
+      --primary-chart: 51.24% 0.222 261.097;
+      --secondary-chart: 76.58% 0.119 263.28;
+      --tertiary-chart: 63.25% 0.184 258.64;
+      --highlight-chart: 81.17% 0.097 249.1;
+      --accent-chart: 81.17% 0.097 249.1;
+  }
+  .dark: {
+      --primary-chart: 54.6% 0.215 262.87;
+      --secondary-chart: 72.11% 0.142 253.1;
+      --tertiary-chart: 63.25% 0.184 258.64;
+      --highlight-chart: 81.17% 0.097 249.1;
+      --accent-chart: 88.29% 0.057 251.91;
+  }
 }
-/* Rest of your styles */
 ```
 
-## Line Chart Simple
+## Tooltip
+Tooltips are used to provide additional information about a chart element when the user hovers over it. They can be used to display additional details, such as the value of a data point, or to provide context about the data.
+```
+import { Chart } from '@/components/ui'
+import { LineChart } from 'recharts'
 
-<Demo className="w-full" component='charts/line-chart/line-chart-simple-demo' />
+<LineChart accessibilityLayer data={data}>
+  <XAxis.../>
+  <Chart.Tooltip cursor={false} content={<Chart.TooltipContent />} />
+  <Bar.../>
+</LineChart>
+```
 
-## Line Chart Linear
+## Legend
+Legends are used to display a list of labels for different chart elements. They can be used to provide context about the data and help the user understand the meaning of different colors and shapes.
+```
+import { Chart } from '@/components/ui'
+import { LineChart } from 'recharts'
 
-<Demo className="w-full" component='charts/line-chart/line-chart-linear-demo' />
+<LineChart>
+  ...
+  <Chart.Legend content={<Chart.LegendContent />} />
+</LineChart>
+```
 
-## Line Chart Step
+## Line Chart
+A line chart is used to display data points connected by a straight line, showing trends or changes over time. It's ideal for visualizing continuous data, especially when you want to emphasize the direction of change (upward or downward trends) over a period.
 
-<Demo className="w-full" component='charts/line-chart/line-chart-step-demo' />
+### Multiple
+<Demo center component="chart/line/line-chart-multiple-demo" />
 
-## Line Chart Multiple
+### Dots
+<Demo center component="chart/line/line-chart-dots-demo" />
 
-<Demo className="w-full" component='charts/line-chart/line-chart-multiple-demo' />
+### Dots Color
+<Demo center component="chart/line/line-chart-dots-color-demo" />
 
-## Line Chart Dots
+### Custom Label
+<Demo center component="chart/line/line-chart-label-demo" />
 
-<Demo className="w-full" component='charts/line-chart/line-chart-dots-demo' />
+### Linear
+<Demo center component="chart/line/line-chart-linear-demo" />
 
-## Line Chart Custom Dots
-
-<Demo className="w-full" component='charts/line-chart/line-chart-custom-dots-demo' />
-
-## Line Chart Dots Colors
-
-<Demo className="w-full" component='charts/line-chart/line-chart-dots-colors-demo' />
-
-## Line Chart Label
-
-<Demo className="w-full" component='charts/line-chart/line-chart-label-demo' />
-
-## Line Chart Custom Label
-
-<Demo className="w-full" component='charts/line-chart/line-chart-custom-label-demo' />
-
-## Line Chart Interactive
-
-<Demo className="w-full" component='charts/line-chart/line-chart-interactive-demo' />
+## Accessibility
+For accessibility purposes, you can add the `accessibilityLayer` prop to the chart component. This will add a `role="img"` to the chart, which will make it accessible to screen readers.
+```
+<LineChart accessibilityLayer />
+```

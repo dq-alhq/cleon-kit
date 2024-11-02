@@ -1,13 +1,6 @@
 'use client'
 
-import {
-    Header,
-    Heading,
-    type HeadingProps,
-    type LinkProps,
-    Text,
-    type TextProps
-} from 'react-aria-components'
+import { Header, Heading, type HeadingProps, type LinkProps } from 'react-aria-components'
 
 import { buttonVariants, Container, Link } from '@/components/ui'
 import { cn } from '@/lib/utils'
@@ -69,8 +62,12 @@ const HeroTitle = ({ children, className, ...props }: HeadingProps) => (
     </Heading>
 )
 
-const HeroDescription = ({ children, className, ...props }: TextProps) => (
-    <Text
+const HeroDescription = ({
+    children,
+    className,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+    <div
         className={cn(
             'text-base lg:text-xl max-w-2xl block leading-relaxed text-muted-foreground',
             className
@@ -78,7 +75,7 @@ const HeroDescription = ({ children, className, ...props }: TextProps) => (
         {...props}
     >
         {children}
-    </Text>
+    </div>
 )
 
 const HeroContent = ({ children, className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
@@ -108,6 +105,7 @@ const HeroButton = ({
     ...props
 }: HeroButtonProps) => (
     <Link
+        variant='unstyled'
         className={cn(
             buttonVariants({
                 size: size,

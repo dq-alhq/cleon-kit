@@ -1,6 +1,6 @@
 'use client'
 
-import { IconCopy, IconFolder, IconHighlight, IconTrash, IconUpload } from 'cleon-icons'
+import { IconCopy, IconFolder, IconHighlighter, IconTrash, IconUpload } from 'cleon-icons'
 
 import { ContextMenu } from '@/components/ui'
 
@@ -14,7 +14,7 @@ export default function ContextMenuWithIconDemo() {
                     Open
                 </ContextMenu.Item>
                 <ContextMenu.Item>
-                    <IconHighlight />
+                    <IconHighlighter />
                     Rename
                 </ContextMenu.Item>
                 <ContextMenu.Item>

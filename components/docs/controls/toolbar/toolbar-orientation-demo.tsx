@@ -2,18 +2,18 @@
 
 import {
     IconAlignCenter,
-    IconAlignJustified,
+    IconAlignJustify,
     IconAlignLeft,
     IconCamera,
     IconCircleArrowLeft,
     IconCircleArrowRight,
-    IconDotsVertical,
+    IconEllipsisVertical,
+    IconImage,
     IconLayoutGrid,
     IconLink,
     IconPencil,
-    IconPhoto,
-    IconPointer,
-    IconTools
+    IconPencilRuler,
+    IconPointer
 } from 'cleon-icons'
 
 import { Button, Menu, Toggle, Toolbar } from '@/components/ui'
@@ -29,7 +29,7 @@ export default function ToolbarOrientationDemo() {
                     <IconPencil />
                 </Toolbar.Item>
                 <Toolbar.Item aria-label='Pencil Box' size='icon' variant='outline'>
-                    <IconTools />
+                    <IconPencilRuler />
                 </Toolbar.Item>
             </Toolbar.Group>
             <Toolbar.Separator />
@@ -38,7 +38,7 @@ export default function ToolbarOrientationDemo() {
                     <IconCamera />
                 </Toolbar.Item>
                 <Toolbar.Item aria-label='Gallery' size='icon' variant='outline'>
-                    <IconPhoto />
+                    <IconImage />
                 </Toolbar.Item>
             </Toolbar.Group>
             <Toolbar.Separator />
@@ -50,14 +50,14 @@ export default function ToolbarOrientationDemo() {
                     <IconAlignCenter />
                 </Toolbar.Item>
                 <Toolbar.Item aria-label='Align Justify' size='icon' variant='outline'>
-                    <IconAlignJustified />
+                    <IconAlignJustify />
                 </Toolbar.Item>
             </Toolbar.Group>
             <Toolbar.Separator />
             <Toolbar.Group>
                 <Menu>
                     <Button aria-label='Other options' variant='outline' size='icon'>
-                        <IconDotsVertical />
+                        <IconEllipsisVertical />
                     </Button>
                     <Menu.Content showArrow placement='right'>
                         <Menu.Item>
@@ -73,7 +73,7 @@ export default function ToolbarOrientationDemo() {
                             Insert Link
                         </Menu.Item>
                         <Menu.Item>
-                            <IconPhoto />
+                            <IconImage />
                             Insert Image
                         </Menu.Item>
                         <Menu.Item>

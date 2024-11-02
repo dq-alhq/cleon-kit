@@ -7,7 +7,7 @@ import {
     IconChevronRight,
     IconChevronsLeft,
     IconChevronsRight,
-    IconDotsHorizontal
+    IconEllipsis
 } from 'cleon-icons'
 import * as Aria from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
@@ -151,7 +151,7 @@ const Item = ({
                     ...props
                 },
                 <span aria-hidden className={itemEllipsisIcon({ className })}>
-                    <IconDotsHorizontal />
+                    <IconEllipsis />
                 </span>
             )
         case 'previous':

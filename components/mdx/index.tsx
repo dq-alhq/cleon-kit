@@ -4,9 +4,10 @@ import { Link, type LinkProps } from '@/components/ui'
 import { useMDXComponent } from '@/lib/hooks/use-mdx'
 
 import { BlockContent } from './block'
+import { CLI } from './cli'
 import { Code } from './code'
 import { Demo } from './demo'
-import { CLI, Installation } from './installation'
+import { Installation } from './installation'
 import { DocsNote } from './note'
 
 interface MdxProps {

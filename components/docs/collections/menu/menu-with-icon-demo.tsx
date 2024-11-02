@@ -2,10 +2,10 @@
 
 import {
     IconCommand,
-    IconDashboard,
-    IconDesktop,
+    IconGauge,
     IconHeadphones,
-    IconLogout,
+    IconLogOut,
+    IconMonitor,
     IconMoon,
     IconSettings,
     IconSun
@@ -30,7 +30,7 @@ export default function MenuWithIconDemo() {
                 </Menu.Section>
 
                 <Menu.Item href='#dashboard'>
-                    <IconDashboard />
+                    <IconGauge />
                     Dashboard
                 </Menu.Item>
                 <Menu.Item href='#settings'>
@@ -49,13 +49,13 @@ export default function MenuWithIconDemo() {
                         ) : resolvedTheme === 'dark' ? (
                             <IconMoon />
                         ) : (
-                            <IconDesktop />
+                            <IconMonitor />
                         )}
                         Switch theme
                     </Menu.Item>
                     <Menu.Content>
                         <Menu.Item onAction={() => setTheme('system')}>
-                            <IconDesktop /> System
+                            <IconMonitor /> System
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('dark')}>
                             <IconMoon /> Dark
@@ -72,7 +72,7 @@ export default function MenuWithIconDemo() {
                 </Menu.Item>
                 <Menu.Separator />
                 <Menu.Item href='#logout'>
-                    <IconLogout />
+                    <IconLogOut />
                     Log out
                 </Menu.Item>
             </Menu.Content>

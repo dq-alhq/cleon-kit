@@ -2,41 +2,66 @@
 
 import React from 'react'
 
+import { IconChevronDown } from 'cleon-icons'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import type { Selection } from 'react-aria-components'
 
-import { Select } from '@/components/ui'
+import { Button, Menu } from '@/components/ui'
+import { useQueryString } from '@/lib/hooks/use-query-string'
 
-export default function SelectSize() {
-    const searchParams = useSearchParams()
+const sizes = [
+    { id: '4', name: 'Size 4' },
+    { id: '5', name: 'Size 5' },
+    { id: '6', name: 'Size 6' },
+    { id: '7', name: 'Size 7' }
+]
+
+export function SelectSize() {
     const router = useRouter()
     const pathname = usePathname()
-    const [size, setSize] = React.useState(searchParams.get('s') || '5')
+    const { createQueryString } = useQueryString()
 
-    const createQuery = React.useCallback(
-        (name: string, value: string) => {
-            const params = new URLSearchParams(searchParams.toString())
-            params.set(name, value)
-            return params.toString()
-        },
-        [searchParams]
+    const searchParams = useSearchParams()
+
+    const [selectedSize, setSelectSize] = React.useState<Selection>(
+        new Set([searchParams.get('s') || '5'])
     )
-
-    const handleSelect = (v: string) => {
-        setSize(v as '4' | '5' | '6' | '7')
-        router.push(`${pathname}?${createQuery('s', v)}`, { scroll: false })
+    const onSelectionChange = (size: Selection) => {
+        router.push(pathname + '?' + createQueryString('s', [...size].join(',')), {
+            scroll: false
+        })
+        setSelectSize(size)
     }
 
     return (
-        <Select
-            aria-label='Icon Size'
-            className='w-full sm:w-36'
-            selectedKey={size}
-            onSelectionChange={(v) => handleSelect(v as '4' | '5' | '6' | '7')}
-        >
-            <Select.Item id='4'>Size 4 (20px)</Select.Item>
-            <Select.Item id='5'>Size 5 (24px)</Select.Item>
-            <Select.Item id='6'>Size 6 (28px)</Select.Item>
-            <Select.Item id='7'>Size 7 (32px)</Select.Item>
-        </Select>
+        <Menu aria-label='Select Icon Size'>
+            <Button
+                className='[&[data-pressed]_[data-slot=icon]]:rotate-180 bg-background [&_[data-slot=icon]]:transition-transform w-full sm:max-w-sm'
+                variant='outline'
+            >
+                <span>Size {[...selectedSize].join(', ').replace('size-', '')}</span>
+                <IconChevronDown />
+            </Button>
+            <Menu.Content
+                selectionMode='single'
+                selectedKeys={selectedSize}
+                onSelectionChange={onSelectionChange}
+                placement='bottom end'
+                items={sizes}
+            >
+                {(item) => (
+                    <Menu.Radio textValue={item.name}>
+                        {item.name} /{' '}
+                        {item.name === 'Size 4'
+                            ? '20px'
+                            : item.name === 'Size 5'
+                              ? '24px'
+                              : item.name === 'Size 6'
+                                ? '28px'
+                                : '32px'}
+                    </Menu.Radio>
+                )}
+            </Menu.Content>
+        </Menu>
     )
 }

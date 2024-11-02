@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconPhoto } from 'cleon-icons'
+import { IconImage } from 'cleon-icons'
 import { isFileDropItem } from 'react-aria-components'
 
 import { Description, DropZone, FileTrigger } from '@/components/ui'
@@ -43,7 +43,7 @@ export default function DropZoneAndFileTriggerDemo() {
             ) : (
                 <div className='grid space-y-3'>
                     <div className='size-12 mx-auto grid place-content-center rounded-full border bg-muted/70 group-data-[drop-target]:bg-primary/20 group-data-[drop-target]:border-primary/70'>
-                        <IconPhoto className='size-5' />
+                        <IconImage className='size-5' />
                     </div>
                     <div className='justify-center flex'>
                         <FileTrigger

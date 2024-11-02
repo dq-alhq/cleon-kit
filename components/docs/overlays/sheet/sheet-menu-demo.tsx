@@ -9,16 +9,16 @@ import {
     IconBrandGithubCopilot,
     IconBuilding,
     IconChartBar,
+    IconFileCode,
     IconFilter,
     IconGlobe,
     IconHeart,
-    IconLogout,
-    IconMessages,
+    IconLogOut,
+    IconMessage,
     IconSettings,
-    IconSourceCode,
     IconStar,
     IconUser,
-    IconUsersGroup
+    IconUsers
 } from 'cleon-icons'
 import { Group, Menu as MenuPrimitive } from 'react-aria-components'
 
@@ -117,7 +117,7 @@ export default function SheetMenuDemo() {
                                     <IconStar /> Your stars
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <IconSourceCode /> Your gists
+                                    <IconFileCode /> Your gists
                                 </Menu.Item>
                                 <Menu.Item>
                                     <IconBuilding /> Your organizations
@@ -144,15 +144,15 @@ export default function SheetMenuDemo() {
                                     <IconBookOpen /> GitHub Docs
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <IconUsersGroup /> GitHub Support
+                                    <IconUsers /> GitHub Support
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <IconMessages /> GitHub Community
+                                    <IconMessage /> GitHub Community
                                 </Menu.Item>
                             </Menu.Section>
                             <Menu.Section>
                                 <Menu.Item>
-                                    <IconLogout /> Sign out
+                                    <IconLogOut /> Sign out
                                 </Menu.Item>
                             </Menu.Section>
                         </MenuPrimitive>

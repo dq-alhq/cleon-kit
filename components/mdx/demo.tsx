@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconLoader2 } from 'cleon-icons'
+import { IconLoaderCircle } from 'cleon-icons'
 
 import { previews } from '@/components/docs/generated/previews'
 import jsonPreviews from '@/components/docs/generated/previews.json'
@@ -39,7 +39,7 @@ export function Demo({ component, className, center = false, ...props }: DemoPro
                         <React.Suspense
                             fallback={
                                 <div className='flex w-full justify-center items-center text-sm text-muted-foreground'>
-                                    <IconLoader2 className='size-12 animate-spin' />
+                                    <IconLoaderCircle className='size-12 animate-spin' />
                                 </div>
                             }
                         >

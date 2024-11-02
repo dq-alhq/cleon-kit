@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconColorSwatch } from 'cleon-icons'
+import { IconSwatchBook } from 'cleon-icons'
 import { type ColorFormat } from 'react-aria-components'
 
 import { buttonVariants, Menu } from '@/components/ui'
@@ -22,7 +22,7 @@ export default function SelectFormat({ selectedFormat, setSelectedFormat }: Sele
     return (
         <Menu>
             <Menu.Trigger className={buttonVariants({ variant: 'outline' })}>
-                <IconColorSwatch /> Format : {selectedFormat}
+                <IconSwatchBook /> Format : {selectedFormat}
             </Menu.Trigger>
             <Menu.Content items={ColorSelectors}>
                 {(item) => (

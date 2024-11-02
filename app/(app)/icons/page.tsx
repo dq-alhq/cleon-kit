@@ -1,10 +1,10 @@
+import React from 'react'
+
 import { IconBrandFigma, IconBrandGithub } from 'cleon-icons'
 
-import ListIcons from '@/components/controllers/icons/list-icons'
-import SearchIcon from '@/components/controllers/icons/search-icon'
-import SelectColor from '@/components/controllers/icons/select-color'
-import SelectSize from '@/components/controllers/icons/select-size'
-import SelectStroke from '@/components/controllers/icons/select-stroke'
+import { IconsController } from '@/components/controllers/icons'
+import { IconComponent } from '@/components/controllers/icons/icon-component'
+import Icons from '@/components/controllers/icons/icons.json'
 import {
     Hero,
     HeroButton,
@@ -13,18 +13,28 @@ import {
     HeroHeader,
     HeroTitle
 } from '@/components/layouts/hero'
-import { CLI } from '@/components/mdx/installation'
-import { Container, Link } from '@/components/ui'
+import { CLI } from '@/components/mdx/cli'
+import { Container, Link, Loader } from '@/components/ui'
+
+export async function generateMetadata() {
+    return {
+        title: 'Icons'
+    }
+}
 
 type SearchParams = Promise<{ [key: string]: string }>
 
 export default async function IconsPage(props: { searchParams: SearchParams }) {
     const searchParams = await props.searchParams
-    const size = searchParams.s || '5'
-    const stroke = searchParams.stroke || '2'
     const query = searchParams.q || ''
-    const color = searchParams.c || '#52525b'
-    const category = searchParams.category || 'all'
+    const size = searchParams.s || '5'
+    const stroke = searchParams.t || '2'
+
+    const filteredIcons = Icons.filter(
+        (i) =>
+            i.name.toLowerCase().includes(query?.toLowerCase()) ||
+            i.keywords.some((k) => k.includes(query?.toLowerCase()))
+    )
     return (
         <>
             <Hero>
@@ -77,24 +87,26 @@ export default async function IconsPage(props: { searchParams: SearchParams }) {
                     </HeroContent>
                 </HeroHeader>
             </Hero>
-            <div className='rounded-b-lg w-full bg-background/60 backdrop-blur-xl sticky top-12 py-6 lg:top-14 z-10'>
-                <Container className='flex flex-col-reverse sm:flex-row gap-3 justify-between items-center '>
-                    <SearchIcon />
-                    <div className='flex gap-2 items-center w-full sm:w-auto'>
-                        <SelectColor />
-                        <SelectStroke />
-                        <SelectSize />
-                    </div>
-                </Container>
-            </div>
+            <IconsController />
             <Container className='py-4 flex w-full flex-col lg:flex-row gap-8 items-start'>
-                <ListIcons
-                    category={category}
-                    color={color}
-                    size={size}
-                    stroke={stroke}
-                    query={query}
-                />
+                <React.Suspense
+                    fallback={
+                        <div className='flex justify-center items-center min-h-96'>
+                            <Loader size='xl' />
+                        </div>
+                    }
+                >
+                    <div className='flex items-center gap-2 flex-wrap justify-between'>
+                        {filteredIcons.map((item: any, i: number) => (
+                            <IconComponent
+                                key={i}
+                                size={size as '4' | '5' | '6' | '7'}
+                                stroke={stroke as '1' | '2'}
+                                name={item.name}
+                            />
+                        ))}
+                    </div>
+                </React.Suspense>
             </Container>
         </>
     )

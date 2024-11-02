@@ -176,7 +176,7 @@ const TableRow = <T extends object>({
             id={id}
             {...props}
             className={cn(
-                'tr group relative cursor-default border-b text-foreground/70 outline-none ring-primary focus-visible:ring-1 selected:bg-primary selected:hover:bg-primary/50',
+                'tr group relative cursor-default border-b text-foreground/70 outline-none ring-primary focus-visible:ring-1 selected:bg-primary/40 selected:hover:bg-primary/20',
                 'href' in props ? 'cursor-pointer hover:bg-secondary/50' : '',
                 className
             )}

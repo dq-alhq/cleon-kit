@@ -3,18 +3,18 @@
 import * as React from 'react'
 
 import {
-    IconBasket,
     IconBrandLinux,
     IconChevronDown,
     IconCommand,
-    IconDashboard,
+    IconGauge,
     IconHeadphones,
     IconLaptop,
-    IconLogout,
+    IconLogOut,
     IconPackage,
     IconSearch,
     IconSettings,
-    IconShoppingBag
+    IconShoppingBag,
+    IconShoppingBasket
 } from 'cleon-icons'
 import { usePathname } from 'next/navigation'
 
@@ -35,7 +35,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
                     </Navbar.Logo>
                     <Navbar.Section>
                         <NavbarItem isCurrent href='/blocks/navbar/navbar-01'>
-                            {isUsingIcon && <IconBasket />}
+                            {isUsingIcon && <IconShoppingBasket />}
                             Store
                         </NavbarItem>
                         <NavbarItem href='/blocks/navbar/navbar-02'>
@@ -99,7 +99,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
                                 </Menu.Section>
 
                                 <Menu.Item href='#dashboard'>
-                                    <IconDashboard />
+                                    <IconGauge />
                                     Dashboard
                                 </Menu.Item>
                                 <Menu.Item href='#settings'>
@@ -118,7 +118,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
                                 </Menu.Item>
                                 <Menu.Separator />
                                 <Menu.Item href='#logout'>
-                                    <IconLogout />
+                                    <IconLogOut />
                                     Log out
                                 </Menu.Item>
                             </Menu.Content>
@@ -169,7 +169,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
                                 </Menu.Section>
 
                                 <Menu.Item href='#dashboard'>
-                                    <IconDashboard />
+                                    <IconGauge />
                                     Dashboard
                                 </Menu.Item>
                                 <Menu.Item href='#settings'>
@@ -188,7 +188,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
                                 </Menu.Item>
                                 <Menu.Separator />
                                 <Menu.Item href='#logout'>
-                                    <IconLogout />
+                                    <IconLogOut />
                                     Log out
                                 </Menu.Item>
                             </Menu.Content>

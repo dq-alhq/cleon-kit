@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconCheck, IconClipboard } from 'cleon-icons'
+import { IconCheck, IconCopy } from 'cleon-icons'
 import { ListBoxItem, type ListBoxItemProps } from 'react-aria-components'
 import { toast } from 'sonner'
 import { copyToClipboard } from 'usemods'
@@ -66,7 +66,7 @@ const ColorItem = ({ item, textColor, name, selectedFormat, tailwindVariable }: 
                     copied && 'block'
                 )}
             >
-                {copied ? <IconCheck /> : <IconClipboard />}
+                {copied ? <IconCheck /> : <IconCopy />}
             </span>
             <span className='text-xs left-1/2 -translate-x-1/2 bottom-2 absolute font-mono flex flex-col justify-center'>
                 {item.shade}

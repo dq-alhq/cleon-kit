@@ -3,14 +3,14 @@
 import React from 'react'
 
 import {
-    IconColorSwatch,
     IconHome,
+    IconLayoutTemplate,
     IconPackage,
-    IconPaint,
-    IconShapes2,
-    IconTemplate
+    IconPalette,
+    IconShapes,
+    IconSwatchBook
 } from 'cleon-icons'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { usePathname, useRouter } from 'next/navigation'
 import { titleCase } from 'usemods'
 
@@ -76,28 +76,28 @@ export function CommandPalette({ open, setOpen }: OpenCloseProps) {
                         </Link>
                     </Command.Item>
                     <Command.Item value='documenation' asChild>
-                        <Link href='/docs/getting-started/installation'>
+                        <Link href='/docs'>
                             <IconPackage /> Components
                         </Link>
                     </Command.Item>
                     <Command.Item value='components' asChild>
                         <Link href='/blocks'>
-                            <IconTemplate /> Blocks
+                            <IconLayoutTemplate /> Blocks
                         </Link>
                     </Command.Item>
                     <Command.Item value='icons' asChild>
                         <Link href='/icons'>
-                            <IconShapes2 /> Icons
+                            <IconShapes /> Icons
                         </Link>
                     </Command.Item>
                     <Command.Item value='colors' asChild>
                         <Link href='/colors'>
-                            <IconColorSwatch /> Colors
+                            <IconSwatchBook /> Colors
                         </Link>
                     </Command.Item>
                     <Command.Item value='themes' asChild>
                         <Link href='/themes'>
-                            <IconPaint /> Themes
+                            <IconPalette /> Themes
                         </Link>
                     </Command.Item>
                 </Command.Section>

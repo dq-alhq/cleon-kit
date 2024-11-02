@@ -7,10 +7,10 @@ import { type ThemeProviderProps } from 'next-themes/dist/types'
 import { useRouter } from 'next/navigation'
 import { RouterProvider } from 'react-aria-components'
 
-import { Toaster } from '@/components/ui'
-
 const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => (
-    <NextThemesProvider {...props}>{children}</NextThemesProvider>
+    <NextThemesProvider storageKey='cleon-theme' {...props}>
+        {children}
+    </NextThemesProvider>
 )
 
 declare module 'react-aria-components' {
@@ -23,10 +23,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
     const router = useRouter()
     return (
         <RouterProvider navigate={router.push}>
-            <ThemeProvider attribute='class'>
-                <Toaster />
-                {children}
-            </ThemeProvider>
+            <ThemeProvider attribute='class'>{children}</ThemeProvider>
         </RouterProvider>
     )
 }

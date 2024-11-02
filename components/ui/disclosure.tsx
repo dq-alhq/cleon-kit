@@ -31,7 +31,6 @@ const DisclosureGroup = ({
                     hideBorder
                         ? '[&_[data-slot=accordion-item]]:border-none'
                         : '[&_[data-slot=accordion-item]]:border-b',
-
                     className
                 ])
             }
@@ -121,14 +120,17 @@ const Trigger = ({ className, ...props }: Aria.ButtonProps) => {
                     {!hideIndicator && (
                         <div
                             className={cn(
-                                'ml-auto relative flex items-center transition duration-300 justify-center size-3',
+                                'ml-auto relative flex items-center justify-center size-3',
+                                'transition-transform duration-300',
                                 '-rotate-90 group-aria-expanded:rotate-0'
                             )}
                         >
-                            <IconMinus className={cn('transition absolute duration-300 size-3')} />
+                            <IconMinus
+                                className={cn('transition-opacity absolute duration-300 size-3')}
+                            />
                             <IconMinus
                                 className={cn(
-                                    'transition absolute duration-300 size-3',
+                                    'transition-all absolute duration-300 size-3',
                                     '-rotate-90 group-aria-expanded:rotate-0'
                                 )}
                             />
@@ -139,10 +141,26 @@ const Trigger = ({ className, ...props }: Aria.ButtonProps) => {
         </Aria.Button>
     )
 }
+
+const disclosurePanelStyles = tv({
+    base: 'sm:text-sm transition-all duration-300',
+    variants: {
+        hidden: {
+            true: 'animate-out fade-out-0 ease-in-out',
+            false: 'animate-in fade-in-0 ease-in-out'
+        }
+    }
+})
+
 const Panel = ({ className, ...props }: Aria.DisclosurePanelProps) => {
     return (
-        <Aria.UNSTABLE_DisclosurePanel {...props} className={cn('sm:text-sm', className)}>
-            {props.children}
+        <Aria.UNSTABLE_DisclosurePanel
+            {...props}
+            className={Aria.composeRenderProps(className, (className, renderProps) =>
+                disclosurePanelStyles({ ...renderProps, className })
+            )}
+        >
+            <div className='animate-in fade-in-0 duration-300'>{props.children}</div>
         </Aria.UNSTABLE_DisclosurePanel>
     )
 }

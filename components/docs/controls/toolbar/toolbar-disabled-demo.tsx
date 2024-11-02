@@ -1,13 +1,13 @@
 'use client'
 
 import {
-    IconAlignJustified,
+    IconAlignJustify,
     IconAlignRight,
     IconCamera,
+    IconImage,
     IconPencil,
-    IconPhoto,
-    IconPointer,
-    IconTools
+    IconPencilRuler,
+    IconPointer
 } from 'cleon-icons'
 
 import { Toggle, Toolbar } from '@/components/ui'
@@ -23,7 +23,7 @@ export default function ToolbarDisabledDemo() {
                     <IconPencil />
                 </Toggle>
                 <Toggle aria-label='Pencil Box' size='icon' variant='outline'>
-                    <IconTools />
+                    <IconPencilRuler />
                 </Toggle>
             </Toolbar.Group>
             <Toolbar.Separator />
@@ -32,7 +32,7 @@ export default function ToolbarDisabledDemo() {
                     <IconCamera />
                 </Toolbar.Item>
                 <Toolbar.Item aria-label='Gallery' size='icon' variant='outline'>
-                    <IconPhoto />
+                    <IconImage />
                 </Toolbar.Item>
             </Toolbar.Group>
             <Toolbar.Separator />
@@ -41,7 +41,7 @@ export default function ToolbarDisabledDemo() {
                     <IconAlignRight />
                 </Toggle>
                 <Toggle aria-label='Align Justify' size='icon' variant='outline'>
-                    <IconAlignJustified />
+                    <IconAlignJustify />
                 </Toggle>
             </Toolbar.Group>
         </Toolbar>

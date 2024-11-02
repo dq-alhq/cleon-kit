@@ -1,6 +1,10 @@
 import ColorCustomizer from '@/components/controllers/colors/color-customizer'
 import { Hero, HeroDescription, HeroHeader, HeroTitle } from '@/components/layouts/hero'
 
+export const metadata = {
+    title: 'Colors'
+}
+
 export default function Page() {
     return (
         <>
