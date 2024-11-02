@@ -26,7 +26,7 @@ export default function PreviewContent({
                 height={720}
                 style={{ zoom: zoomOut ? 0.6 : 1 }}
                 allowFullScreen
-                src={`/blocks/${component}`}
+                src={`/${component}`}
             />
         </React.Suspense>
     )

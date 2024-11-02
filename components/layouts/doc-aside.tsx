@@ -63,7 +63,7 @@ const renderHierarchy = (node: HierarchyNode, defaultValues: string[]) => {
             {filteredNodeEntries.map(([key, value]) => (
                 <Disclosure
                     className={({ isExpanded }) =>
-                        cn(isExpanded && 'pb-0 [&_svg]:text-primary [&_svg]:fill-primary/10')
+                        cn(isExpanded && 'pb-0 [&_.icon]:text-primary [&_.icon]:fill-primary/10')
                     }
                     key={key}
                     id={key}
@@ -178,6 +178,7 @@ const Trigger = ({ children, className }: { children: React.ReactNode; className
                 'group hover:text-primary py-1.5 pressed:text-primary aria-expanded:text-primary',
                 '[&_svg]:text-foreground [&_svg]:fill-foreground/10',
                 '[&_svg]:hover:text-primary [&_svg]:hover:fill-primary/10',
+                '[&_.indicator]:aria-expanded:text-primary [&_.indicator]:aria-expanded:fill-primary/10',
                 className
             )}
         >

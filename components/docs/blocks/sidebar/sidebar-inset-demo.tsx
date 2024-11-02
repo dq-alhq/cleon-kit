@@ -1,7 +1,5 @@
 'use client'
 
-import * as React from 'react'
-
 import {
     IconChevronDown,
     IconCircleUser,
@@ -11,18 +9,15 @@ import {
     IconShield
 } from 'cleon-icons'
 
-import { AppSidebar } from '@/app/blocks/sidebar/app-sidebar'
-import { CommandPalette } from '@/components/layouts/command-menu'
 import { Avatar, Breadcrumbs, Button, Menu, Separator, Sidebar } from '@/components/ui'
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-    const [open, setOpen] = React.useState(false)
+import { AppSidebar } from './app-sidebar'
+
+export default function SidebarInsetDemo() {
     return (
         <>
-            <CommandPalette setOpen={setOpen} open={open} />
-
             <Sidebar.Provider>
-                <AppSidebar collapsible='dock' variant='inset' />
+                <AppSidebar variant='inset' />
                 <Sidebar.Inset>
                     <header className='sticky justify-between sm:justify-start top-0 h-[3.57rem] px-4 flex items-center gap-x-2'>
                         <span className='flex items-center gap-x-4'>
@@ -74,7 +69,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             </Menu>
                         </div>
                     </header>
-                    <div className='p-4 lg:p-6'>{children}</div>
+                    <div className='p-4 lg:p-6'>YOUR CONTENT</div>
                 </Sidebar.Inset>
             </Sidebar.Provider>
         </>

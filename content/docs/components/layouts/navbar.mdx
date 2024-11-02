@@ -8,7 +8,7 @@ references: ["https://react-spectrum.adobe.com/react-aria/Link.html#props"]
 
 ## Basic
 A navbar provides a variety of actions or options for users to select.
-<Demo component="layouts/navbar/navbar-basic-demo" />
+<Block component="blocks/navbar/navbar-basic-demo" />
 
 ## Installation
 <Install component='navbar' />
@@ -21,7 +21,7 @@ When designing a layout, a navbar that links to all your pages is essential. Let
 
 <Code code={`'use client'
 
-  import { IconBrandApple } from "justd-icons"
+  import { IconBrandLinux } from "cleon-icons"
   import { Navbar } from "ui"
 
   export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
@@ -29,7 +29,7 @@ When designing a layout, a navbar that links to all your pages is essential. Let
       <Navbar {...props}>
         <Navbar.Nav>
           <Navbar.Logo href="#">
-            <IconBrandApple className="size-5" />
+            <IconBrandLinux className="size-5" />
           </Navbar.Logo>
           <Navbar.Section>
             <Navbar.Item href="#">Store</Navbar.Item>
@@ -56,7 +56,7 @@ Next, you'll need to create a layout component that includes the navbar. Here's 
 
 ### Done
 Great job! You've successfully created a navbar. Now, let's put it to use.
-<Demo component="layouts/navbar/navbar-creating-demo" />
+<Block component="blocks/navbar/navbar-creating-demo" />
 
 ### Using the Layout
 There are several ways to use the layout, depending on your framework. Or, if you're not using any framework, you can simply apply the layout component.
@@ -89,26 +89,26 @@ app/
 
 ## Logo
 The logo is typically the first item in the navbar, usually representing the brand or company.
-<Demo component="layouts/navbar/navbar-logo-demo" />
+<Block component="blocks/navbar/navbar-logo-demo" />
 
 ## Current
 Highlight the current page in the navbar for better navigation clarity.
-<Demo component="layouts/navbar/navbar-current-demo" />
+<Block component="blocks/navbar/navbar-current-demo" />
 
 ## Variant
 There are three types of variants: `navbar`, `floating`, and `inset`, each with distinct behaviors.
 
 ### Navbar
 The default variant of the navbar is `navbar`. You can change it to `floating` or `inset` by setting the `variant` prop.
-<Demo component="layouts/navbar/navbar-basic-demo" />
+<Block component="blocks/navbar/navbar-basic-demo" />
 
 ### Floating
 The floating variant will have a border inside the navbar itself, the wrapper will have a padding to the content.
-<Demo component="layouts/navbar/navbar-floating-demo" />
+<Block component="blocks/navbar/navbar-floating-demo" />
 
 ### Inset
 The inset one will have the padding to inset main content. You can of course see what's going on the demo, but you can also see the [live example here](/blocks/navbar/navbar-03).
-<Demo className='rounded-lg overflow-hidden' component="layouts/navbar/navbar-variant-demo" />
+<Block component="blocks/navbar/navbar-inset-demo" />
 
 ## Sticky
 You also make the navbar sticky by setting the `isSticky` prop to `true`.
@@ -133,17 +133,17 @@ If you prefer full control of your layout and don't want to use the `<Navbar.Ins
 ## Using Icons
 If you'd like to use icons on the navbar items, that's no problem at all. The navbar is already designed and optimized to accommodate icons seamlessly. First of all, you need to install the `cleon-icons` package.
 <CLI command='install' items={['cleon-icons']}/>
-<Demo component="layouts/navbar/navbar-icon-demo" />
+<Block component="blocks/navbar/navbar-icon-demo" />
 
 ## Disabled
 Disable individual navbar items when needed.
-<Demo component="layouts/navbar/navbar-disabled-demo" />
+<Block component="blocks/navbar/navbar-disabled-demo" />
 
 ## Controlled
 On mobile devices, the navbar is hidden by default. You can open it using `Navbar.Trigger`, but there are times when you might want to manage its state by clicking one of the links within the navbar. You can achieve this because it shares the sheet properties, specifically `isOpen` and `onOpenChange`. There are multiple ways to control the state, but the simplest method is to listen for path changes and set `isOpen` to `true` or `false` accordingly.
 
 ### Inertia.js
-When you are using inertia.js, you can listen the path by using `usePage` hooks. If you're not sure, you can always see the real example here at [starter kit inertia.js](https://github.com/justdlabs/inertia.ts).
+When you are using inertia.js, you can listen the path by using `usePage` hooks.
 
 ```tsx
 import { usePage } from '@inertiajs/react';

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconMenu, IconMinus, IconPanelLeftClose } from 'cleon-icons'
+import { IconMenu, IconMinus, IconPanelLeftClose, IconPanelLeftOpen } from 'cleon-icons'
 import type { DisclosureProps, LinkProps } from 'react-aria-components'
 import {
     Button as ButtonPrimitive,
@@ -69,9 +69,7 @@ const Provider = React.forwardRef<
                 if (setOpenProp) {
                     return setOpenProp?.(typeof value === 'function' ? value(open) : value)
                 }
-
                 _setOpen(value)
-
                 document.cookie = `sidebar:state=${open}; path=/; max-age=${60 * 60 * 24 * 7}`
             },
             [setOpenProp, open]
@@ -82,9 +80,9 @@ const Provider = React.forwardRef<
         }, [isMobile, setOpen, setOpenMobile])
 
         React.useEffect(() => {
-            const handleKeyDown = (event: KeyboardEvent) => {
-                if (event.key === 'b' && (event.metaKey || event.ctrlKey)) {
-                    event.preventDefault()
+            const handleKeyDown = (e: KeyboardEvent) => {
+                if (e.key === 'b' && (e.metaKey || e.ctrlKey)) {
+                    e.preventDefault()
                     toggleSidebar()
                 }
             }
@@ -145,23 +143,23 @@ const Inset = ({ className, ...props }: React.ComponentProps<'main'>) => {
 
 const Sidebar = ({
     side = 'left',
-    variant = 'sidebar',
+    variant = 'default',
     collapsible = 'offcanvas',
     className,
     children,
     ...props
 }: React.ComponentProps<'div'> & {
     side?: 'left' | 'right'
-    variant?: 'sidebar' | 'floating' | 'inset'
-    collapsible?: 'offcanvas' | 'dock' | 'none'
+    variant?: 'default' | 'floating' | 'inset'
+    collapsible?: 'offcanvas' | 'dock' | 'fixed'
 }) => {
     const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
 
-    if (collapsible === 'none') {
+    if (collapsible === 'fixed') {
         return (
             <div
                 className={cn(
-                    'flex h-full w-[--sidebar-width] flex-col bg-background text-foreground ',
+                    'flex h-full w-[--sidebar-width] flex-col bg-background text-foreground',
                     className
                 )}
                 {...props}
@@ -250,17 +248,17 @@ const itemStyles = tv({
             true: 'outline-none'
         },
         isFocusVisible: {
-            true: 'bg-muted [&:focus-visible_[slot=label]]:text-accent-foreground [&:focus-visible_[slot=description]]:text-accent-foreground/70 text-muted-foreground'
+            true: 'bg-muted [&:focus-visible_[slot=label]]:text-primary-foreground [&:focus-visible_[slot=description]]:text-primary-foreground/70 text-muted-foreground'
         },
         isHovered: {
             true: [
-                'bg-muted [&:focus-visible_[slot=label]]:text-accent-foreground [&:focus-visible_[slot=description]]:text-accent-foreground/70 text-muted-foreground [&_.text-muted-foreground]:text-muted-foreground/80'
+                'bg-muted [&:focus-visible_[slot=label]]:text-primary-foreground [&:focus-visible_[slot=description]]:text-primary-foreground/70 text-muted-foreground [&_.text-muted-foreground]:text-muted-foreground/80'
             ]
         },
         isCurrent: {
             true: [
-                '[&_[data-slot=icon]]:text-accent-foreground [&_[data-slot=label]]:text-accent-foreground [&_.text-muted-foreground]:text-accent-foreground/80 bg-accent text-accent-foreground',
-                '[&_.bdx]:bg-accent-foreground/20 [&_.bdx]:ring-accent-foreground/30'
+                '[&_[data-slot=icon]]:text-primary-foreground [&_[data-slot=label]]:text-primary-foreground [&_.text-muted-foreground]:text-primary-foreground/80 bg-primary text-primary-foreground',
+                '[&_.side-item]:bg-primary-foreground/20 [&_.side-item]:ring-primary-foreground/30'
             ]
         },
         isDisabled: {
@@ -317,7 +315,7 @@ const Item = ({ isCurrent, children, className, icon: Icon, ...props }: ItemProp
                     <span className='col-start-2 group-data-[collapsible=dock]:hidden'>
                         {typeof children === 'function' ? children(values) : children}
                         {props.badge && (
-                            <div className='bdx h-[1.30rem] px-1 rounded-md text-muted-foreground text-xs font-medium ring-1 ring-foreground/20 grid place-content-center w-auto inset-y-1/2 -translate-y-1/2 absolute right-1.5 bg-foreground/[0.02] dark:bg-foreground/10'>
+                            <div className='side-item h-[1.30rem] px-1 rounded-md text-muted-foreground text-xs font-medium ring-1 ring-foreground/20 grid place-content-center w-auto inset-y-1/2 -translate-y-1/2 absolute right-1.5 bg-foreground/[0.02] dark:bg-foreground/10'>
                                 {props.badge}
                             </div>
                         )}
@@ -333,7 +331,7 @@ const Content = ({ className, ...props }: React.ComponentProps<'div'>) => {
         <div
             data-sidebar='content'
             className={cn([
-                'flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=dock]:items-center group-data-[collapsible=dock]:overflow-hidden [&>section+section]:mt-8',
+                'flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=dock]:items-center group-data-[collapsible=dock]:overflow-hidden [&>section+section]:mt-4',
                 className
             ])}
             {...props}
@@ -342,7 +340,7 @@ const Content = ({ className, ...props }: React.ComponentProps<'div'>) => {
 }
 
 const Trigger = ({ className, onPress, ...props }: React.ComponentProps<typeof Button>) => {
-    const { toggleSidebar } = useSidebar()
+    const { toggleSidebar, state } = useSidebar()
     return (
         <Button
             aria-label={props['aria-label'] || 'Toggle Sidebar'}
@@ -350,13 +348,17 @@ const Trigger = ({ className, onPress, ...props }: React.ComponentProps<typeof B
             variant='ghost'
             size='icon'
             className={className}
-            onPress={(event) => {
-                onPress?.(event)
+            onPress={(e) => {
+                onPress?.(e)
                 toggleSidebar()
             }}
             {...props}
         >
-            <IconPanelLeftClose className='md:inline hidden' />
+            {state === 'expanded' ? (
+                <IconPanelLeftClose className='md:inline hidden' />
+            ) : (
+                <IconPanelLeftOpen className='md:inline hidden' />
+            )}
             <IconMenu className='md:hidden inline' />
             <span className='sr-only'>Toggle Sidebar</span>
         </Button>
@@ -435,7 +437,7 @@ const Section = ({
                             {collapsible ? (
                                 <ButtonPrimitive
                                     slot='trigger'
-                                    className='w-full focus:outline-none flex items-center justify-between text-sm text-muted-foreground px-3 py-2 has-[.indicator]:pr-0'
+                                    className='w-full focus:outline-none flex items-center justify-between text-sm text-muted-foreground px-3 py-2 has-[.indicator]:pr-2'
                                 >
                                     {title}
                                     <div
@@ -491,7 +493,7 @@ const Rail = ({ className, ...props }: React.ComponentProps<'button'>) => {
             onClick={toggleSidebar}
             title='Toggle Sidebar'
             className={cn(
-                'absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] hover:after:bg-transparent group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex',
+                'absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] hover:after:bg-primary/40 group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex',
                 '[[data-side=left]_&]:cursor-w-resize [[data-side=right]_&]:cursor-e-resize',
                 '[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
                 'group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full group-data-[collapsible=offcanvas]:hover:bg-background',

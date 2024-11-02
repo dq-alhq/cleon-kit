@@ -701,6 +701,54 @@ export const previews: Record<string, any> = {
   "media/avatar-shape-demo": {
     component: React.lazy(() => import("@/components/docs/media/avatar-shape-demo")),
   },
+  "blocks/sidebar/sidebar-floating-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/sidebar-floating-demo")),
+  },
+  "blocks/sidebar/sidebar-basic-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/sidebar-basic-demo")),
+  },
+  "blocks/sidebar/sidebar-dock-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/sidebar-dock-demo")),
+  },
+  "blocks/sidebar/sidebar-off-canvas-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/sidebar-off-canvas-demo")),
+  },
+  "blocks/sidebar/sidebar-default-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/sidebar-default-demo")),
+  },
+  "blocks/sidebar/sidebar-fixed-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/sidebar-fixed-demo")),
+  },
+  "blocks/sidebar/sidebar-inset-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/sidebar-inset-demo")),
+  },
+  "blocks/sidebar/app-sidebar": {
+    component: React.lazy(() => import("@/components/docs/blocks/sidebar/app-sidebar")),
+  },
+  "blocks/navbar/navbar-basic-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-basic-demo")),
+  },
+  "blocks/navbar/navbar-creating-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-creating-demo")),
+  },
+  "blocks/navbar/navbar-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-disabled-demo")),
+  },
+  "blocks/navbar/navbar-floating-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-floating-demo")),
+  },
+  "blocks/navbar/navbar-current-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-current-demo")),
+  },
+  "blocks/navbar/navbar-icon-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-icon-demo")),
+  },
+  "blocks/navbar/navbar-logo-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-logo-demo")),
+  },
+  "blocks/navbar/navbar-inset-demo": {
+    component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-inset-demo")),
+  },
   "drag-and-drop/drop-zone-and-file-trigger-demo": {
     component: React.lazy(() => import("@/components/docs/drag-and-drop/drop-zone-and-file-trigger-demo")),
   },
@@ -868,30 +916,6 @@ export const previews: Record<string, any> = {
   },
   "forms/textarea/textarea-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/forms/textarea/textarea-controlled-demo")),
-  },
-  "layouts/navbar/navbar-basic-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-basic-demo")),
-  },
-  "layouts/navbar/navbar-creating-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-creating-demo")),
-  },
-  "layouts/navbar/navbar-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-disabled-demo")),
-  },
-  "layouts/navbar/navbar-variant-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-variant-demo")),
-  },
-  "layouts/navbar/navbar-floating-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-floating-demo")),
-  },
-  "layouts/navbar/navbar-current-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-current-demo")),
-  },
-  "layouts/navbar/navbar-icon-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-icon-demo")),
-  },
-  "layouts/navbar/navbar-logo-demo": {
-    component: React.lazy(() => import("@/components/docs/layouts/navbar/navbar-logo-demo")),
   },
   "navigation/link/link-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/link/link-disabled-demo")),

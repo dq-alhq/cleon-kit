@@ -1,7 +1,5 @@
 'use client'
 
-import * as React from 'react'
-
 import {
     IconChevronDown,
     IconCircleUser,
@@ -11,27 +9,21 @@ import {
     IconShield
 } from 'cleon-icons'
 
-import { AppSidebar } from '@/app/blocks/sidebar/app-sidebar'
-import { Avatar, Breadcrumbs, Button, Menu, Separator, Sidebar } from '@/components/ui'
+import { Avatar, Button, Menu, SearchField, Separator, Sidebar } from '@/components/ui'
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+import { AppSidebar } from './app-sidebar'
+
+export default function SidebarOffCanvasDemo() {
     return (
         <Sidebar.Provider>
-            <AppSidebar collapsible='dock' variant='floating' />
+            <AppSidebar collapsible='offcanvas' />
             <Sidebar.Inset>
-                <header className='sticky justify-between sm:justify-start top-0 h-[3.57rem] px-4 flex items-center gap-x-2'>
-                    <span className='flex items-center gap-x-4'>
+                <header className='sticky justify-between sm:justify-start top-0 bg-bg h-[3.57rem] px-4 border-b flex items-center gap-x-2'>
+                    <span className='flex items-center gap-x-3'>
                         <Sidebar.Trigger className='-mx-2' />
                         <Separator className='h-6 sm:block hidden' orientation='vertical' />
-                        <Breadcrumbs className='md:flex hidden'>
-                            <Breadcrumbs.Item href='/blocks/sidebar/sidebar-01'>
-                                Dashboard
-                            </Breadcrumbs.Item>
-
-                            <Breadcrumbs.Item>Billing</Breadcrumbs.Item>
-                        </Breadcrumbs>
                     </span>
-
+                    <SearchField className='sm:inline hidden sm:ml-1.5' />
                     <div className='flex sm:hidden items-center gap-x-2'>
                         <Button variant='ghost' aria-label='Search...' size='icon'>
                             <IconSearch />
@@ -69,7 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         </Menu>
                     </div>
                 </header>
-                <div className='p-4 lg:p-6'>{children}</div>
+                <div className='p-4 lg:p-6'>YOUT CONTENT</div>
             </Sidebar.Inset>
         </Sidebar.Provider>
     )

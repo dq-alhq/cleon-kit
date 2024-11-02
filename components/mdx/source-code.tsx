@@ -12,9 +12,10 @@ import { Code } from './code'
 
 interface SourceCodeProps extends React.HTMLAttributes<HTMLDivElement> {
     component: string | string[]
+    withMessage?: boolean
 }
 
-export const SourceCode = ({ component, ...props }: SourceCodeProps) => {
+export const SourceCode = ({ component, withMessage = true, ...props }: SourceCodeProps) => {
     const [codeStrings, setCodeStrings] = React.useState<{ name: string; code: string }[]>([])
     const [isOpened, setIsOpened] = React.useState<boolean>(false)
 
@@ -43,15 +44,17 @@ export const SourceCode = ({ component, ...props }: SourceCodeProps) => {
     const open = () => setIsOpened(!isOpened)
 
     return (
-        <section className='my-6 not-prose space-y-2'>
-            <Description className='-mt-2 mb-4 prose text-base max-w-none'>
-                Copy the code below and paste it into your component folder.
-            </Description>
+        <section className={cn('not-prose space-y-2', withMessage ? 'my-4' : 'my-2')}>
+            {withMessage && (
+                <Description className='-mt-2 mb-4 prose text-base max-w-none'>
+                    Copy the code below and paste it into your component folder.
+                </Description>
+            )}
             <Tabs onSelectionChange={() => setIsOpened(false)}>
                 <Tabs.List items={codeStrings}>
                     {(item) => (
                         <Tabs.Label key={item.name} id={`tab-${item.name}`}>
-                            {item.name}.tsx
+                            {item.name.split('/').length > 1 ? `main` : item.name}.tsx
                         </Tabs.Label>
                     )}
                 </Tabs.List>

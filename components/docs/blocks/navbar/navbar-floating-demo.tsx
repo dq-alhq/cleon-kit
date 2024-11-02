@@ -6,7 +6,7 @@ import { Button, Navbar } from '@/components/ui'
 
 export default function NavbarFloatingDemo() {
     return (
-        <Navbar intent='floating'>
+        <Navbar variant='floating'>
             <Navbar.Nav>
                 <Navbar.Logo href='#'>
                     <IconBrandLinux className='size-5' />

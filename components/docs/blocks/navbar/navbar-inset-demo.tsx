@@ -4,7 +4,7 @@ import { IconBrandLinux, IconSearch, IconShoppingBag } from 'cleon-icons'
 
 import { Button, Heading, Navbar } from '@/components/ui'
 
-export default function NavbarVariantDemo() {
+export default function NavbarInsetDemo() {
     return (
         <Navbar variant='inset'>
             <Navbar.Nav>

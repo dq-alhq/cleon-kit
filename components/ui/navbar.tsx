@@ -10,7 +10,6 @@ import { tv } from 'tailwind-variants'
 import { cn, useMediaQuery } from '@/lib/utils'
 
 import { Button } from './button'
-import { Container } from './container'
 import { Sheet } from './sheet'
 
 type NavbarOptions = {
@@ -122,7 +121,7 @@ const navStyles = tv({
             floating: 'bg-background max-w-[1680px] mx-auto shadow-sm border rounded-xl sm:px-4',
             navbar: 'bg-background shadow-sm border-b sm:px-6',
             inset: [
-                'bg-muted/50 mx-auto dark:bg-background sm:px-6',
+                'bg-muted mx-auto dark:bg-background sm:px-6',
                 '[&>div]:max-w-[1680px] lg:[&>div]:flex [&>div]:items-center [&>div]:w-full [&>div]:mx-auto'
             ]
         }
@@ -286,7 +285,7 @@ const insetStyles = tv({
     variants: {
         variant: {
             floating: '',
-            inset: 'bg-background lg:rounded-lg lg:shadow-sm lg:ring-1 lg:ring-dark/5',
+            inset: 'bg-background dark:brightness-150 lg:rounded-lg lg:shadow-sm lg:ring-1 lg:ring-dark/5',
             navbar: ''
         }
     }
@@ -300,7 +299,7 @@ const Inset = ({ className, ...props }: React.ComponentProps<'div'>) => {
             className={cn('flex flex-1 flex-col', variant === 'inset' && 'pb-2 lg:px-2', className)}
         >
             <div className={insetStyles({ variant, className })}>
-                <Container>{props.children}</Container>
+                <div className='container'>{props.children}</div>
             </div>
         </main>
     )

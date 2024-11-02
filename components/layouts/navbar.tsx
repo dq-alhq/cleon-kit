@@ -219,7 +219,7 @@ export function NavbarDropdown() {
             <Button aria-label='Menu' variant='ghost' className='group -ml-1 [&_svg]:size-4'>
                 <span className='flex items-center gap-x-2'>
                     <IconBrandCleon className='-ml-1 size-6' />
-                    <span className='text-base font-bold tracking-tight sm:text-sm'>Cleon Kit</span>
+                    <span className='text-base font-bold tracking-tight sm:text-sm'>Cleon UI</span>
                     <IconChevronDown className='-mr-2 ml-1 text-muted-foreground transition duration-300 group-hover:text-foreground group-pressed:rotate-180 group-pressed:text-foreground' />
                     <span className='sr-only'>Open menu</span>
                 </span>

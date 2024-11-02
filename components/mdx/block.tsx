@@ -2,34 +2,33 @@
 
 import * as React from 'react'
 
-import { IconMonitor, IconSmartphone, IconTablet } from 'cleon-icons'
+import { IconFullscreen, IconMonitor, IconSmartphone, IconTablet } from 'cleon-icons'
 
-import jsonPreviews from '@/components/docs/generated/previews.json'
-import { Tabs, Toggle } from '@/components/ui'
+import { buttonVariants, Link, Tabs, Toggle } from '@/components/ui'
 import { cn } from '@/lib/utils'
 
-import { Code } from './code'
 import PreviewContent from './preview-content'
+import { SourceCode } from './source-code'
 
 type screenWidthType = 'max-w-none' | 'max-w-3xl' | 'max-w-sm'
 
 interface HowProps extends React.HTMLAttributes<HTMLDivElement> {
     component: string
+    partials?: string[]
     className?: string
     zoomOut?: boolean
 }
 
-export function BlockContent({ component, zoomOut = true, className, ...props }: HowProps) {
-    // @ts-ignore
-    const [codeString, setCodeString] = React.useState<string>('')
-    React.useEffect(() => {
-        const preview = jsonPreviews[component as keyof typeof jsonPreviews]
-        if (preview) {
-            setCodeString(preview.raw)
-        }
-    }, [component])
-
+export function BlockContent({
+    component,
+    partials,
+    zoomOut = true,
+    className,
+    ...props
+}: HowProps) {
     const [screenWidth, setScreenWidth] = React.useState<screenWidthType>('max-w-none')
+
+    const sourceCode = partials ? [component, ...partials] : [component]
 
     return (
         <div className={cn('not-prose group relative my-6', className)} {...props}>
@@ -46,6 +45,13 @@ export function BlockContent({ component, zoomOut = true, className, ...props }:
                         )}
                     >
                         <div className='absolute hidden sm:-top-14 right-0 sm:flex gap-1 [&_.btn]:!size-8'>
+                            <Link
+                                target='_blank'
+                                className={buttonVariants({ size: 'icon', variant: 'outline' })}
+                                href={`/${component}`}
+                            >
+                                <IconFullscreen />
+                            </Link>
                             <Toggle
                                 variant='solid'
                                 size='icon'
@@ -79,7 +85,7 @@ export function BlockContent({ component, zoomOut = true, className, ...props }:
                     </div>
                 </Tabs.Content>
                 <Tabs.Content id='code'>
-                    <Code code={codeString} />
+                    <SourceCode withMessage={false} component={sourceCode} />
                 </Tabs.Content>
             </Tabs>
         </div>

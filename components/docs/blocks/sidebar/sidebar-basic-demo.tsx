@@ -1,7 +1,5 @@
 'use client'
 
-import * as React from 'react'
-
 import {
     IconChevronDown,
     IconCircleUser,
@@ -11,10 +9,11 @@ import {
     IconShield
 } from 'cleon-icons'
 
-import { AppSidebar } from '@/app/blocks/sidebar/app-sidebar'
 import { Avatar, Button, Menu, SearchField, Separator, Sidebar } from '@/components/ui'
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+import { AppSidebar } from './app-sidebar'
+
+export default function SidebarBasicDemo() {
     return (
         <Sidebar.Provider>
             <AppSidebar />
@@ -62,7 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         </Menu>
                     </div>
                 </header>
-                <div className='p-4 lg:p-6'>{children}</div>
+                <div className='p-4 lg:p-6'>YOUR CONTENT</div>
             </Sidebar.Inset>
         </Sidebar.Provider>
     )

@@ -120,18 +120,20 @@ const Trigger = ({ className, ...props }: Aria.ButtonProps) => {
                     {!hideIndicator && (
                         <div
                             className={cn(
-                                'ml-auto relative flex items-center justify-center size-3',
+                                'ml-auto relative flex items-center justify-center size-3 indicator',
                                 'transition-transform duration-300',
                                 '-rotate-90 group-aria-expanded:rotate-0'
                             )}
                         >
                             <IconMinus
-                                className={cn('transition-opacity absolute duration-300 size-3')}
+                                className={cn(
+                                    'transition-opacity absolute duration-300 size-3 indicator'
+                                )}
                             />
                             <IconMinus
                                 className={cn(
                                     'transition-all absolute duration-300 size-3',
-                                    '-rotate-90 group-aria-expanded:rotate-0'
+                                    '-rotate-90 group-aria-expanded:rotate-0 indicator'
                                 )}
                             />
                         </div>

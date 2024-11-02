@@ -1,6 +1,6 @@
 'use client'
 
-import { IconBrandGoogle, IconSearch, IconShoppingBag } from 'cleon-icons'
+import { IconBrandLinux, IconSearch, IconShoppingBag } from 'cleon-icons'
 
 import { Button, Navbar } from '@/components/ui'
 
@@ -9,7 +9,7 @@ export default function AppNavbar(props: React.ComponentProps<typeof Navbar>) {
         <Navbar {...props}>
             <Navbar.Nav>
                 <Navbar.Logo href='#'>
-                    <IconBrandGoogle className='size-5' />
+                    <IconBrandLinux className='size-5' />
                 </Navbar.Logo>
                 <Navbar.Section>
                     <Navbar.Item href='/docs/components/layouts/navbar'>Documentation</Navbar.Item>

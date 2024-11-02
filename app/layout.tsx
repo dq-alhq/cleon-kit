@@ -9,10 +9,10 @@ import '@/lib/styles/app.css'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'https://cleon-kit.vercel.app'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'https://cleon-ui.vercel.app'),
     title: {
-        default: 'Cleon Kit',
-        template: `%s | Cleon Kit`
+        default: 'Cleon UI',
+        template: `%s | Cleon UI`
     },
     description: 'Customizable React UI Components Library',
     alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         'UI Kit',
         'UI Library',
         'UI Framework',
-        'Cleon Kit',
+        'Cleon UI',
         'React Aria',
         'React Aria Components',
         'Server Components',
@@ -41,16 +41,16 @@ export const metadata: Metadata = {
         'Laravel Inertia UI Kit',
         'Laravel Inertia UI Library',
         'Laravel Inertia UI Framework',
-        'Laravel Inertia Cleon Kit',
-        'Laravel Cleon Kit',
-        'Cleon Kit Components',
-        'Cleon Kit UI Components',
-        'Cleon Kit UI Kit',
-        'Cleon Kit UI Library',
-        'Cleon Kit UI Framework',
-        'Cleon Kit Laravel Inertia',
-        'Cleon Kit Laravel',
-        'Cleon Kit Inertia'
+        'Laravel Inertia Cleon UI',
+        'Laravel Cleon UI',
+        'Cleon UI Components',
+        'Cleon UI UI Components',
+        'Cleon UI UI Kit',
+        'Cleon UI UI Library',
+        'Cleon UI UI Framework',
+        'Cleon UI Laravel Inertia',
+        'Cleon UI Laravel',
+        'Cleon UI Inertia'
     ],
     // manifest: '/manifest.json',
     authors: [
