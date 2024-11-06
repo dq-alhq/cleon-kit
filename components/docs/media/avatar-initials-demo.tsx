@@ -3,5 +3,5 @@
 import { Avatar } from '@/components/ui'
 
 export default function AvatarInitialsDemo() {
-    return <Avatar alt='DQ' initials='DQ' />
+    return <Avatar tooltip='DQ' alt='DQ' initials='DQ' />
 }

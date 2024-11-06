@@ -5,7 +5,7 @@ import React from 'react'
 import * as Aria from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-const tooltipStyles = tv({
+export const tooltipStyles = tv({
     base: [
         'group rounded-lg [&_strong]:font-medium border text-background px-3 py-1.5 text-sm will-change-transform dark:shadow-none',
         'placement-left:slide-in-from-right-1 placement-right:slide-in-from-left-1 placement-top:slide-in-from-bottom-1 placement-bottom:slide-in-from-top-1'

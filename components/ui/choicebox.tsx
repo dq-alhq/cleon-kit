@@ -58,7 +58,7 @@ const Choicebox = <T extends object>({
 }
 
 const choiceboxItemStyles = tv({
-    base: 'rounded-lg cursor-pointer border p-4 [&_[slot=title]]:font-medium transition',
+    base: 'rounded-lg cursor-pointer border p-4 [&_[slot=title]]:font-medium transition outline-none focus:outline-none',
     variants: {
         isSelected: {
             true: [

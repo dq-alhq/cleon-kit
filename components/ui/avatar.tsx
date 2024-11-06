@@ -2,22 +2,38 @@
 
 import React from 'react'
 
+import { Collection } from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
+
+import { Tooltip } from '@/components/ui/tooltip'
+import { cn } from '@/lib/utils'
+import { type CollectionProps } from '@react-aria/collections'
 
 import { VisuallyHidden } from './visually-hidden'
 
-const avatarGroupStyles = tv({
-    base: 'flex items-center justify-center -space-x-2 [&_[data-slot=avatar]]:ring-2 [&_[data-slot=avatar]]:ring-background'
-})
-
-interface AvatarGroupProps
-    extends React.HTMLAttributes<HTMLDivElement>,
-        VariantProps<typeof avatarGroupStyles> {
-    children: React.ReactNode
+interface AvatarGroupProps<T extends AvatarProps> extends Omit<CollectionProps<T>, 'children'> {
+    children?: React.ReactNode
+    className?: string
 }
 
-const AvatarGroup = ({ className, ...props }: AvatarGroupProps) => {
-    return <div className={avatarGroupStyles({ className })} {...props} />
+const AvatarGroup = <T extends AvatarProps>({
+    className,
+    items,
+    children,
+    ...props
+}: AvatarGroupProps<T>) => {
+    return (
+        <div
+            className={cn(
+                'flex items-center -space-x-2 justify-center [&_[data-slot=avatar]]:ring-2 [&_[data-slot=avatar]]:ring-background',
+                'hover:[&_.loo2ppvkxrcah38e]:scale-110 hover:[&_.loo2ppvkxrcah38e]:z-30 [&_.loo2ppvkxrcah38e]:transition',
+                className
+            )}
+            {...props}
+        >
+            <Collection items={items}>{children ?? ((item) => <Avatar {...item} />)}</Collection>
+        </div>
+    )
 }
 
 const avatarStyles = tv({
@@ -53,6 +69,7 @@ interface AvatarProps
     initials?: string
     alt?: string
     status?: Status
+    tooltip?: string
     className?: string
 }
 
@@ -62,6 +79,7 @@ const Avatar = ({
     initials,
     alt = '',
     children,
+    tooltip,
     className,
     shape,
     size,
@@ -69,7 +87,41 @@ const Avatar = ({
 }: AvatarProps) => {
     const badgeId = React.useId()
     const ariaLabelledby = [badgeId, children ? badgeId : ''].join(' ')
-    return (
+    return tooltip ? (
+        <Tooltip delay={0} closeDelay={0}>
+            <Tooltip.Trigger className='outline-none' aria-labelledby={ariaLabelledby}>
+                <span
+                    aria-labelledby={ariaLabelledby}
+                    data-slot='avatar'
+                    {...props}
+                    className={avatarStyles({ shape, size, className })}
+                >
+                    {initials && (
+                        <svg
+                            className='select-none fill-current text-[48px] font-medium uppercase'
+                            viewBox='0 0 100 100'
+                            aria-hidden={alt ? undefined : 'true'}
+                        >
+                            {alt && <title>{alt}</title>}
+                            <text
+                                x='50%'
+                                y='50%'
+                                alignmentBaseline='middle'
+                                dominantBaseline='middle'
+                                textAnchor='middle'
+                                dy='.125em'
+                            >
+                                {initials}
+                            </text>
+                        </svg>
+                    )}
+                    {src && <img src={src} alt={alt} />}
+                    {status && <AvatarBadge size={size} status={status} aria-label={status} />}
+                </span>
+            </Tooltip.Trigger>
+            <Tooltip.Content variant='inverse'>{tooltip}</Tooltip.Content>
+        </Tooltip>
+    ) : (
         <span
             aria-labelledby={ariaLabelledby}
             data-slot='avatar'

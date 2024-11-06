@@ -2,5 +2,5 @@ components/docs/generated/**/*
 .velite
 .next
 .github
-**/*.json
+# **/*.json
 content

@@ -27,10 +27,10 @@ const variants = {
     secondary: {
         base: [
             variant.secondary,
-            '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-bg'
+            '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
         ],
         selected: [
-            'bg-foreground ring-foreground/50 text-bg dark:bg-foreground/90 dark:text-secondary ring-inset',
+            'bg-foreground ring-foreground/50 text-background dark:bg-foreground/90 dark:text-secondary ring-inset',
             '[&_[slot=remove]:hover]:bg-background [&_[slot=remove]:hover]:text-secondary-foreground'
         ]
     },
@@ -50,7 +50,7 @@ const variants = {
             '[&_[slot=remove]:hover]:bg-warning [&_[slot=remove]:hover]:text-warning-foreground'
         ],
         selected: [
-            'bg-warning dark:hover:bg-warning dark:bg-warning dark:text-bg hover:bg-warning text-warning-foreground hover:text-warning-foreground',
+            'bg-warning dark:hover:bg-warning dark:bg-warning dark:text-background hover:bg-warning text-warning-foreground hover:text-warning-foreground',
             '[&_[slot=remove]:hover]:bg-warning-foreground/80 [&_[slot=remove]:hover]:text-warning'
         ]
     },

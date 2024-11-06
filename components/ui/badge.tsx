@@ -5,7 +5,7 @@ import React from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const badgeVariants = tv({
-    base: 'inline-flex items-center gap-x-1.5 py-0.5 text-xs/5 font-medium [&_svg]:size-3',
+    base: 'inline-flex items-center outline-none transition-colors gap-x-1.5 py-0.5 text-xs/5 font-medium [&_svg]:size-3',
     variants: {
         variant: {
             primary:

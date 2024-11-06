@@ -5,16 +5,17 @@ import { tv, type VariantProps } from 'tailwind-variants'
 
 const toggleStyles = tv({
     base: [
-        'inline-flex btn gap-x-2 whitespace-nowrap relative items-center bg-transparent focus:outline-none justify-center border text-sm font-medium ring-offset-bg transition-colors hover:bg-muted'
+        'inline-flex btn gap-x-2 whitespace-nowrap relative items-center bg-transparent justify-center border text-sm font-medium ring-offset-bg transition-colors hover:bg-muted',
+        'outline-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary'
     ],
     variants: {
         isDisabled: {
             true: 'opacity-50 cursor-default'
         },
         variant: {
-            solid: 'bg-white border-border selected:border-primary hover:text-black text-black selected:bg-primary selected:text-primary-foreground',
+            solid: 'bg-white border-muted selected:border-primary hover:text-black text-black selected:bg-primary selected:text-primary-foreground',
             outline:
-                'border-border selected:bg-muted selected:backdrop-blur-sm hover:bg-muted hover:brightness-110',
+                'border-muted selected:bg-muted selected:backdrop-blur-sm hover:bg-muted hover:brightness-110',
             ghost: 'selected:bg-muted border-transparent selected:text-foreground'
         },
         size: {

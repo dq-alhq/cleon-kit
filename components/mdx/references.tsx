@@ -18,7 +18,8 @@ import {
     IconBrandTiptap,
     IconBrandVite,
     IconChartBar,
-    IconCommand
+    IconCommand,
+    IconTextCursorInput
 } from 'cleon-icons'
 import { Menu, MenuItem } from 'react-aria-components'
 
@@ -98,6 +99,10 @@ export function DocRefs({ references }: any) {
             case url.includes('tiptap'):
                 title = 'Tiptap'
                 icon = IconBrandTiptap
+                break
+            case url.includes('lexical'):
+                title = 'Lexical'
+                icon = IconTextCursorInput
                 break
             default:
                 icon = () => null

@@ -4,7 +4,7 @@ import * as Aria from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 const separatorStyles = tv({
-    base: 'bg-muted shrink-0 forced-colors:bg-[ButtonBorder]',
+    base: 'bg-muted shrink-0',
     variants: {
         orientation: {
             horizontal: 'h-px w-full',

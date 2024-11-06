@@ -1,0 +1,102 @@
+.tiptap {
+    @apply text-foreground;
+
+    h1 {
+        @apply text-2xl font-extrabold tracking-tight lg:text-3xl;
+    }
+
+    h2 {
+        @apply text-xl font-extrabold tracking-tight lg:text-2xl;
+    }
+
+    h3 {
+        @apply text-lg font-extrabold tracking-tight lg:text-lg;
+    }
+
+    h4 {
+        @apply text-base font-extrabold tracking-tight lg:text-lg;
+    }
+
+    h5 {
+        @apply text-sm font-extrabold tracking-tight lg:text-base;
+    }
+
+    h6 {
+        @apply text-xs font-extrabold tracking-tight lg:text-sm;
+    }
+
+    p {
+        @apply leading-normal [&:not(:first-child)]:mt-4;
+    }
+
+    a {
+        @apply underline text-primary;
+    }
+
+    blockquote {
+        @apply pl-4 my-4 border-l-4 border-primary;
+    }
+
+    code {
+        @apply relative rounded-lg bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+    }
+
+    pre {
+        @apply p-4 my-2 font-mono text-sm rounded-lg bg-muted [&>code]:p-0 [&>code]:m-0;
+    }
+
+    img {
+        @apply my-4 rounded-lg;
+    }
+
+    hr {
+        @apply my-4;
+    }
+
+    ul {
+        @apply pl-8 [&>li]:mt-1 list-disc;
+    }
+
+    ol {
+        @apply pl-8 [&>li]:mt-1 list-decimal [&>li]:gap-2;
+    }
+
+    ul[data-type='taskList'],
+    ol[data-type='taskList'],
+    .contains-task-list {
+        @apply pl-3 !list-none [&>li]:flex [&>li]:items-center [&>li]:gap-1 [&_input]:mr-1;
+    }
+
+    .tableWrapper {
+        @apply !p-0 !m-0 overflow-x-auto;
+    }
+
+    table {
+        @apply w-full my-4 overflow-hidden border-collapse table-fixed;
+
+        td,
+        th {
+            @apply border border-foreground box-border min-w-4 px-1.5 py-2 relative align-top;
+
+            > * {
+                @apply mb-0;
+            }
+        }
+
+        th {
+            @apply font-semibold text-left bg-secondary;
+        }
+
+        .selectedCell:after {
+            @apply bg-muted content-none absolute left-0 top-0 bottom-0 right-0 pointer-events-none z-[2];
+        }
+
+        .column-resize-handle {
+            @apply absolute top-0 w-1 pointer-events-none bg-primary -bottom-2 -right-2;
+        }
+    }
+
+    &.resize-cursor {
+        @apply cursor-ew-resize cursor-col-resize;
+    }
+}

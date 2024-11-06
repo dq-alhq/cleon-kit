@@ -72,6 +72,16 @@ const config = withTV({
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)'
+            },
+            keyframes: {
+                blink: {
+                    '0%': { opacity: '0.2' },
+                    '20%': { opacity: '1' },
+                    '100% ': { opacity: '0.2' }
+                }
+            },
+            animation: {
+                blink: 'blink 1.4s both infinite'
             }
         }
     },

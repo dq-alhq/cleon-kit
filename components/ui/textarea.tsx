@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils'
 
 import { Description, FieldError, Label } from './field'
 
-const textareaStyles = tv({
-    base: 'w-full outline-none focus:outline-none min-w-0 rounded-md border bg-background px-2.5 py-2 text-base shadow-sm outline-none transition duration-200 disabled:bg-muted disabled:opacity-50 sm:text-sm',
+export const textareaStyles = tv({
+    base: 'w-full outline-none focus:outline-none min-w-0 rounded-md border bg-background px-2.5 py-2 text-base shadow-sm outline-none transition disabled:bg-muted disabled:opacity-50 sm:text-sm',
     variants: {
         isFocused: { true: 'border-primary/85 ring-4 ring-primary/20' },
         isInvalid: { true: 'border-danger ring-4 ring-danger/20' }

@@ -1,0 +1,33 @@
+---
+title: Rich Text Field
+description: Create exactly the rich text editor you want out of customizable building blocks.
+order: 11
+published: true
+references: ['https://lexical.dev/docs/intro']
+---
+
+## Basic
+
+This rich text editor is using [Lexical](https://lexical.dev/docs/intro), of course you can register for Pro account then re-customize this component.
+
+<Demo center component='forms/rich-text-field/rich-text-field-demo' />
+
+## Installation
+
+<Install component='rich-text-field' />
+
+## Controlled
+
+### Return as HTML
+You can control the rich text field value with the `value` prop. By default it returns `HTML`
+<Demo component="forms/rich-text-field/rich-text-field-controlled-html-demo" />
+
+### Return as Markdown
+You can return as Markdown by passing the `returnType` props to `markdown`
+<Demo component="forms/rich-text-field/rich-text-field-controlled-markdown-demo" />
+
+## Disabled
+
+When the rich text field is disabled, it cannot be edited.
+
+<Demo component='forms/rich-text-field/rich-text-field-disabled-demo' />

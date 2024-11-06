@@ -40,7 +40,7 @@ const ColorPicker = ({
                 <Popover>
                     <Aria.Button
                         isDisabled={isDisabled}
-                        className='flex cursor-pointer focus:outline-none outline-none disabled:cursor-default disabled:opacity-50 items-center rounded text-sm'
+                        className='flex cursor-pointer disabled:cursor-default disabled:opacity-50 items-center rounded text-sm outline outline-primary outline-offset-2 outline-0 focus-visible:outline-2'
                     >
                         <ColorSwatch className={cn('size-6', className)} />
                         {label && <span className='ml-2'>{label}</span>}

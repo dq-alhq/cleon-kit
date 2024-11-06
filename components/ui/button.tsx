@@ -9,14 +9,15 @@ import { cn } from '@/lib/utils'
 
 const buttonVariants = tv({
     base: [
-        'relative btn border before:absolute after:absolute box-border whitespace-nowrap outline-none transition-all duration-200 no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium',
+        'relative btn border before:absolute after:absolute box-border whitespace-nowrap transition-colors no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium',
         'pressed:brightness-95',
         '[&>svg]:-mx-0.5 [&>svg]:my-1 [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-[--btn-icon]',
-        'disabled:cursor-default disabled:opacity-50',
+        'disabled:cursor-default disabled:opacity-50 disabled:pointer-events-none',
         'border-transparent bg-[--btn-border]',
         'before:inset-0 before:-z-10 before:bg-[--btn-bg] before:shadow before:data-[disabled]:shadow-none',
         'after:shadow-[shadow:inset_0_1px_theme(colors.white/15%)] after:active:bg-[--btn-hover-overlay] after:hover:bg-[--btn-hover-overlay] after:data-[disabled]:shadow-none after:inset-0 after:-z-10',
-        'dark:after:-inset-px dark:before:hidden dark:border-white/5 dark:bg-[--btn-bg]'
+        'dark:after:-inset-px dark:before:hidden dark:border-white/5 dark:bg-[--btn-bg]',
+        'outline outline-0 focus-visible:outline-2 outline-primary outline-offset-2'
     ],
     variants: {
         variant: {
