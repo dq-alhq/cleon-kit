@@ -31,6 +31,7 @@ const toggleStyles = tv({
         }
     },
     defaultVariants: {
+        variant: 'solid',
         size: 'md',
         shape: 'square'
     }
