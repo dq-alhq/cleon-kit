@@ -77,7 +77,6 @@ export default function ThemeCustomizer() {
     const themeContainerRef = React.useRef<HTMLDivElement>(null)
     const [font, setFont] = React.useState<FontsSansName>('Geist')
 
-    const themeContainer = document.getElementsByTagName('html')[0]
     const handlePresetChange = (theme: string) => {
         setPreset(new Set([theme]))
         localStorage.setItem('theme-id', theme)
@@ -85,11 +84,13 @@ export default function ThemeCustomizer() {
         setDarkVars({ ...darkVars, ...Presets[theme].dark })
         setRadius(Presets[theme].radius ?? Presets.cleon.radius)
 
+        const themeContainer = document.getElementsByTagName('html')[0]
         // const themeContainer = themeContainerRef.current
         if (themeContainer) applyTheme(themeContainer, theme, resolvedTheme as any)
     }
 
     React.useEffect(() => {
+        const themeContainer = document.getElementsByTagName('html')[0]
         localStorage.setItem('theme-id', 'custom')
         if (themeContainer)
             applyCustomTheme(
@@ -125,20 +126,20 @@ export default function ThemeCustomizer() {
         --font-sans: "${font}", sans-serif;
 
         ${Object.keys(lightVars)
-            .map(
-                (key) =>
-                    `${key}: ${lightVars[key as keyof typeof lightVars]}; /* ${getColorName({ color: lightVars[key as keyof typeof lightVars], type: 'hsl' })} */`
-            )
-            .join('\n\t\t')}
+                .map(
+                    (key) =>
+                        `${key}: ${lightVars[key as keyof typeof lightVars]}; /* ${getColorName({ color: lightVars[key as keyof typeof lightVars], type: 'hsl' })} */`
+                )
+                .join('\n\t\t')}
         --radius: ${radius}rem;
     }
     .dark {
         ${Object.keys(darkVars)
-            .map(
-                (key) =>
-                    `${key}: ${darkVars[key as keyof typeof darkVars]}; /* ${getColorName({ color: darkVars[key as keyof typeof darkVars], type: 'hsl' })} */`
-            )
-            .join('\n\t\t')}
+                .map(
+                    (key) =>
+                        `${key}: ${darkVars[key as keyof typeof darkVars]}; /* ${getColorName({ color: darkVars[key as keyof typeof darkVars], type: 'hsl' })} */`
+                )
+                .join('\n\t\t')}
     }
 }
 
