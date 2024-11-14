@@ -5,7 +5,7 @@ import { tv, type VariantProps } from 'tailwind-variants'
 
 const trackStyles = tv({
     base: [
-        'mr-2 h-5 w-8 bg-muted cursor-pointer rounded-full border-2 border-transparent transition duration-200',
+        'mr-2 h-5 w-8 bg-muted cursor-pointer rounded-[calc(var(--radius)+2px)] border-2 border-transparent transition duration-200',
         'group-focus:ring-4',
         'group-focus:ring-4 group-invalid:ring-danger/20',
         'group-disabled:cursor-default group-disabled:opacity-50'
@@ -28,7 +28,7 @@ const trackStyles = tv({
 const switchStyles = tv({
     slots: {
         base: 'group inline-flex touch-none lg:text-sm items-center',
-        ball: 'group-selected:ml-3 group-selected:group-data-[pressed]:ml-2 group-pressed:w-5 block size-4 origin-right rounded-full bg-primary-foreground shadow transition-all duration-200'
+        ball: 'group-selected:ml-3 group-selected:group-data-[pressed]:ml-2 group-pressed:w-5 block size-4 origin-right rounded-[calc(var(--radius)+2px)] bg-primary-foreground shadow transition-all duration-200'
     }
 })
 

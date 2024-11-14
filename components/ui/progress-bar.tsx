@@ -22,17 +22,17 @@ const ProgressBar = ({ label, className, ...props }: ProgressBarProps) => {
                             {valueText}
                         </span>
                     </div>
-                    <div className='relative h-2 min-w-64 overflow-hidden rounded-full bg-muted outline outline-1 -outline-offset-1 outline-transparent'>
+                    <div className='relative h-2 min-w-64 overflow-hidden rounded-lg bg-muted outline outline-1 -outline-offset-1 outline-transparent'>
                         {!isIndeterminate ? (
                             <motion.div
-                                className='absolute left-0 top-0 h-full rounded-full bg-primary'
+                                className='absolute left-0 top-0 h-full rounded-lg bg-primary'
                                 initial={{ width: '0%' }}
                                 animate={{ width: `${percentage}%` }}
                                 transition={{ duration: 0.5, ease: 'easeInOut' }}
                             />
                         ) : (
                             <motion.div
-                                className='absolute top-0 h-full rounded-full bg-primary'
+                                className='absolute top-0 h-full rounded-lg bg-primary'
                                 initial={{ left: '0%', width: '40%' }}
                                 animate={{ left: ['0%', '100%', '0%'] }}
                                 transition={{

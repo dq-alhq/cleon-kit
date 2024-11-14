@@ -12,7 +12,7 @@ export default function CarouselWithCollectionDemo() {
                     <Carousel.Item id={item.id}>
                         <Card className='p-1'>
                             <Image
-                                className='rounded-md h-40 object-center object-cover'
+                                className='rounded-lg h-40 object-center object-cover'
                                 src={`https://picsum.photos/id/${item.id}/400/300`}
                                 alt={`image ${item.id}`}
                                 width={400}

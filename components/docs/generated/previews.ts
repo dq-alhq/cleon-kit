@@ -386,8 +386,20 @@ export const previews: Record<string, any> = {
   "navigation/pagination/simple-pagination-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/pagination/simple-pagination-demo")),
   },
-  "navigation/breadcrumbs-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs-demo")),
+  "navigation/breadcrumbs/breadcrumbs-separator-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs/breadcrumbs-separator-demo")),
+  },
+  "navigation/breadcrumbs/breadcrumbs-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs/breadcrumbs-demo")),
+  },
+  "navigation/breadcrumbs/breadcrumbs-collections-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs/breadcrumbs-collections-demo")),
+  },
+  "navigation/breadcrumbs/breadcrumbs-current-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs/breadcrumbs-current-demo")),
+  },
+  "navigation/breadcrumbs/breadcrumbs-menu-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs/breadcrumbs-menu-demo")),
   },
   "blocks/navbar/navbar-creating-demo": {
     component: React.lazy(() => import("@/components/docs/blocks/navbar/navbar-creating-demo")),
@@ -1070,44 +1082,41 @@ export const previews: Record<string, any> = {
   "surfaces/show-more/show-more-as-text-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/show-more/show-more-as-text-demo")),
   },
-  "media/carousel-autoplay-demo": {
-    component: React.lazy(() => import("@/components/docs/media/carousel-autoplay-demo")),
+  "media/carousel/carousel-autoplay-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel/carousel-autoplay-demo")),
   },
-  "media/avatar-group-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-group-demo")),
+  "media/carousel/carousel-orientation-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel/carousel-orientation-demo")),
   },
-  "media/carousel-orientation-demo": {
-    component: React.lazy(() => import("@/components/docs/media/carousel-orientation-demo")),
+  "media/carousel/carousel-with-collection-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel/carousel-with-collection-demo")),
   },
-  "media/avatar-size-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-size-demo")),
+  "media/carousel/carousel-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel/carousel-demo")),
   },
-  "media/carousel-with-collection-demo": {
-    component: React.lazy(() => import("@/components/docs/media/carousel-with-collection-demo")),
+  "media/carousel/carousel-options-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel/carousel-options-demo")),
   },
-  "media/carousel-demo": {
-    component: React.lazy(() => import("@/components/docs/media/carousel-demo")),
+  "media/carousel/carousel-api-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel/carousel-api-demo")),
   },
-  "media/carousel-options-demo": {
-    component: React.lazy(() => import("@/components/docs/media/carousel-options-demo")),
+  "media/avatar/avatar-group-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar/avatar-group-demo")),
   },
-  "media/avatar-status-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-status-demo")),
+  "media/avatar/avatar-size-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar/avatar-size-demo")),
   },
-  "media/avatar-initials-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-initials-demo")),
+  "media/avatar/avatar-status-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar/avatar-status-demo")),
   },
-  "media/avatar-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-demo")),
+  "media/avatar/avatar-initials-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar/avatar-initials-demo")),
   },
-  "media/carousel-api-demo": {
-    component: React.lazy(() => import("@/components/docs/media/carousel-api-demo")),
+  "media/avatar/avatar-shape-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar/avatar-shape-demo")),
   },
-  "media/avatar-shape-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-shape-demo")),
-  },
-  "media/avatar-fallback-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-fallback-demo")),
+  "media/avatar/avatar-fallback-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar/avatar-fallback-demo")),
   },
   "chart/radial/radial-chart-text-demo": {
     component: React.lazy(() => import("@/components/docs/chart/radial/radial-chart-text-demo")),

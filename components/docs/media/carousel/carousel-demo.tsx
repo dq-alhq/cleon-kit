@@ -10,7 +10,7 @@ export default function CarouselDemo() {
             <Carousel.Content>
                 <Carousel.Item className='basis-1/2'>
                     <Image
-                        className='rounded-xl'
+                        className='rounded-lg'
                         src='https://picsum.photos/id/61/400/300'
                         alt='image 1'
                         width={400}
@@ -19,7 +19,7 @@ export default function CarouselDemo() {
                 </Carousel.Item>
                 <Carousel.Item className='basis-1/2'>
                     <Image
-                        className='rounded-xl'
+                        className='rounded-lg'
                         src='https://picsum.photos/id/62/400/300'
                         alt='image 2'
                         width={400}
@@ -28,7 +28,7 @@ export default function CarouselDemo() {
                 </Carousel.Item>
                 <Carousel.Item className='basis-1/2'>
                     <Image
-                        className='rounded-xl'
+                        className='rounded-lg'
                         src='https://picsum.photos/id/63/400/300'
                         alt='image 3'
                         width={400}
@@ -37,7 +37,7 @@ export default function CarouselDemo() {
                 </Carousel.Item>
                 <Carousel.Item className='basis-1/2'>
                     <Image
-                        className='rounded-xl'
+                        className='rounded-lg'
                         src='https://picsum.photos/id/64/400/300'
                         alt='image 4'
                         width={400}
@@ -46,7 +46,7 @@ export default function CarouselDemo() {
                 </Carousel.Item>
                 <Carousel.Item className='basis-1/2'>
                     <Image
-                        className='rounded-xl'
+                        className='rounded-lg'
                         src='https://picsum.photos/id/65/400/300'
                         alt='image 5'
                         width={400}
@@ -55,7 +55,7 @@ export default function CarouselDemo() {
                 </Carousel.Item>
                 <Carousel.Item className='basis-1/2'>
                     <Image
-                        className='rounded-xl'
+                        className='rounded-lg'
                         src='https://picsum.photos/id/66/400/300'
                         alt='image 6'
                         width={400}
@@ -64,7 +64,7 @@ export default function CarouselDemo() {
                 </Carousel.Item>
                 <Carousel.Item className='basis-1/2'>
                     <Image
-                        className='rounded-xl'
+                        className='rounded-lg'
                         src='https://picsum.photos/id/61/400/300'
                         alt='image 7'
                         width={400}

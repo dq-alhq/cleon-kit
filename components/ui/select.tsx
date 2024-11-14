@@ -79,12 +79,8 @@ const Select = <T extends object>({
     )
 }
 
-const SelectItemDetails = DropdownItemDetails
-const SelectItem = DropdownItem
-const SelectSection = DropdownSection
-
-Select.Item = SelectItem
-Select.ItemDetails = SelectItemDetails
-Select.Section = SelectSection
+Select.Item = DropdownItem
+Select.ItemDetails = DropdownItemDetails
+Select.Section = DropdownSection
 
 export { Select }

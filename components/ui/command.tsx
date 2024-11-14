@@ -64,7 +64,7 @@ const Command = ({
             >
                 <Aria.Modal
                     className={cn(
-                        'fixed bottom-0 left-[50%] top-auto z-50 grid h-[calc(100vh-35%)] w-full max-w-full translate-x-[-50%] gap-4 overflow-hidden rounded-t-xl bg-background text-overlay-foreground shadow-lg ring-1 ring-dark/5 dark:ring-border sm:bottom-auto sm:top-[6rem] sm:h-auto sm:w-full sm:max-w-2xl sm:rounded-xl',
+                        'fixed bottom-0 left-[50%] top-auto z-50 grid h-[calc(100vh-35%)] w-full max-w-full translate-x-[-50%] gap-4 overflow-hidden rounded-t-lg bg-background text-overlay-foreground shadow-lg ring-1 ring-dark/5 dark:ring-border sm:bottom-auto sm:top-[6rem] sm:h-auto sm:w-full sm:max-w-2xl sm:rounded-lg',
                         'sm:entering:slide-in-from-bottom-auto entering:duration-300 entering:animate-in entering:fade-in-0 entering:slide-in-from-bottom-1/2 entering:slide-in-from-left-1/2 entering:[transition-timing-function:ease-out] sm:entering:duration-300 sm:entering:slide-in-from-top-[2rem]',
                         'exiting:duration-300 exiting:animate-out exiting:fade-out-0 exiting:slide-out-to-bottom-1/2 exiting:slide-out-to-left-1/2 exiting:[transition-timing-function:ease] sm:exiting:slide-out-to-top-[4rem]'
                     )}
@@ -76,7 +76,7 @@ const Command = ({
                                     value={value}
                                     onValueChange={onValueChange}
                                     className={cn(
-                                        'flex h-svh w-full flex-col overflow-hidden rounded-md sm:h-full',
+                                        'flex h-svh w-full flex-col overflow-hidden rounded-lg sm:h-full',
                                         '[&_[cmdk-group-heading]]:ml-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:-mb-1.5 [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12',
                                         '[&_[cmdk-item]]:py-2.5 [&_[cmdk-item]]:pl-2.5 [&_[cmdk-item]]:pr-4',
                                         className
@@ -89,7 +89,7 @@ const Command = ({
                                         autoFocus={!isDesktop}
                                         onPress={close}
                                         className={cn(
-                                            'absolute right-3 top-1.5 [&>span>svg]:text-muted-foreground pressed:[&_svg]:text-foreground lg:top-3.5 rounded-full border lg:border-muted border-transparent lg:bg-muted/50 py-2.5 px-2.5 lg:py-0.5 text-xs transition data-[state=open]:bg-muted data-[state=open]:text-muted-foreground lg:focus:border-foreground/70 focus:outline-none lg:focus:ring-2 lg:focus:ring-primary disabled:pointer-events-none',
+                                            'absolute right-3 top-1.5 [&>span>svg]:text-muted-foreground pressed:[&_svg]:text-foreground lg:top-3.5 rounded-lg border lg:border-muted border-transparent lg:bg-muted/50 py-2.5 px-2.5 lg:py-0.5 text-xs transition data-[state=open]:bg-muted data-[state=open]:text-muted-foreground lg:focus:border-foreground/70 focus:outline-none lg:focus:ring-2 lg:focus:ring-primary disabled:pointer-events-none',
                                             'focus:outline-none lg:focus:bg-primary/10 lg:focus:ring-2 lg:focus:ring-primary/20 lg:focus:border-primary/70',
                                             'disabled:pointer-events-none'
                                         )}
@@ -122,7 +122,7 @@ const CommandInput = React.forwardRef<React.ElementRef<typeof CMDK.Input>, Comma
                     autoFocus
                     ref={ref}
                     className={cn(
-                        'flex w-full rounded-md bg-transparent text-base placeholder:text-muted-foreground',
+                        'flex w-full rounded-lg bg-transparent text-base placeholder:text-muted-foreground',
                         'focus:outline-none',
                         'disabled:opacity-50 disabled:cursor-not-allowed',
                         hideSearchIndicator && 'pl-1',

@@ -22,7 +22,7 @@ import { cn } from '@/lib/utils'
 
 import { formatColorForTailwind, formatColorFromTailwind, getColorName } from '../colors/colors'
 import './color.css'
-import { applyTheme } from './controller'
+import { applyCustomTheme, applyTheme } from './controller'
 import { FontsSans, type FontsSansName } from './fonts'
 import ThemeContainer from './theme-container'
 import { BrandColors, Presets, RadixColors, TailwindColors } from './theme-presets'
@@ -69,7 +69,7 @@ export default function ThemeCustomizer() {
         '--muted': Presets.cleon.dark['--muted'],
         '--muted-foreground': Presets.cleon.dark['--muted-foreground']
     })
-    const [radius, setRadius] = React.useState(Presets.cleon.radius)
+    const [radius, setRadius] = React.useState<number | undefined>(Presets.cleon.radius)
 
     const [preset, setPreset] = React.useState<Selection>(new Set(['cleon']))
 
@@ -77,6 +77,7 @@ export default function ThemeCustomizer() {
     const themeContainerRef = React.useRef<HTMLDivElement>(null)
     const [font, setFont] = React.useState<FontsSansName>('Geist')
 
+    const themeContainer = document.getElementsByTagName('html')[0]
     const handlePresetChange = (theme: string) => {
         setPreset(new Set([theme]))
         localStorage.setItem('theme-id', theme)
@@ -84,10 +85,21 @@ export default function ThemeCustomizer() {
         setDarkVars({ ...darkVars, ...Presets[theme].dark })
         setRadius(Presets[theme].radius ?? Presets.cleon.radius)
 
-        const themeContainer = document.getElementsByTagName('html')[0]
         // const themeContainer = themeContainerRef.current
         if (themeContainer) applyTheme(themeContainer, theme, resolvedTheme as any)
     }
+
+    React.useEffect(() => {
+        localStorage.setItem('theme-id', 'custom')
+        if (themeContainer)
+            applyCustomTheme(
+                themeContainer,
+                lightVars,
+                darkVars,
+                radius as number,
+                resolvedTheme as any
+            )
+    }, [lightVars, darkVars, radius])
 
     React.useEffect(() => {
         const savedTheme =

@@ -73,7 +73,7 @@ export function Navbar() {
                                     <>
                                         <LinkPrimitive
                                             target='_blank'
-                                            href='https://github.com/dq-alhq/cleon-ui'
+                                            href='https://github.com/dq-alhq/cleon-kit'
                                             className={buttonVariants({
                                                 variant: 'outline',
                                                 size: 'icon'
@@ -167,7 +167,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                 <div className='flex items-center gap-x-1'>
                     <LinkPrimitive
                         target='_blank'
-                        href='https://github.com/dq-alhq/cleon-ui'
+                        href='https://github.com/dq-alhq/cleon-kit'
                         className={buttonVariants({
                             variant: 'outline',
                             size: 'icon'

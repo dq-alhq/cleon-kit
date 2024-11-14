@@ -31,7 +31,7 @@ export default function UserProfileSink() {
                         </Heading>
                     </div>
                 </div>
-                <div className='border rounded p-2'>
+                <div className='border rounded-lg p-2'>
                     <Tabs aria-label='Packages'>
                         <Tabs.List className='w-full justify-center'>
                             <Tabs.Label id='t1'>Identity</Tabs.Label>

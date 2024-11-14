@@ -267,6 +267,49 @@ export const Presets: Record<string, ThemeStyle> = {
         },
         radius: 0.875
     },
+    metro: {
+        light: {
+            '--background': '0 0% 100%',
+            '--foreground': '0 0% 11%',
+            '--primary': '212 97% 43%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '200 18% 46%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '3 65% 49%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '90 76% 38%',
+            '--success-foreground': '0 0% 0%',
+            '--warning': '25 100% 64%',
+            '--warning-foreground': '0 0% 0%',
+            '--info': '199 94% 70%',
+            '--info-foreground': '0 0% 0%',
+            '--dark': '0 0% 31%',
+            '--dark-foreground': '0 0% 100%',
+            '--muted': '0 0% 64%',
+            '--muted-foreground': '199 18% 33%'
+        },
+        dark: {
+            '--background': '0 0% 11%',
+            '--foreground': '0 0% 100%',
+            '--primary': '212 97% 43%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '200 18% 46%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '3 65% 49%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '90 76% 38%',
+            '--success-foreground': '0 0% 0%',
+            '--warning': '25 100% 64%',
+            '--warning-foreground': '0 0% 0%',
+            '--info': '199 94% 70%',
+            '--info-foreground': '0 0% 0%',
+            '--dark': '0 0% 100%',
+            '--dark-foreground': '0 0% 11%',
+            '--muted': '199 18% 33%',
+            '--muted-foreground': '0 0% 64%'
+        },
+        radius: 0
+    },
     'tw-red': {
         light: {
             '--background': '0 0% 98.04%',
@@ -2087,7 +2130,8 @@ export const BrandColors = [
     { name: 'bootstrap', color: '#712cf9', label: 'Bootstrap' },
     { name: 'mui', color: '#2196f3', label: 'Material UI' },
     { name: 'antd', color: '#1677ff', label: 'Ant Design' },
-    { name: 'nextui', color: '#7828c8', label: 'Next-UI' }
+    { name: 'nextui', color: '#7828c8', label: 'Next-UI' },
+    { name: 'metro', color: '#0366d6', label: 'Metro' }
 ]
 
 export type ThemePreset = keyof typeof Presets

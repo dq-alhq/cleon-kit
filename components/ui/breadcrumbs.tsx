@@ -1,6 +1,6 @@
 'use client'
 
-import { IconChevronRight } from 'cleon-icons'
+import { IconChevronRight, IconSlash } from 'cleon-icons'
 import * as Aria from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
@@ -8,17 +8,48 @@ import { cn } from '@/lib/utils'
 import { Link } from './link'
 
 const Breadcrumbs = <T extends object>({ className, ...props }: Aria.BreadcrumbsProps<T>) => {
-    return <Aria.Breadcrumbs {...props} className={cn('flex gap-1', className)} />
+    return <Aria.Breadcrumbs {...props} className={cn('flex items-center gap-2', className)} />
 }
 
-const Item = ({ className, ...props }: Aria.BreadcrumbProps & Aria.LinkProps) => {
+interface ItemProps extends Aria.BreadcrumbProps {
+    href?: string
+    separator?: 'slash' | 'chevron' | boolean
+}
+
+const Item = ({
+    href,
+    separator = true,
+    className,
+    ...props
+}: ItemProps & Partial<Omit<Aria.LinkProps, 'className'>>) => {
+    const separatorValue = separator === true ? 'chevron' : separator
+
     return (
-        <Aria.Breadcrumb {...props} className={cn('flex items-center gap-1', className)}>
-            <Link href={props.href} {...props} />
-            {'href' in props && (
-                <IconChevronRight className='size-4 shrink-0 text-muted-foreground' />
+        <Aria.Breadcrumb {...props} className={cn('flex text-sm items-center gap-2', className)}>
+            {({ isCurrent }) => (
+                <>
+                    {<Link variant='unstyled' href={href} {...props} />}
+                    {!isCurrent && separator !== false && <Separator separator={separatorValue} />}
+                </>
             )}
         </Aria.Breadcrumb>
+    )
+}
+
+const Separator = ({ separator = 'chevron' }: { separator?: ItemProps['separator'] }) => {
+    return (
+        <span
+            className={cn(
+                '[&>*]:shrink-0 [&>[data-slot=icon]]:size-3.5 [&>*]:text-muted-foreground'
+            )}
+        >
+            {separator === 'chevron' && <IconChevronRight />}
+            {separator === 'slash' && (
+                <span className='text-muted-foreground'>
+                    <IconSlash />
+                </span>
+            )}
+        </span>
     )
 }
 

@@ -6,7 +6,7 @@ const Card = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => 
     return (
         <div
             className={cn(
-                'bg-background card rounded-xl [&:has(table)_.footer]:border-t [&:has(table)_.th]:bg-background [&:has(table)]:overflow-hidden border text-foreground shadow-sm [&_table]:overflow-hidden',
+                'bg-background card rounded-lg [&:has(table)_.footer]:border-t [&:has(table)_.th]:bg-background [&:has(table)]:overflow-hidden border text-foreground shadow-sm [&_table]:overflow-hidden',
                 className
             )}
             {...props}

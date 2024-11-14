@@ -13,7 +13,7 @@ export default function ShowMoreContentRevealDemo() {
             showLessText='Hide'
         >
             <Image
-                className='rounded-xl'
+                className='rounded-lg'
                 src='https://picsum.photos/1920/1080'
                 alt='Image'
                 width={1920}

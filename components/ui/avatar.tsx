@@ -38,7 +38,7 @@ const AvatarGroup = <T extends AvatarProps>({
 
 const avatarStyles = tv({
     base: [
-        'inline-grid relative shrink-0 bg-muted align-middle [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1',
+        'inline-grid relative shrink-0 bg-muted align-middle [--ring-opacity:20%] *:col-start-1 *:row-start-1',
         'loo2ppvkxrcah38e outline outline-1 -outline-offset-1 outline-foreground/[--ring-opacity]'
     ],
     variants: {
@@ -49,7 +49,7 @@ const avatarStyles = tv({
             lg: 'size-10'
         },
         shape: {
-            square: 'rounded-[--avatar-radius] *:rounded-[--avatar-radius] [&_[data-slot=badge]]:rounded-full',
+            square: 'rounded-lg *:rounded-lg [&_[data-slot=badge]]:rounded-full',
             circle: 'rounded-full *:rounded-full'
         }
     },

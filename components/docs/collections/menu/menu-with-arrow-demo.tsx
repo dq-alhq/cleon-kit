@@ -12,12 +12,10 @@ export default function MenuWithArrowDemo() {
                     <Avatar className='size-10' src='https://github.com/dq-alhq.png' />
                 </Menu.Trigger>
                 <Menu.Content placement='bottom' showArrow className='min-w-64'>
-                    <Menu.Section>
-                        <Menu.Header separator>
-                            <span className='block'>DQ Al-Haqqi</span>
-                            <span className='font-normal text-muted-foreground'>@dq-alhq</span>
-                        </Menu.Header>
-                    </Menu.Section>
+                    <Menu.Header separator>
+                        <span className='block'>DQ Al-Haqqi</span>
+                        <span className='font-normal text-muted-foreground'>@dq-alhq</span>
+                    </Menu.Header>
                     <Menu.Item>
                         <IconSettings />
                         Pengaturan

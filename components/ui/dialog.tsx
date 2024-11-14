@@ -187,7 +187,7 @@ const CloseIndicator = ({ className, ...props }: CloseButtonIndicatorProps) => {
             aria-label='Close'
             onPress={props.close}
             className={cn(
-                'close absolute right-1 top-1 sm:right-2 sm:top-2 focus:outline-none focus:bg-muted/50 hover:bg-muted/50 grid place-content-center rounded-xl sm:rounded-md focus-visible:ring-1 focus-visible:ring-primary size-8 sm:size-7 z-50',
+                'close absolute right-1 top-1 sm:right-2 sm:top-2 focus:outline-none focus:bg-muted/50 hover:bg-muted/50 grid place-content-center rounded-lg focus-visible:ring-1 focus-visible:ring-primary size-8 sm:size-7 z-50',
                 className
             )}
         >

@@ -55,8 +55,8 @@ const buttonVariants = tv({
             ],
             outline: [
                 'text-foreground bg-background/80 backdrop-blur-lg border-border dark:border-border [--btn-hover-overlay:theme(colors.muted.DEFAULT)]',
-                '[--btn-icon:theme(colors.foreground)]',
-                'dark:after:shadow-sm dark:before:shadow-sm'
+                '[--btn-icon:theme(colors.foreground)] shadow-none',
+                'dark:after:shadow-none dark:before:shadow-none before:shadow-none after:shadow-none'
             ],
             ghost: 'text-foreground bg-transparent hover:bg-muted shadow-none border-none after:shadow-none before:shadow-none'
         },

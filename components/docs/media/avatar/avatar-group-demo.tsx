@@ -12,25 +12,25 @@ export default function AvatarGroupDemo() {
                 src='https://i.pravatar.cc/150?img=61'
             />
             <Avatar
-                tooltip='Image 1'
+                tooltip='Image 2'
                 alt='image 2'
                 initials='DQ'
                 src='https://i.pravatar.cc/150?img=62'
             />
             <Avatar
-                tooltip='Image 1'
+                tooltip='Image 3'
                 alt='image 3'
                 initials='DQ'
                 src='https://i.pravatar.cc/150?img=63'
             />
             <Avatar
-                tooltip='Image 1'
+                tooltip='Image 4'
                 alt='image 4'
                 initials='DQ'
                 src='https://i.pravatar.cc/150?img=64'
             />
             <Avatar
-                tooltip='Image 1'
+                tooltip='Image 5'
                 alt='image 5'
                 initials='DQ'
                 src='https://i.pravatar.cc/150?img=65'
